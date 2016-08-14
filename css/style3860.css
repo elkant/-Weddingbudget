@@ -1,0 +1,106 @@
+
+
+.cart-table   {
+    border: 1px solid #ddd;
+}
+
+.cart-table  td a {
+    color: #222;
+}
+
+.cart-table  td a:hover {
+    color: #000;
+}
+
+.cart-table thead th {
+    text-transform: uppercase;
+}
+
+
+.cart-table.table>tbody>tr>td,
+.cart-table.table>tbody>tr>th,
+.cart-table.table>tfoot>tr>td,
+.cart-table.table>tfoot>tr>th,
+.cart-table.table>thead>tr>td,
+.cart-table.table>thead>tr>th {
+    vertical-align: middle;
+}
+
+.cart-img img {
+    width: 60px;
+    height: auto;
+}
+
+
+.cart-action input {
+    padding: 6px 3px 6px 6px;
+}
+
+.cart-action input,
+.cart-action button {
+    float: left;
+    margin-right: 3px;
+}
+
+.cart-action button:hover i {
+    color: #222;
+}
+
+.cart-quantity {
+    width: 45px;
+    border-radius: 0;
+}
+
+.coupon-form input {
+    height: 40px;
+    border-radius: 0;
+}
+
+.coupon-form label {
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.cart-total {
+    font-size: 16px;
+}
+
+.cart-btn-row a {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.coupon-form label  {
+    margin-right: 20px;
+}
+.coupon-form input {
+    margin-right: 10px;
+}
+
+.pro-box .one-third,
+.featured-box.pro-box  .one-third:nth-child(2){
+    padding:10px 5px;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.shop-view-mode {
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.shop-view-mode a {
+    margin-left: 15px;
+    color: #adadad;
+}
+
+.shop-view-mode a:hover {
+    color: #222;
+}
