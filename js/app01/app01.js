@@ -722,9 +722,8 @@ app01.config(['$routeProvider',function($routeProvider){
 	.when('/budget' ,{templateUrl:'budget.php'})   
     .when('/register',{templateUrl:'register.php'})
     .when('/contactus',{templateUrl:'contactus.php'})
-	.when('/slides',{templateUrl:'slides.html'})	
-    .when('/providers',{  templateUrl:'providers.php'}).
-    when('/test',{templateUrl:'provider_detail.php'}).
+	.when('/slides',{templateUrl:'slides.html'}).  
+    when('/providers',{templateUrl:'provider_detail.php'}).
     when('/edit',{templateUrl:'editprovider.php'}).
     when('/managesms',{templateUrl:'manageSMS.jsp'}).
     when('/newuser', {templateUrl:'registeruser.jsp'}).
@@ -732,11 +731,9 @@ app01.config(['$routeProvider',function($routeProvider){
     when('/vanswers',{templateUrl:'viewAnswers.jsp'}).
     when('/qstns',{templateUrl:'viewQuestions.jsp'}).
     when('/search',{templateUrl:'search1.php'}).
- when('/editmsg',{templateUrl:'manageSMS.jsp'}).
- when('/biodata',{templateUrl:'viewBioData.jsp'}); 
-        
-        
-        
+	when('/editmsg',{templateUrl:'manageSMS.jsp'}).
+	when('/biodata',{templateUrl:'viewBioData.jsp'}); 
+              
 }]);
 
 

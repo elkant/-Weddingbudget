@@ -28,7 +28,7 @@
                              </ul>
                               </li>
 							
-							<li><a onclick='topofpage();' href="#/providers">Providers </a></li>
+						
                             <li  class="">
                                 <a onclick='topofpage();' href="#/register">Register</a>
                             </li>
@@ -43,6 +43,9 @@
                             
                            
            <li><a href="#/contactus">Contact Us </a></li>
+           <li><a href="#/providers">Providers  </a></li>
+           <li><a href="#/edit">Edit Provider </a></li>
+           <li><a href="#/search">Search </a></li>
                         </ul>
 					</div>
 				

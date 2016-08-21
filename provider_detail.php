@@ -23,7 +23,7 @@ session_start();
 										  <div class="col-md-6">
 										<section id="work_outer"><!--main-section-start-->
 
-  <div class="container">{{datamodel}}
+  <div class="container">
     <section class="main-section contact" id="contact">
      <div class="row">
           <div>

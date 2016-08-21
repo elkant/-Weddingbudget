@@ -155,8 +155,8 @@ include 'slides.html';
 <script type="text/javascript" src="js/angular-route.js"></script>
 <script type="text/javascript" src="js/angular-sanitize.min.js"></script>
 <script type="text/javascript" src="js/angular-resource.min.js"></script>
-<!--<script  type="text/javascript" src="js/app01/app01.js"></script>-->
-<script  type="text/javascript" src="js/app01/app02.js"></script>
+<script  type="text/javascript" src="js/app01/app01.js"></script>
+<!--<script  type="text/javascript" src="js/app01/app02.js"></script>-->
 <script src="js/php_crud_api_transform.js"></script>
   <script src="js/ng-file-upload.js"></script>
    <script src="js/ng-file-upload-shim.js"></script>
