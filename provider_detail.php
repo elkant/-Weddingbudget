@@ -110,6 +110,21 @@ session_start();
 		   <option  ng-repeat="ck in caketype"  id="{{ck.id}}" ng-value="ck.id">{{ck.value}}</option>
 		   </select>
 		    </td>
+			
+		   <td ng-if="pd.providerid=='11'" >  
+		   <select class="form-control"  placeholder="Chair Type" data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('chairtype');" >
+		   <option  ng-repeat="chair in chairtype"  id="{{chair.id}}" ng-value="chair.id">{{chair.value}}</option>
+		   </select>
+		   </td>
+		   
+		    <td ng-if="pd.providerid=='5'" >  
+		   <select class="form-control"  placeholder="Venue Type" data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('venuetype');" >
+		   <option  ng-repeat="venue in venuetype"  id="{{venue.id}}" ng-value="venue.id">{{venue.value}}</option>
+		   </select>
+		   </td>
+			
+			
+			
 		    <td ng-if="datamodel.provider.providerId=='10'"><select class="input-text"  ng-load="getSelectData('entertainment')">
 			<option ng-repeat="ent in entertainment" ng-selected="ent.value=ent.id" value="{{ent.id}}">{{ent.value}}</option>
 			</select>			
