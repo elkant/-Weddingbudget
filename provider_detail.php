@@ -110,21 +110,6 @@ session_start();
 		   <option  ng-repeat="ck in caketype"  id="{{ck.id}}" ng-value="ck.id">{{ck.value}}</option>
 		   </select>
 		    </td>
-			
-		   <td ng-if="pd.providerid=='11'" >  
-		   <select class="form-control"  placeholder="Chair Type" data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('chairtype');" >
-		   <option  ng-repeat="chair in chairtype"  id="{{chair.id}}" ng-value="chair.id">{{chair.value}}</option>
-		   </select>
-		   </td>
-		   
-		    <td ng-if="pd.providerid=='5'" >  
-		   <select class="form-control"  placeholder="Venue Type" data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('venuetype');" >
-		   <option  ng-repeat="venue in venuetype"  id="{{venue.id}}" ng-value="venue.id">{{venue.value}}</option>
-		   </select>
-		   </td>
-			
-			
-			
 		    <td ng-if="datamodel.provider.providerId=='10'"><select class="input-text"  ng-load="getSelectData('entertainment')">
 			<option ng-repeat="ent in entertainment" ng-selected="ent.value=ent.id" value="{{ent.id}}">{{ent.value}}</option>
 			</select>			
@@ -133,10 +118,11 @@ session_start();
 		   <td ng-if="pd.providerid=='5'"><input class="form-control" type="text" name="" placeholder="Physical Address" data-ng-model="pd.location" ></td>
 		   <td ng-if="pd.providerid=='5'"><input class="form-control" type="text" name="" placeholder="Area" data-ng-model="pd.area" ></td>
 		  
-			<td class="file-upload">			
-			<input type="text" class="form-control" ng-model="pd.img"  ><input type="file" file-model="myFile"  />
-			<button ng-click="uploadFiles(myFile)">upload me</button>
-		  </td>
+		   <td>			
+			<span><input type="file"  ng-model="pd.img" data-ng-init="pd.img==img.name"  file-model="img"  /></span>
+			<span><button ng-click="uploadFiles(img)">upload me </button></span>
+		   </td>
+		   
 		  <!-- <input type="file" ngf-select="onFileSelect(pd.img)" ng-model="pd.img" name="fileToUpload"   ngf-pattern="'image/*'" ngf-max-size="2M">-->
 		   <!--<form action="upload.php" method="post" enctype="multipart/form-data">
 				Select image to upload:

@@ -160,7 +160,7 @@ include 'slides.html';
 <script src="js/php_crud_api_transform.js"></script>
   <script src="js/ng-file-upload.js"></script>
    <script src="js/ng-file-upload-shim.js"></script>
-      <script src="js/app01/uploadtry.js"></script>
+   
 
     <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
     <script src="slider-revolution/js/jquery.themepunch.tools.min.js"></script>

@@ -47,12 +47,7 @@ session_start();
 			<td><div  class="form-group"> 
 			<input class="form-control"  data-ng-model="datamodel.provider.websiteurl" type="text" name="" placeholder="Website url" ></div></td></tr>
 			  
-		<tr><td class="control-label"> Upload a beautiful picture</td>
-		   <td><div  class="form-group"> 
-		   <input type="text" class="form-control" ng-model="datamodel.provider.img" placeholder="Awesome Image ">
-		   <input type="file" data-file-model="myFile"  />
-		   <button ng-click="uploadFile()">upload me<!--add upload image --></button>
-			</div> </td></tr> 
+	
 		  <!-- Gowns -->
 		   <tr><td class="control-label">  Other Details</td><td><div  class="form-group"> 
 		   <textarea class="form-control"  placeholder="Description" data-ng-model="datamodel.provider.comments" cols="0" rows="0" >Other Details</textarea></div></td></tr>

@@ -176,66 +176,6 @@
 			$this->response('',204);	// If no records "No Content" status
 		}
 		
-		
-		
-		
-		private function lookup(){	
-			if($this->get_request_method() != "GET"){
-				$this->response('',406);
-			}
-			
-			 // county
-		
-			$query="SELECT * from county ";
-			//echo $query;
-			$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
-
-			if($r->num_rows > 0){
-				//$result = array();
-				$result = array(
-					'provider' => array(),
-					'provider_detail' => array()
-				);
-               while($row = $r->fetch_assoc()){
-					$result['provider_detail'][] = $row;
-					$query2="SELECT * FROM provider where id = '".$row['id']."'";
-					//echo 'DAMN QUERY    '.$query2;
-						$r2 = $this->mysqli->query($query2) or die($this->mysqli->error.__LINE__);
-
-						if($r2->num_rows > 0){
-						while($row = $r2->fetch_assoc()){
-						$result['provider']= $row;
-								}					
-						}				
-
-				}
-			
-			$this->response($this->json($result), 200); // send user details
-			}
-			$this->response('',204);	// If no records "No Content" status
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		private function fetch(){	
 			if($this->get_request_method() != "GET"){
 				$this->response('',406);
@@ -243,8 +183,7 @@
 			$tablename =$this->_request['tablename'];
 			$id = $this->_request['id'];
 			$pid = $this->_request['pid'];		
-				echo $id .'>>>>>>>>>>>'.$tablename;
-		
+				
 			if($id > 0){	
 				$query="SELECT *  FROM $tablename where id=$id and pid=$pid";
 			
@@ -257,6 +196,45 @@
 			}
 			$this->response('',204);	// If no records "No Content" status
 		}
+		
+		
+		private function selectdata(){	
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			$tablename =$this->_request['tablename'];
+			
+		   //  echo $tablename;
+			//if($id > 0){	
+				$query="SELECT *  FROM $tablename";
+			//echo $query;
+				$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+				/* if($r->num_rows > 0) {
+					$result = $r->fetch_assoc();	
+					//echo $result;
+					$this->response($this->json($result), 200); // send user details
+				} */
+				
+				$result = array();
+				while($row = $r->fetch_assoc()){
+						//$result= $row;
+						$result[$tablename][] = $row;
+						//echo $result[$tablename];
+								
+								}	
+								$this->response($this->json($result), 200);	
+							
+			//}
+			
+			
+			
+			
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+		
+		
+		
 		
 		private function insertCustomer(){
 			if($this->get_request_method() != "POST"){
@@ -337,24 +315,6 @@
 		}
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 							protected function basicinsert(){
 										
 										$datas = json_decode(file_get_contents("php://input"),true);
@@ -371,7 +331,7 @@
 														// }
 														// else{ echo "Connection successfull";}
 												$id= uniqid();
-												echo 'ID HERER '.$id;
+												//echo 'ID HERER '.$id;
 											
 										    	foreach($datas as $column => $value){
 
@@ -382,16 +342,16 @@
 															$cols[]=$key;
 															$vals[] = $value;
 															
-															 $data['id']=$id;
-															    /*  if($key=='id'){
-																	 
+															// $value['id']=$id;
+															 
+															      if($key=='id'){
 																	$vals[0]=$id;
-																	} */
+																	} 
 															}
 													  $colnames =implode(",",$cols);
 													  $colvals="'".implode("','", $vals)."'";	
 		                                               $sql= "INSERT INTO $column ($colnames) VALUES ($colvals)";
-													   echo sql;
+													   //echo $sql;
 														if(!empty($datas)){
 															    $r = $this->mysqli->query($sql) or die($this->mysqli->error.__LINE__);
 																$success = array('status' => "Success", "msg" => "Registration Successfully.", "data" => $datas);
@@ -403,13 +363,6 @@
 		
 		
 		}
-		
-		
-		
-		
-		
-		
-		
 		
 			protected function insertCustomers() {
 										$datas = json_decode(file_get_contents("php://input"),true);
