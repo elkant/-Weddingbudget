@@ -536,12 +536,10 @@
 																	foreach((array)$arrays as $keys => $values){
 																	   $cols[]=$keys."='".$values."'";
 																	   $vals[] = $values;
-																  if($key=='id'){
+																
 																		   $id=$arrays['id'];
 																		   $pid=$arrays['pid'];
-																		//  echo 'KEY   '.$array['id']; 
-																		   
-																	   }
+																		
 															$colnames =implode(",",$cols);
 															$colvals="'".implode("','", $vals)."'";	
 															
