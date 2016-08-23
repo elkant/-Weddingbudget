@@ -60,33 +60,66 @@ session_start();
 	        <tr ng-repeat ="(pdIndex,pd) in datamodel.provider_detail"> 
 			<td><select class="form-control"  id="id{{$index+1}}"  ng-init="getSelectData('services');"  data-ng-model="pd.providerid" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
 				<option value="">Choose a provider</option>	
-				<option ng-repeat="ptype in services "  ng-selected="ptype.id==pd.providerid" value ="{{ptype.id}}">{{ptype.type}}</option>       
+				<option ng-repeat="ptype in services "  ng-selected="ptype.id==pd.providerid" ng-value ="{{ptype.id}}" >{{ptype.type}}</option>       
 				</select>
 			</td>
 
 
 		   <td><input class="form-control  " type="text" name=""  placeholder="Cost" data-ng-model="pd.cost" ></td>
-		   <td><input class="form-control  " type="text" name="" placeholder="Capacity" data-ng-model="pd.capacity" ></td>
 		   
-		   <td ng-if="pd.providerid=='1' || pd.providerid=='5'"> 
+		     <td ng-if="pd.providerid=='1' || pd.providerid=='5' || pd.providerid=='7'"> 
 		   <select class="form-control"  placeholder="Capacity" data-ng-model="pd.capacity"  id="no{{$index+1}}"  ng-init="getSelectData('capacityoptions')" >
-		   <option  ng-repeat="capoptions in capacityoptions" ng-selected="capoptions.id==pd.capacity"  id="{{capoptions.id}}">{{capoptions.value}}</option>
-		   </select>
+		    <option  ng-repeat="capoptions in capacityoptions" ng-selected="capoptions.id==pd.capacity"   ng-value="{{capoptions.id}}" id="{{capoptions.id}}">{{capoptions.value}}</option>
+		  </select>
 		   </td>
-		   <td ng-if="pd.providerid!='2'"><input class="form-control" type="text" name=""  placeholder="Type" data-ng-model="pd.type" ></td>
-		   <td >  
-		   <select class="form-control"  placeholder="Cake Type" data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('caketype');" >
-		   <option  ng-repeat="ck in caketype"  id="{{ck.id}}">{{ck.value}}</option>
+		   <!--<td ng-if="pd.providerid=='3'"><input class="form-control" type="text" name=""  placeholder="Type" data-ng-model="pd.type" ></td>-->
+		   
+		   <td ng-if="pd.providerid=='3'" >  
+		   <select class="form-control"  data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('flowers');" >
+		   <option  ng-repeat="flw in flowers" ng-selected="flw.id==pd.type"  id="{{flw.id}}"    ng-value="{{flw.id}}">{{flw.value}}</option>
 		   </select>
 		    </td>
-		    <td ng-if="datamodel.provider.providerId=='10'">
-			<select class="form-control input-text"  ng-load="getSelectData('entertainment')" ng-model="pd.entertainment">
-			<option ng-repeat="ent in entertainment"   ng-selected="ent.id==pd.entertainment" value="{{ent.id}}">{{ent.value}}</option>
+		   
+		     <td ng-if="pd.providerid=='7'" >  
+		   <select class="form-control"  data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('tents');" >
+		   <option  ng-repeat="tent in tents"  id="{{tent.id}}" ng-selected="tent.id==pd.type" ng-value="{{tent.id}}">{{tent.value}}</option>
+		   </select>
+		    </td>
+		   
+		   
+		   <td ng-if="pd.providerid=='2'" >  
+		   <select class="form-control"  placeholder="Cake Type" data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('caketype');" >
+		   <option  ng-repeat="ck in caketype" ng-selected="ck.id==pd.type"  id="{{ck.id}}" ng-value="ck.id">{{ck.value}}</option>
+		   </select>
+		    </td>
+		    <td ng-if="datamodel.providerid=='10'"><select class="input-text"  ng-load="getSelectData('entertainment')">
+			<option ng-repeat="ent in entertainment" ng-selected="ent.id=pd.type" value="{{ent.id}}">{{ent.value}}</option>
 			</select>			
 			</td>
 		   <td ng-if="pd.providerid=='2'"><input class="form-control" placeholder="Unit of Measure" type="text" name="" data-ng-model="pd.uom" ></td>
 		   <td ng-if="pd.providerid=='5'"><input class="form-control" type="text" name="" placeholder="Physical Address" data-ng-model="pd.location" ></td>
 		   <td ng-if="pd.providerid=='5'"><input class="form-control" type="text" name="" placeholder="Area" data-ng-model="pd.area" ></td>
+		  
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		    
+		
+		  
 		   <td ><input class="form-control" type="text" name="" placeholder="Image" data-ng-model="pd.img" ></td>
 		   <td ><input class="form-control  " type="text" name="" placeholder="Small description" data-ng-model="pd.description" ></td>
 		   		

@@ -97,13 +97,13 @@
 			if(isset($_SESSION["id"]))
 				{
 							$id= $_SESSION["id"];
-							} 
+							 
 							
 				//$id =$_SESSION["id"];
 		
 			 //$accountid = $this->_request['accountid'];	
-			// echo $accountid;
-			$query="SELECT * from provider where accountid=$id";
+			
+			$query="SELECT * from provider where accountid='$id'";
 			
 			$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
 
@@ -129,6 +129,7 @@
 			$this->response($this->json($result), 200); // send user details
 			}
 			$this->response('',204);	// If no records "No Content" status
+				}
 		}
 		
 		
