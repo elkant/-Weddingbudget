@@ -56,11 +56,11 @@ session_start();
              
 			</table>
 	  
-	   <table class="table table-condensed bordered col-lg-12" >
+	       <table class="table table-condensed bordered col-lg-12" >
 	        <tr ng-repeat ="(pdIndex,pd) in datamodel.provider_detail"> 
-			<td><select class="form-control"  id="id{{$index+1}}"  ng-init="getSelectData('providertype');"  data-ng-model="pd.providerid" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
+			<td><select class="form-control"  id="id{{$index+1}}"  ng-init="getSelectData('services');"  data-ng-model="pd.providerid" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
 				<option value="">Choose a provider</option>	
-				<option ng-repeat="ptype in providertype "  ng-selected="ptype.id==pd.providerid" value ="{{ptype.id}}">{{ptype.type}}</option>       
+				<option ng-repeat="ptype in services "  ng-selected="ptype.id==pd.providerid" value ="{{ptype.id}}">{{ptype.type}}</option>       
 				</select>
 			</td>
 

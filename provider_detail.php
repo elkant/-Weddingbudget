@@ -76,9 +76,9 @@ session_start();
 	   </tr>-->
 	        <tr ng-repeat ="pd in datamodel.provider_detail"> 
 			
-			<td><select class="form-control"  id="id{{$index+1}}"  ng-init="getSelectData('providertype');"  data-ng-model="pd.providerid" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
+			<td><select class="form-control"  id="id{{$index+1}}"  ng-init="getSelectData('services');"  data-ng-model="pd.providerid" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
 				<option value="">Choose a provider</option>	
-				<option ng-repeat="ptype in providertype " value ="{{ptype.id}}">{{ptype.type}}</option>       
+				<option ng-repeat="ptype in services " value ="{{ptype.id}}">{{ptype.type}}</option>       
 				</select>
 			</td>
 
@@ -119,7 +119,7 @@ session_start();
 		   <td ng-if="pd.providerid=='5'"><input class="form-control" type="text" name="" placeholder="Area" data-ng-model="pd.area" ></td>
 		  
 		   <td>			
-			<span><input type="file"  ng-model="pd.img" data-ng-init="pd.img==img.name"  file-model="img"  /></span>
+			<span><input type="file"  ng-model="pd.img" file-model="img"  /></span>
 			<span><button ng-click="uploadFiles(img)">upload me </button></span>
 		   </td>
 		   
