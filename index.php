@@ -267,6 +267,7 @@ $(function() {
 //a function to always focus on the top of angular div 
 
 function topofpage(){
+	 $('.showhide').click();
 	
 	//$(window).scrollTop(200);
 	$(window).scrollTop($('#maindiv').offset().top);

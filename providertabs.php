@@ -14,10 +14,10 @@ $query=" select name , provider_detail.cost as cost,capacity,services.type as it
 include 'db.php';
 
 
-$executequery=mysql_query($query) or die(mysql_error());
+$executequery=mysqli_query($conn,$query) or die(mysql_error());
 if($executequery)
 {
-	while($row=mysql_fetch_array($executequery))
+	while($row=mysqli_fetch_array($executequery))
 	{
 		//details for [provider name] as a [product] supplier
 	echo "<div class='panel panel-danger'>";
@@ -48,6 +48,6 @@ if($executequery)
  
  
 
-mysql_close();
+mysqli_close($conn);
 
 ?>

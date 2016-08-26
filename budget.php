@@ -25,6 +25,8 @@ input[type=radio]:checked ~ .check::before{
 <div class="section-title well" style='border-color:#FF7FF7;'>
 <h2 style='text-align:left;background-color:white;'  >  <span class="timer" data-from="0" data-to="" data-speed="1000"  id='budgetreturned'></span></h2>
 <form class="form-inline">
+
+
 <select  type="text" onchange='callpackage();' class="form-control" id='packages' name='packages'  > 
 <option value=''> choose budget package </option>
 <option value='1000000'> Gold package (1M) </option>
@@ -38,7 +40,11 @@ input[type=radio]:checked ~ .check::before{
 </select>
 <button type="submit" id='generatebtn' class="btn btn-sm btn-rounded btn-dark-solid text-uppercase" onclick='budgetgenerator(0);'>
 see results
-</button>
+</button> 
+<button type="submit" id='savebudgetbtn' class="btn btn-sm btn-rounded btn-dark-solid" onclick='savebudgetfunction();'> <i class='fa fa-save'> </i>
+save budget
+</button> 
+
 <span id='loading'></span> 
 <input type='hidden' id='bv' name='bv'>
 </form>	   
@@ -125,6 +131,23 @@ see results
 <!--price table-->
 <div id='allmodals'></div>
 
+<!---saved budget modal--->
+<div class="modal fade" id="savedbudget" role="dialog">
+<div class="modal-dialog " style="width:95%;">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" onclick="showbudgetmodal();" class="close" data-dismiss="modal">
+&times;</button>
+ <h3 class="modal-title" style="text-align:center;color:#FF7FF7;">Saved Budget list </h3> 
+ </div><div class="modal-body"> <div id="providerdetails"><p>    No saved budgets yet    </p></div>
+ </div>
+ <div class="modal-footer">
+ <button type="button"  class="btn btn-default" data-dismiss="modal">Close</button>
+ </div>
+ </div>
+ </div>
+ </div>
+
 </form>
 </div>
 
@@ -156,8 +179,8 @@ see results
 <script></script>
 
 <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/pouchdb-5.3.1.min.js"></script>
 <script>
-
 
 //a n ajax that loads towns
 	$.ajax({
@@ -209,7 +232,7 @@ budgetgenerator(amt);
 		
 	}
 	
-	
+	var currentjsondata="";
 	
 	//an ajax that forwards user inputs to budget generator for algorithimn excecution and returns results
 function budgetgenerator(amt){
@@ -237,6 +260,20 @@ $.ajax({
 		type:'post',
 		dataType:'json',
 		success: function(data){
+		currentjsondata=data;
+		budgetdisplay(data);
+		
+		}//end of budget success
+		
+	});	
+
+}
+	
+	
+	
+	function budgetdisplay(data){
+		
+		
 		
 		$("#loading").html("");
 		$("#generatebtn").prop("disabled",false);
@@ -310,12 +347,9 @@ var newtable="<thead><tr><th>Image</th><th>Category</th><th>Provider Name</th><t
 		
 		   $('[data-toggle="popover"]').popover(); 
 		
-		}//end of budget success
 		
-	});	
-
-}
-	
+		
+	}
 	
 	
 	//a function to load other selected providers via data table
@@ -500,6 +534,35 @@ $("form").submit(function(e)
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
 });
+
+
+
+//local storage
+
+var budgetdb = new PouchDB('budget');
+
+function savebudgetdata(id,chosenelements) {
+	var today = new Date();
+var dateis=""+today;
+var dateform=dateis.substring(0,16);
+	
+   budgetdetails=
+              {
+        _id:id,//unique identifier
+	    code:currentjsondata,  //the whole json results
+        datesaved:dateform, //date of saving
+        elementorder:chosenindex,  //The selected budget data
+        completed: false
+              };
+  budgetdb.put(budgetdetails, function callback(err, result) 
+                              {
+    if (!err) 
+	{
+      console.log('budget added succesfully');
+    }
+               });
+}
+
 
 </script>
 

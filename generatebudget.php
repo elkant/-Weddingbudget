@@ -70,10 +70,10 @@ $outerrowcount=-1;
 $getpriorityitems="select priority, type as itemname, services.id as itemid from budgetpriority join services on budgetpriority.serviceid=services.id  ";
 
 
-$executequery=mysql_query($getpriorityitems) or die(mysql_error());
+$executequery=mysqli_query($conn,$getpriorityitems) or die(mysqli_error());
 if($executequery)
 {
-	while($row=mysql_fetch_array($executequery))
+	while($row=mysqli_fetch_array($executequery))
 	{
 		$outerrowcount++;
 	 $jsonval=$jsonval.'[';
@@ -93,14 +93,14 @@ if($executequery)
 	//save the optimal price based on hits to the views list.
 	//
 	$deductamount=0;
-	$innerqry=mysql_query($wishlistquery) or die(mysql_error());
+	$innerqry=mysqli_query($conn,$wishlistquery) or die(mysql_error());
 	if($innerqry){
 		//do a while loop
 		$extrarow=0;//a variable to help add one extra row beyond the budget amount
 		
 		//$subarray = array();  
 		
-		while($innerrow=mysql_fetch_array($innerqry)){
+		while($innerrow=mysqli_fetch_array($innerqry)){
 			
 			
 		// if the  amount balance can afford the next item , add it to the found budget json list.
@@ -161,7 +161,7 @@ $jsonval=$jsonval.']}';
   echo   $jsondata;
   
 //close connection
-mysql_close();
+mysqli_close($conn);
 
 
 

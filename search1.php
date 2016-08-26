@@ -6,9 +6,9 @@
                          <div class="text-center">
                             <ul class="portfolio-filter">
                                 <li >
-								        <select class="form-control"  id="id{{$index+1}}"  ng-init="getSelectData('providertype');"  data-ng-model="searchmodel.category" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
+								        <select class="form-control"  id="id{{$index+1}}"  ng-init="getSelectData('services');"  data-ng-model="searchmodel.category" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
 										<option value="">Choose a provider</option>	
-										<option ng-repeat="ptype in providertype " value ="{{ptype.id}}">{{ptype.type}}</option>       
+										<option ng-repeat="ptype in services " value ="{{ptype.id}}">{{ptype.type}}</option>       
 										</select>
 										
 								</li>

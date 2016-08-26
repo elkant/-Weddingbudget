@@ -7,7 +7,7 @@
 		
 		const DB_SERVER = "127.0.0.1";
 		const DB_USER = "root";
-		const DB_PASSWORD = "";
+		const DB_PASSWORD = "70450289";
 		const DB = "weddingbudget";
 
 		private $db = NULL;
@@ -92,6 +92,7 @@
 		private function customers(){	
 			if($this->get_request_method() != "GET"){
 				$this->response('',406);
+				
 			}
 			session_start();
 			if(isset($_SESSION["id"]))
@@ -370,7 +371,7 @@
 										
 										 $servername="localhost";
 													 $username="root";
-													 $password="";
+													 $password="70450289";
 													 $dbname="weddingbudget";
 													 
 													$conn = new mysqli($servername,$username,$password,$dbname);
@@ -419,7 +420,7 @@
 																//echo uniqid;
 											    $servername="localhost";
 												$username="root";
-												$password="";
+												$password="70450289";
 												$dbname="weddingbudget";
 														$sql='';
 														$sql1='';
@@ -510,7 +511,7 @@
 																//echo uniqid;
 											    $servername="localhost";
 												$username="root";
-												$password="";
+												$password="70450289";
 												$dbname="weddingbudget";
 														$sql='';
 														$sql1='';
@@ -623,7 +624,7 @@
 											
 											 $servername="localhost";
 												$username="root";
-												$password="";
+												$password="70450289";
 												$dbname="weddingbudget";
 
 												 
