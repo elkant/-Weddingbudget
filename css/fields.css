@@ -1,0 +1,15 @@
+<style>
+
+.maindetails{
+	width:60%;
+}
+
+.editimg{ 
+background: #fff none repeat scroll 0 0;
+    border: 1px solid #efefef;
+	display: block;
+    padding: 3px; 
+	width:80px;
+	height:80px;
+	}
+</style>

@@ -10,18 +10,46 @@ app01 = angular.module('app01',['ngRoute','ngResource','ngSanitize','ngFileUploa
 app01.directive('fileModel', ['$parse', function ($parse) {
     return {
     restrict: 'A',
-    link: function(scope, element, attrs) {
+	/* require:'ngModel',
+	 scope:{
+              ngModel: '=?'
+            }, */
+    link: function(scope, element, attrs, ngModelCtrl,ngModel) {
         var model = $parse(attrs.fileModel);
         var modelSetter = model.assign;
 
         element.bind('change', function(){
             scope.$apply(function(){
-                modelSetter(scope, element[0].files[0]);
+                 modelSetter(scope, element[0].files[0]);
+				//scope.ngModel=element[0].files[0].name;
+			   //  ngModel.$setViewValue("aaaa");   
+				console.log("aaaa "+ element[0].files[0].name);				 
+				
             });
         });
+			
     }
    };
 }]);
+
+
+
+//Easy Respoonsive Tabs
+app01.directive('responsivetabs', function () {
+    return {
+        restrict:'A',
+        link: function(scope, element, attrs)
+        {
+		//console.log('Setting horizontal tabs');
+            $(element).easyResponsiveTabs({
+				type: 'horizontal',
+				width: 'auto',
+				fit: true,
+				closed: 'accordion'
+			});
+        }
+    }
+});
 
 //We can write our own fileUpload service to reuse it in the controller
 // app01.service('fileUpload', ['$http', function ($http) {
@@ -46,22 +74,21 @@ app01.directive('fileModel', ['$parse', function ($parse) {
  // }]);
 
 app01.service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl, name){
+    this.uploadFileToUrl = function(file, uploadUrl, name,$scope){
          var fd = new FormData();
          fd.append('file', file);
          fd.append('name', name);
          $http.post(uploadUrl, fd, {
              transformRequest: angular.identity,
              headers: {'Content-Type': undefined,'Process-Data': false}
-         })
-         .success(function(){
-            console.log("Success");
-         })
-         .error(function(){
+         }).success(function(result){
+            console.log(result);
+			return result;			
+         }).error(function(){
             console.log("Error");
          });
-     }
- }]);
+         }
+	   }]);
  
  
  
@@ -92,7 +119,8 @@ app01.service('fileUpload', ['$http', function ($http) {
 	obj.updateCustomer = function (datamodel) {
 
 	      return $http.post(serviceBase + 'update', angular.toJson(datamodel)).then(function (results) {
-				return results
+				return results;
+				console.log(results);
 				
 				
 			});
@@ -144,20 +172,19 @@ app01.service('fileUpload', ['$http', function ($http) {
 			$scope.datamodel[detailName].splice($scope.datamodel[detailName].length+1,0,angular.fromJson(emptyColumns[detailName]));
 		console.log($scope.datamodel[detailName]);
 		};
-		
-		/* $scope.getSelectData= function(table){
-		console.log(table);
-		//var fetchurl = 'api.php/'+table;
-		var fetchurl = 'selectdata/'+table;
-		$http.get(fetchurl).success(function(response){ 							  
-				  $scope[table]=php_crud_api_transform(response)[table];
-
-			  });
-
-			} */ 
+		    
 			
 			
-			 $scope.getSelectData= function(table){
+			$scope.removeRow = function(id,tablename){
+				console.log(id+"---"+tablename);
+				if(id>0){
+					  $scope.datamodel[tablename].splice(id,1);
+				}
+		  
+			  }
+	
+			
+		 $scope.getSelectData= function(table){
 				var fetchurl = serviceBase + 'selectdata?tablename='+table;
 			$http.get(fetchurl).success(function(response){ 
          	 $scope[table]=response[table];
@@ -165,15 +192,39 @@ app01.service('fileUpload', ['$http', function ($http) {
 
 			}	
 			
-		 $scope.uploadFiles = function(files){
+		
+		
+      // fileUpload.uploadFileToUrl(file, uploadUrl, text);
+	  
+	  
+	   $scope.uploadFiles = function(files,index){
+
 		var file = files;   
         console.dir(file);
 
         var uploadUrl = "save_form.php";
         var text = $scope.name;
 		console.log(text);
-        fileUpload.uploadFileToUrl(file, uploadUrl, text);
-			};
+        //fileUpload.uploadFileToUrl(file, uploadUrl, text);
+		
+		 
+         var fd = new FormData();
+         fd.append('file', file);
+         fd.append('name', name);
+         $http.post(uploadUrl, fd, {
+             transformRequest: angular.identity,
+             headers: {'Content-Type': undefined,'Process-Data': false}
+         }).success(function(result){
+            console.log(""+result);
+			 $scope.datamodel.provider_detail[index].img=result.trim();
+					
+         }).error(function(){
+            console.log("Error");
+         });
+        };
+	  
+	  
+	  
    
       
    	var emptyColumns = {};
@@ -197,30 +248,43 @@ app01.service('fileUpload', ['$http', function ($http) {
 	
 	}]);
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ app01.filter('getvals',[function(){
+	 return function(propname,table){
+		 console.log(propname+'++++'+table);
+			var fetchurl = serviceBase + 'selectdata?tablename='+table;
+		
+		   $http.get(fetchurl).success(function(response){ 
+         	   $scope[table]=response[table];
+			 console.log($scope[table]);
+			  var t= $filter('filter')($scope[table] , {
+					'id' : propname
+				}, true)[0];
+				$scope.namevalue=t.type;
+				console.log(t);
+				return $scope.namevalue;
+			
+			    });
+		     }
+	 
+			}]);
  
 
-app01.controller('homeCtrl',['$scope','$routeParams','$http','$location','$sce','$route','fileUpload','services', function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services){
+
+app01.controller('homeCtrl',['$scope','$routeParams','$http','$location','$sce','$route','fileUpload','services','$window','$filter', 
+function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services,$window,$filter){
     $scope.datamodel={};
       $scope.datamodel.provider={'id':''};
 	  $scope.datamodel.provider_detail=[{'id':'','providerid':'','cost':'', 'capacity':'','type':'','uom':'', 'location':'','location':'','area':'','img':''}];
      
    var serviceBase = 'services/'
+  //  $scope.searchmodel={};
+  			$scope.cart=[]
 	$scope.search = function(data) {
-		console.log(data);
 		
           $scope.searchmodel=services.getItems(data.category,data.cost);
 		  $http.get(serviceBase + 'fetchitems?category='+data.category+' && cost='+data.cost).success(function(response){
 		   $scope.resultmodel =response;
-			$scope.cart=[]
+
 				var total=0;
 	       $scope.addtocart = function pushtoarray(value,index) {
 			var idx = $scope.cart.indexOf(value);
@@ -239,6 +303,27 @@ app01.controller('homeCtrl',['$scope','$routeParams','$http','$location','$sce',
 	  
 		};
 		});}
+		
+		$scope.getValue = function (propname,table) {
+			console.log(propname+'++++'+table);
+			var fetchurl = serviceBase + 'selectdata?tablename='+table;
+		
+		   $http.get(fetchurl).success(function(response){ 
+         	   $scope[table]=response[table];
+			 console.log($scope[table]);
+			  var t= $filter('filter')($scope[table] , {
+					'id' : propname
+				}, true)[0];
+				$scope.value= t;
+			 console.log(t);
+			    });
+
+			
+			    
+				
+				
+				
+			};
 	
 	 $scope.getSelectData= function(table){
 		var fetchurl = serviceBase + 'selectdata?tablename='+table;
@@ -328,7 +413,7 @@ app01.controller('homeCtrl',['$scope','$routeParams','$http','$location','$sce',
 	 if(registerdata.pwdcheck.rptpwd != registerdata.credentials.account.password ){
 		 alert("Password entered in repeat password field does not match with new password.");
 		 } else{
-	  $http.post(serviceBase + 'basicinsert', angular.toJson(registerdata.credentials)).success(function (results) {
+	  $http.post(serviceBase + 'register', angular.toJson(registerdata.credentials)).success(function (results) {
 				
 		         console.log(results.msg);
 				 $location.path('/providers');
@@ -343,6 +428,7 @@ app01.controller('homeCtrl',['$scope','$routeParams','$http','$location','$sce',
 	
 	
 		 $scope.uploadFiles = function(files){
+			 alert(files);
 		var file = files;   
         console.dir(file);
 
@@ -376,11 +462,54 @@ app01.controller('listCtrl', function ($scope, services,$http) {
   var serviceBase = 'services/';
 
   $http.get(serviceBase + 'customers').success(function(response){
-	       console.log(response);
+	     
 		  $scope.datamodel=response;
 		  });
+		  
+		  
+		   $scope.uploadFiles = function(files,index){
+
+		var file = files;   
+        console.dir(file);
+
+        var uploadUrl = "save_form.php";
+        var text = $scope.name;
+		console.log(text);
+        //fileUpload.uploadFileToUrl(file, uploadUrl, text);
+		
+		 
+         var fd = new FormData();
+         fd.append('file', file);
+         fd.append('name', name);
+         $http.post(uploadUrl, fd, {
+             transformRequest: angular.identity,
+             headers: {'Content-Type': undefined,'Process-Data': false}
+         }).success(function(result){
+            console.log(""+result);
+			 $scope.datamodel.provider_detail[index].img=result.trim();
+					
+         }).error(function(){
+            console.log("Error");
+         });
+        };
+		  
+		  $scope.removeRows = function(id,tablename){
+				
+				if(id>0){
+					  $scope.datamodel[tablename].splice(id,1);
+				}
+		  
+			  }
+		  
+		  
 	    $scope.updateCustomer = function(datamodel) {
-		   services.updateCustomer(datamodel);
+		
+ $http.post(serviceBase + 'update', angular.toJson(datamodel)).then(function (results) {
+				 
+				console.log(results.data);
+				
+				
+			});
 			};
 	   
 });
@@ -390,19 +519,14 @@ app01.controller('listCtrl', function ($scope, services,$http) {
 
 app01.config(['$routeProvider',function($routeProvider){
     $routeProvider
-	.when('/budget' ,{templateUrl:'budget.php'})   
+	.when('/budget' ,{templateUrl:'main.php'})   
     .when('/register',{templateUrl:'register.php'})
     .when('/contactus',{templateUrl:'contactus.php'})
 	.when('/slides',{templateUrl:'slides.html'})	
     .when('/providers',{  templateUrl:'provider_detail.php'}).
-    when('/edit',{templateUrl:'editprovider.php'}).
-    when('/managesms',{templateUrl:'manageSMS.jsp'}).
-    when('/newuser', {templateUrl:'registeruser.jsp'}).
-    when('/agents',{templateUrl:'showAgents.jsp'}).
-    when('/vanswers',{templateUrl:'viewAnswers.jsp'}).
-    when('/qstns',{templateUrl:'viewQuestions.jsp'}).
-    when('/search',{templateUrl:'search1.php'}).
- when('/editmsg',{templateUrl:'manageSMS.jsp'}); 
+     when('/edit',{templateUrl:'editprovider.php'}).
+     when('/search',{templateUrl:'search1.php'}).
+     when('/editmsg',{templateUrl:'manageSMS.jsp'}); 
         
         
         

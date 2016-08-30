@@ -41,8 +41,8 @@
                             
                            
            <li><a onclick='topofpage();' href="#/contactus">Contact Us </a></li>
-           <li><a onclick='topofpage();' href="#/providers">Providers  </a></li>
-           <li><a onclick='topofpage();' href="#/edit">Edit Provider </a></li>
+           <li ng-if="<?php echo $_SESSION['type']=='provider'?>"><a href="#/providers">Providers  </a></li>
+           <li ng-if="<?php echo $_SESSION['type']=='provider'?>"><a href="#/edit">Edit Provider </a></li>
            <li><a onclick='topofpage();' href="#/search">Search </a></li>
                         </ul>
 				

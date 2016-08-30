@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" data-ng-app="app01">
-
+<?php
+session_start();
+?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -18,6 +20,7 @@
     
 <link href='http://fonts.googleapis.com/css?family=Abel|Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic,900,900italic,200italic,200' rel='stylesheet' type='text/css'>
 <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fields.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/magnific-popup.css" rel="stylesheet">
     <link href="css/shortcodes/shortcodes.css" rel="stylesheet">
@@ -27,6 +30,7 @@
     <link href="css/blog.css" rel="stylesheet">
     <link href="css/style-responsivec4ca.css?1" rel="stylesheet">
     <link href="css/default-theme3860.css?v=1" rel="stylesheet">
+	<link href="css/tabs.css" rel="stylesheet" />
 
     <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="slider-revolution/css/extralayers.css" media="screen">
@@ -160,6 +164,7 @@ include 'slides.html';
 <script src="js/php_crud_api_transform.js"></script>
   <script src="js/ng-file-upload.js"></script>
    <script src="js/ng-file-upload-shim.js"></script>
+   <script src="js/tabs.js"></script>
    
 
     <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->

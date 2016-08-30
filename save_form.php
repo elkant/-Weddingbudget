@@ -2,12 +2,12 @@
 
      $target_dir = "./uploads/";
      $name = $_POST['name'];
-     print_r($_FILES);
+     //print_r($_FILES);
      $target_file = $target_dir . basename($_FILES["file"]["name"]);
       $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 	  $uploadOk = 1;
     // move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
- echo basename($_FILES["file"]["name"]);
+ 
      if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["file"]["tmp_name"]);
     if($check !== false) {
@@ -41,10 +41,12 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
 	// move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
-    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+	$newfilename = round(microtime(true)).$_FILES["file"]["name"];
+	// if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_dir . $newfilename)) {
 	
 	
-        echo  basename( $_FILES["file"]["name"]);
+        echo  $newfilename;
 		
     } else {
         echo "Sorry, there was an error uploading your file.";
