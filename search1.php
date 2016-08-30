@@ -37,7 +37,7 @@
 													 		<li ng-if="pd.providerid!=''"  >
 															<span ng-repeat="serv in services | filter:{id:pd.providerid}:true" >{{serv.type}}</span>
 															</li>
-															<li ng-if="pd.capacity!=''">{{pd.capacity}}}
+															<li ng-if="pd.capacity!=''">{{pd.capacity}}
 															<span ng-repeat="cap in capacityoptions | filter:{id:pd.capacity}:true" >{{cap.value}}</span>
 															
 															</li>
