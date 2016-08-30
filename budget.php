@@ -35,16 +35,18 @@ input[type=radio]:checked ~ .check::before{
 
 </select>
  <b>OR</b>
-<input id='budget_amount' onkeypress='return numbers(event);' required name='budget_amount'  type="number" class="form-control " style=;border-color:;  placeholder="Enter your amount">
+<input id='budget_amount' onkeypress='return numbers(event);'  name='budget_amount'  type="number" class="form-control " style=;border-color:;  placeholder="Enter your amount">
 <select  type="text" class="form-control" id='budget_location' name='budget_location'  > 
 </select>
 <button type="submit" id='generatebtn' class="btn btn-sm btn-rounded btn-dark-solid text-uppercase" onclick='budgetgenerator(0);'>
 see results
 </button> 
-<button type="submit" id='savebudgetbtn' class="btn btn-sm btn-rounded btn-dark-solid" onclick='savebudgetfunction();'> <i class='fa fa-save'> </i>
-save budget
-</button> 
 
+
+
+<button type="submit" data-toggle='modal' data-target='#savedbudget'  class="btn btn-sm btn-rounded btn-default" onclick='loadbudget()'> <i class='fa fa-view'> </i>
+View saved budget
+</button> 
 <span id='loading'></span> 
 <input type='hidden' id='bv' name='bv'>
 </form>	   
@@ -136,10 +138,10 @@ save budget
 <div class="modal-dialog " style="width:95%;">
 <div class="modal-content">
 <div class="modal-header">
-<button type="button" onclick="showbudgetmodal();" class="close" data-dismiss="modal">
+<button type="button"  class="close" data-dismiss="modal">
 &times;</button>
  <h3 class="modal-title" style="text-align:center;color:#FF7FF7;">Saved Budget list </h3> 
- </div><div class="modal-body"> <div id="providerdetails"><p>    No saved budgets yet    </p></div>
+ </div><div class="modal-body"> <div id="savedbudgetdata"><p>    No saved budgets yet    </p></div>
  </div>
  <div class="modal-footer">
  <button type="button"  class="btn btn-default" data-dismiss="modal">Close</button>
@@ -269,8 +271,6 @@ $.ajax({
 
 }
 	
-	
-	
 	function budgetdisplay(data){
 		
 		
@@ -339,7 +339,8 @@ var newtable="<thead><tr><th>Image</th><th>Category</th><th>Provider Name</th><t
 	
 	if(totalbudget>0){
 	
-	$("#budgetreturned").html("<i class='fa fa-dollar'></i> Budget Results "+totalbudget);
+	$("#budgetreturned").html("<i class='fa fa-dollar'></i> Budget Results "+totalbudget+"  <button style='margin-right:2px;' type='submit' id='savebudgetbtn' class='btn btn-sm btn-rounded btn-info' onclick='savebudget();'> <i class='fa fa-save'> </i> save budget </button>  "
+	+" <div id='budgetsavedalert' style='display:none;' role='alert' class='alert alert-danger'> <button aria-label='Close' data-dismiss='alert' class='close' type='button'><span aria-hidden='true'>×</span></button> <i class='fa fa-lg fa-check-circle-o'></i> <strong>Budget Saved </strong> successfully. </div>  ");
 	$("#bv").val(totalbudget);
 	$("#budgetreturned").data("to",totalbudget);
 	}
@@ -541,28 +542,74 @@ $(document).ready(function(){
 
 var budgetdb = new PouchDB('budget');
 
-function savebudgetdata(id,chosenelements) {
-	var today = new Date();
+function savebudget() {
+	var currenttabledata="";
+	
+	currenttabledata=$("#budgettable").html();
+	
+	console.log(""+currenttabledata);
+	
+var today = new Date();
+var budgetvalue=$("#bv").val();
 var dateis=""+today;
 var dateform=dateis.substring(0,16);
-	
+var uid=new Date().valueOf();	
    budgetdetails=
-              {
-        _id:id,//unique identifier
-	    code:currentjsondata,  //the whole json results
+        {_id:""+uid,//unique identifier
+	    code:currenttabledata,  //the whole json results. as loaded from search.
         datesaved:dateform, //date of saving
-        elementorder:chosenindex,  //The selected budget data
-        completed: false
-              };
+		amount:budgetvalue,
+        completed: false};
   budgetdb.put(budgetdetails, function callback(err, result) 
                               {
     if (!err) 
 	{
       console.log('budget added succesfully');
+	  $("#budgetsavedalert").show();
+	  
     }
+	else {
+		
+		console.log(err);
+	}
                });
 }
 
+// a code to load the budget from local storage
+
+function loadbudget()
+{
+	var mdata="<table class='table cart-table table-responsive' ><tr ><th>Date</th><th>Amount</th><th>View</th></tr>";
+	budgetdb.allDocs({include_docs:true,ascending: true}).then(function (doc) 
+       {
+    
+     for(a=0;a<doc.total_rows;a++){
+	    var dat={};
+	   
+	   dat=doc.rows[a];
+	 console.log(dat.doc.datesaved);
+
+mdata+="<tr ><td>"+dat.doc.datesaved+"</td><td>"+dat.doc.amount+" Kshs.</td><td><button class='btn btn-default' onclick=\"showdbtable('"+dat.doc._id+"');\" >View</button></td></tr>";
+if(a===(doc.total_rows-1)){ mdata+="</table>"; $("#savedbudgetdata").html(mdata); }
+}	   
+		
+	});
+	
+	
+	
+}
+
+
+function showdbtable(myid){
+	
+		budgetdb.get(myid).then(function (doc) {
+			$('#savedbudget').modal('hide');
+ $("#budgettable").html(doc.code);
+ 	
+
+});
+	
+}
 
 </script>
 

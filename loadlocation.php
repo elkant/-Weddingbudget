@@ -9,12 +9,12 @@ include 'db.php';
 $getlocation='select id, value as town from location';
 
 
-$rs=mysql_query($getlocation);
+$rs=mysqli_query($conn,$getlocation);
 if(!$rs)
 echo "no records found";
 else
 {
-	while($row=mysql_fetch_array($rs))
+	while($row=mysqli_fetch_array($rs))
 	{
 		
 		
@@ -24,7 +24,7 @@ else
   }
 
 //close connection
-mysql_close($conn);
+mysqli_close($conn);
 //save
 $_SESSION["towns"]=$towns;
 
