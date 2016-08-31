@@ -153,26 +153,12 @@ session_start();
 		   <td ng-if="pd.providerid=='5'"><input class="form-control" type="text" name="" placeholder="Area" data-ng-model="pd.area" ></td>
 		   <td><textarea class="form-control  " type="text" name="" placeholder="Small description" data-ng-model="pd.description" >small description</textarea></td>
 			
-		   <td>	
-		   <!--<button type="button" class="btn btn-toolbar" data-ng-click="uploadDocument(pdIndex)" tooltip="Upload Document">
-															<img src="img/uploadclip.png" />
-		     </button>-->												   
-			<input type="file" ng-model="pd.img" file-model="myFile" />
+		   <td>
+			<input type="file" ng-model="pd.img" name="file" id="file" file-model="myFile" class="inputfile" />
+			<label for="file" >Choose image</label>	
 			<button ng-click="uploadFiles(myFile,pdIndex)">Upload</button>
+			
 		  </td>
-		   
-		  <!-- <input type="file" ngf-select="onFileSelect(pd.img)" ng-model="pd.img" name="fileToUpload"   ngf-pattern="'image/*'" ngf-max-size="2M">-->
-		   <!--<form action="upload.php" method="post" enctype="multipart/form-data">
-				Select image to upload:
-				<input type="file" name="fileToUpload" id="fileToUpload">
-				<input type="submit" value="Upload Image" name="submit">
-				 <button  type="file" class="btn btn-toolbar" data-ng-click="uploadDocument(datamodel.provider.fileToUpload)" >
-															
-				</button>
-			</form>-->
-		   
-		   
-		 
 		   <td><a href ng-click="removeRow(pdIndex,'provider_detail')">-</a></td>		   
 		   </tr>
 			</table>

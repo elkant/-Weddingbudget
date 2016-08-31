@@ -12,4 +12,51 @@ background: #fff none repeat scroll 0 0;
 	width:80px;
 	height:80px;
 	}
+	
+	
+			
+			.inputfile{
+				width:0.1px;
+				height:0.1px;
+				opacity:0;
+				overflow:hidden;
+				position:absolute;
+				z-ndex:-1;
+				
+			}
+			.inputfile+label{
+				
+				color:white;
+				background-color:#ff00f0;
+				display:inline-block;
+				margin-right: 20px;
+			display: inline-block;
+			border-radius:1;
+			/* font-family: 'Abel', sans-serif; */
+			letter-spacing: 1px;
+			  
+				padding: 6px 12px;
+				margin-bottom: 0;
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 1.42857143;
+				text-align: center;
+				white-space: nowrap;
+				vertical-align: middle;
+				-ms-touch-action: manipulation;
+				touch-action: manipulation;
+				cursor: pointer;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				background-image: none;
+				border: 1px solid transparent;
+				border-radius: 4px;
+   
+			}
+			.inputfile:focus+label,
+			.inputfile+label:hover{background-color:pink;}
+			.inputfile+label{cursor:pointer;}
+			
 </style>
