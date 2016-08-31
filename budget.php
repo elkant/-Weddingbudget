@@ -551,6 +551,7 @@ function savebudget() {
 	
 var today = new Date();
 var budgetvalue=$("#bv").val();
+var title=$("#budgetreturned").html();
 var dateis=""+today;
 var dateform=dateis.substring(0,16);
 var uid=new Date().valueOf();	
@@ -558,7 +559,9 @@ var uid=new Date().valueOf();
         {_id:""+uid,//unique identifier
 	    code:currenttabledata,  //the whole json results. as loaded from search.
         datesaved:dateform, //date of saving
+		title:title,
 		amount:budgetvalue,
+		
         completed: false};
   budgetdb.put(budgetdetails, function callback(err, result) 
                               {
@@ -579,37 +582,68 @@ var uid=new Date().valueOf();
 
 function loadbudget()
 {
-	var mdata="<table class='table cart-table table-responsive' ><tr ><th>Date</th><th>Amount</th><th>View</th></tr>";
+	var mdata="<table class='table cart-table table-responsive' ><tr ><th>Date</th><th>Amount</th><th>View</th><th>Delete</th></tr>";
 	budgetdb.allDocs({include_docs:true,ascending: true}).then(function (doc) 
-       {
-    
-     for(a=0;a<doc.total_rows;a++){
-	    var dat={};
-	   
+{   
+for(a=0;a<doc.total_rows;a++){
+	    var dat={};	   
 	   dat=doc.rows[a];
-	 console.log(dat.doc.datesaved);
-
-mdata+="<tr ><td>"+dat.doc.datesaved+"</td><td>"+dat.doc.amount+" Kshs.</td><td><button class='btn btn-default' onclick=\"showdbtable('"+dat.doc._id+"');\" >View</button></td></tr>";
-if(a===(doc.total_rows-1)){ mdata+="</table>"; $("#savedbudgetdata").html(mdata); }
+	
+mdata+="<tr ><td>"+dat.doc.datesaved+"</td><td>"+dat.doc.amount+" Kshs.</td><td><button class='btn btn-default' onclick=\"showdbtable('"+dat.doc._id+"');\" >View</button></td><td><button class='btn btn-default' onclick=\"isdelete('"+dat.doc._id+"');\" ><i class='fa fa-close'></i></button></td></tr>";
+if(a===(doc.total_rows-1)){ mdata+="</table>"; $("#savedbudgetdata").html(mdata); } //edit table dom after all data is loaded 
 }	   
-		
-	});
-	
-	
-	
+});	
 }
 
 
-function showdbtable(myid){
-	
+function showdbtable(myid)
+{	
 		budgetdb.get(myid).then(function (doc) {
 			$('#savedbudget').modal('hide');
- $("#budgettable").html(doc.code);
- 	
-
-});
-	
+            $("#budgettable").html(doc.code);
+            $("#budgetreturned").html(doc.title);
+            $("#savebudgetbtn").hide();
+			
+                                                });	
 }
+
+
+
+
+
+
+function isdelete(id){
+	
+	   if(ConfirmDelete()===true){
+        
+        deletebudget(id);
+
+    }
+}
+
+
+function ConfirmDelete()
+    {
+      var x = confirm("Are you sure you want to delete saved budget?");
+      if (x)
+          return true;
+      else
+        return false;
+    }
+
+	
+	function deletebudget(id){
+budgetdb.get(id).then(function(doc) {
+	
+  return budgetdb.remove(doc);
+}).then(function (result) {
+	loadbudget();
+
+}).catch(function (err) {
+  console.log(err);
+});   
+}
+
 
 </script>
 
