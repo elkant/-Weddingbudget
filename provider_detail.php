@@ -26,7 +26,7 @@ session_start();
    </div> 
 </div>   
                     <div class="row">
-					     <div class="col-md-10 col-md-offset-1">
+					     <div class="col-md-12 col-md-offset-1">
                             <form >
 
                                 <div class="row">
@@ -76,7 +76,7 @@ session_start();
 			</tr>
 	  
 	   <tr><td colspan="3">
-	   <table class="table table-bordered table-primary table-striped" style="width:100%">
+	   <table class="table table-bordered table-primary table-striped">
 	  <!-- <tr>
 	   <th>Provider</th>
 	   <th>Cost</th>
@@ -88,13 +88,21 @@ session_start();
 	   <th>Image</th>
 	   <th>Small Description</th>
 	   </tr>-->
+	            <div  style="display:none" entity = "services" ng-model="services" fetch-data></div>
+				<div  style="display:none" entity ="capacityoptions" ng-model="capacityoptions" fetch-data></div>
+				<div  style="display:none" entity ="veneutype" ng-model="venuetype" fetch-data></div>
+				<div  style="display:none" entity ="flowers" ng-model="flowers" fetch-data></div>
+				<div  style="display:none" entity ="tents" ng-model="tents" fetch-data></div>
+				<div  style="display:none" entity ="caketype" ng-model="caketype" fetch-data></div>
+				<div  style="display:none" entity ="entertainment" ng-model="entertainment" fetch-data></div>
+				
 	       <tr ng-repeat ="(pdIndex,pd) in datamodel.provider_detail"> 
-			
+		   {{pd}}
 			<td>
-			<a href ng-click="removeRow(pdIndex,'provider_detail')">-</a>
-			<select class="form-control"  id="id{{$index+1}}"  ng-init="getSelectData('services');"  data-ng-model="pd.providerid" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
+		
+			<select class="form-control"  id="id{{$index+1}}"  data-ng-model="pd.providerid" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
 				<option value="">Choose a provider</option>	
-				<option ng-repeat="ptype in services " value ="{{ptype.id}}">{{ptype.type}}</option>       
+				<option  id="{{ptype.id}}" ng-repeat="ptype in services " value ="{{ptype.id}}">{{ptype.type}}</option>       
 				</select>
 			</td>
 
@@ -102,7 +110,7 @@ session_start();
 		   <td><input class="form-control  " type="text" name=""  placeholder="Cost" data-ng-model="pd.cost" ></td>
 		   
 		   <td ng-if="pd.providerid=='1' || pd.providerid=='5' || pd.providerid=='7'"> 
-		   <select class="form-control"  placeholder="Capacity" data-ng-model="pd.capacity"  id="no{{$index+1}}"  ng-init="getSelectData('capacityoptions')" >
+		   <select class="form-control"  placeholder="Capacity" data-ng-model="pd.capacity"  id="no{{$index+1}}"  >
 		   <option  ng-repeat="capoptions in capacityoptions" id="{{capoptions.id}}" ng-value="{{capoptions.id}}">{{capoptions.value}}</option>
 		   </select>
 		   </td>
@@ -110,14 +118,14 @@ session_start();
 		   
 		   
 		    <td ng-if="pd.providerid=='5'" >  
-		   <select class="form-control"  data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('venuetype');" >
+		   <select class="form-control"  data-ng-model="pd.type"  id="type{{$index+1}}"  >
 		   <option  ng-repeat="venue in venuetype"  id="{{venue.id}}" ng-value="{{venue.id}}">{{venue.value}}</option>
 		   </select>
 		    </td>
 		   
 		   
 		   <td ng-if="pd.providerid=='3'" >  
-		   <select class="form-control"  data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('flowers');" >
+		   <select class="form-control"  data-ng-model="pd.type"  id="type{{$index+1}}"   >
 		   <option  ng-repeat="flw in flowers"  id="{{flw.id}}" ng-value="{{flw.id}}">{{flw.value}}</option>
 		   </select>
 		    </td>
@@ -125,28 +133,32 @@ session_start();
 			
 		   
 		     <td ng-if="pd.providerid=='7'" >  
-		   <select class="form-control"  data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('tents');" >
+		   <select class="form-control"  data-ng-model="pd.type"  id="type{{$index+1}}"   >
 		   <option  ng-repeat="tent in tents"  id="{{tent.id}}" ng-value="{{tent.id}}">{{tent.value}}</option>
 		   </select>
 		    </td>
 		   
 		   
 		   <td ng-if="pd.providerid=='2'" >  
-		   <select class="form-control"  placeholder="Cake Type" data-ng-model="pd.type"  id="type{{$index+1}}"  ng-init="getSelectData('caketype');" >
+		   <select class="form-control"  placeholder="Cake Type" data-ng-model="pd.type"  id="type{{$index+1}}"  >
 		   <option  ng-repeat="ck in caketype"  id="{{ck.id}}" ng-value="{{ck.id}}">{{ck.value}}</option>
 		   </select>
 		    </td>
-		    <td ng-if="datamodel.provider.providerId=='10'"><select class="input-text"  ng-load="getSelectData('entertainment')">
+		    <td ng-if="datamodel.provider.providerId=='10'"><select class="input-text" >
 			<option ng-repeat="ent in entertainment" ng-selected="ent.value=ent.id" value="{{ent.id}}">{{ent.value}}</option>
 			</select>			
 			</td>
 		   <td ng-if="pd.providerid=='2'"><input class="form-control" placeholder="Unit of Measure" type="text" name="" data-ng-model="pd.uom" ></td>
 		   <td ng-if="pd.providerid=='5'"><input class="form-control" type="text" name="" placeholder="Physical Address" data-ng-model="pd.location" ></td>
 		   <td ng-if="pd.providerid=='5'"><input class="form-control" type="text" name="" placeholder="Area" data-ng-model="pd.area" ></td>
-		  
-		   <td>		
-			<input type="file" ng-model="pd.img"  file-model="myFile" />
-			<button ng-click="uploadFiles(myFile,pdIndex)">Upload<!--<img src="img/clip.png" alt="">--></button>
+		   <td><textarea class="form-control  " type="text" name="" placeholder="Small description" data-ng-model="pd.description" >small description</textarea></td>
+			
+		   <td>	
+		   <!--<button type="button" class="btn btn-toolbar" data-ng-click="uploadDocument(pdIndex)" tooltip="Upload Document">
+															<img src="img/uploadclip.png" />
+		     </button>-->												   
+			<input type="file" ng-model="pd.img" file-model="myFile" />
+			<button ng-click="uploadFiles(myFile,pdIndex)">Upload</button>
 		  </td>
 		   
 		  <!-- <input type="file" ngf-select="onFileSelect(pd.img)" ng-model="pd.img" name="fileToUpload"   ngf-pattern="'image/*'" ngf-max-size="2M">-->
@@ -161,8 +173,8 @@ session_start();
 		   
 		   
 		 
-		   <td ><textarea class="form-control  " type="text" name="" placeholder="Small description" data-ng-model="pd.description" >small description</textarea></td>
-		    </tr>
+		   <td><a href ng-click="removeRow(pdIndex,'provider_detail')">-</a></td>		   
+		   </tr>
 			</table>
 		 </td>
 		 </tr>

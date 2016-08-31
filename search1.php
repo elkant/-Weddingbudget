@@ -13,7 +13,7 @@
 										
 								</li>
                                 <li style="margin-right:2%"> <input style="box-shadow: none;border: 1px solid #e5e5e5; border-radius: 3px;width:100%;height:34px; " data-ng-model="searchmodel.cost" type="text" name="" placeholder="Cost "></li>
-                                <li><button class="btn btn-small btn-dark-solid "  ng-click="search(searchmodel)" >Search </button></li>
+                                <li style="margin-right:2%"><button class="btn btn-small btn-dark-solid "  ng-click="search(searchmodel)" >Search </button></li>
 
                             </ul>
                         </div>
@@ -37,11 +37,13 @@
 													 		<li ng-if="pd.providerid!=''"  >
 															<span ng-repeat="serv in services | filter:{id:pd.providerid}:true" >{{serv.type}}</span>
 															</li>
-															<li ng-if="pd.capacity!=''">{{pd.capacity}}
-															<span ng-repeat="cap in capacityoptions | filter:{id:pd.capacity}:true" >{{cap.value}}</span>
-															
+															<li ng-if="pd.capacity!=''">
+															 <div entity = "capacityoptions" ng-model="capacityoptions" fetch-data><span ng-repeat="data in capacityoptions|filter:{id:pd.capacity}:true">{{data.value}}</span></div>
+							     
 															</li>
-															<li ng-if="pd.location!=''">{{pd.location}}</li>
+															<li ng-if="pd.location!=''">
+															<div entity = "location" ng-model="location" fetch-data><span ng-repeat="data in location|filter:{id:pd.location}:true">{{data.value}}</span></div>
+															</li>
 															<li ng-if="pd.area!=''">{{pd.area}}</li>
 															<li ng-if="pd.uom!=''"> {{pd.uom}}<li>
 															<li ng-if="pd.cost!=''">{{pd.cost}}</li>
@@ -86,11 +88,14 @@
 								<th>Cost</th>
 								</tr>
                                 <tr style='text-align:left;'  ng-repeat="items in cart">
-								
-                                    <td ng-repeat="serv in services | filter:{id:items.providerid}:true" >{{serv.type}} <!--needs to be changed --></td>
-                                    <td>{{items.type}} <!--needs to be changed --></td>
-                                    
-                                    <td>Kshs. {{items.cost}}</td>
+								 <td entity = "services" ng-model="services" fetch-data><span ng-repeat="data in services|filter:{id:items.providerid}:true">{{data.type}}</span></td>
+				<!--Venue--> <td><td  ng-if="items.providerid=='5'" entity="venuetype" ng-model="venuetype" fetch-data><span ng-repeat="data in venuetype|filter:{id:items.type}:true">{{data.value}}</span></td>
+				<!--Flowers--> <td  ng-if="items.providerid=='3'" entity="flowers" ng-model="flowers" fetch-data><span ng-repeat="data in flowers|filter:{id:items.type}:true">{{data.value}}</span></td>
+					<!--Tents--><td ng-if="items.providerid=='7'" entity="tents" ng-model="tents" fetch-data><span ng-repeat="data in tents|filter:{id:items.type}:true">{{data.value}}</span></td>
+					<!--cake--><td ng-if="items.providerid=='2'" entity="caketype" ng-model="caketype" fetch-data><span ng-repeat="data in caketype|filter:{id:items.type}:true">{{data.value}}</span></td>
+					<!--entmainent--><td ng-if="items.providerid=='10'" entity="entertainment" ng-model="entertainment" fetch-data><span ng-repeat="data in entertainment|filter:{id:items.type}:true">{{data.value}}</span></td>
+								</td>								
+								<td>{{items.cost}}</td>
                                     
                                 </tr>
 								</table>

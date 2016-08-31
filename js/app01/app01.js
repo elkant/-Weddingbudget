@@ -16,14 +16,12 @@ app01.directive('fileModel', ['$parse', function ($parse) {
             }, */
     link: function(scope, element, attrs, ngModelCtrl,ngModel) {
         var model = $parse(attrs.fileModel);
+		console.log(attrs);
         var modelSetter = model.assign;
 
         element.bind('change', function(){
             scope.$apply(function(){
                  modelSetter(scope, element[0].files[0]);
-				//scope.ngModel=element[0].files[0].name;
-			   //  ngModel.$setViewValue("aaaa");   
-				console.log("aaaa "+ element[0].files[0].name);				 
 				
             });
         });
@@ -51,27 +49,6 @@ app01.directive('responsivetabs', function () {
     }
 });
 
-//We can write our own fileUpload service to reuse it in the controller
-// app01.service('fileUpload', ['$http', function ($http) {
-    // this.uploadFileToUrl = function(file, uploadUrl, name){
-	
-         // var fd = new FormData();
-         // fd.append('file', file);
-         // fd.append('name', name);
-         // $http.post(uploadUrl, fd, {
-             // transformRequest: angular.identity,
-             // headers: {'Content-Type': undefined,'Process-Data': false}
-         // })
-         // .then(function successCallback(response) {
-            // console.log(response.data);
-			// alert(response.data);
-         // },
-         // function errorCallback(response) { 
-            // console.log(response.data);
-			// alert(response.data);
-         // });
-     // }
- // }]);
 
 app01.service('fileUpload', ['$http', function ($http) {
     this.uploadFileToUrl = function(file, uploadUrl, name,$scope){
@@ -142,7 +119,8 @@ app01.service('fileUpload', ['$http', function ($http) {
     return obj;   
 }]);
 
- app01.controller('editCtrl',['$scope','$routeParams','$rootScope','$http','$location','$sce','$route','fileUpload','services', function($scope,$routeParams,$rootScope,$http,$location,$sce,$route,fileUpload,services){
+ app01.controller('editCtrl',['$scope','$routeParams','$rootScope','$http','$location','$sce','$route','fileUpload','services', 
+ function($scope,$routeParams,$rootScope,$http,$location,$sce,$route,fileUpload,services){
    $scope.datamodel={};
       $scope.datamodel.provider={'id':''};
 	  $scope.datamodel.provider_detail=[{'id':'','providerid':'','cost':'', 'capacity':'','type':'','uom':'', 'location':'','location':'','area':'','img':''}];
@@ -183,6 +161,23 @@ app01.service('fileUpload', ['$http', function ($http) {
 		  
 			  }
 	
+	/* 
+		$scope.uploadDocument = function(_field){
+		
+			
+			//$scope._field = _field;
+			
+	    ngDialog.open({
+			template: 'filebrowser.html',
+			className: 'ngdialog w800',
+			showClose: true,
+			closeByDocument: true,
+			closeByEscape: true,
+			appendTo: false
+			//,
+			//scope: $scope
+		});	
+	     }; */
 			
 		 $scope.getSelectData= function(table){
 				var fetchurl = serviceBase + 'selectdata?tablename='+table;
@@ -193,9 +188,6 @@ app01.service('fileUpload', ['$http', function ($http) {
 			}	
 			
 		
-		
-      // fileUpload.uploadFileToUrl(file, uploadUrl, text);
-	  
 	  
 	   $scope.uploadFiles = function(files,index){
 
@@ -203,11 +195,7 @@ app01.service('fileUpload', ['$http', function ($http) {
         console.dir(file);
 
         var uploadUrl = "save_form.php";
-        var text = $scope.name;
-		console.log(text);
-        //fileUpload.uploadFileToUrl(file, uploadUrl, text);
-		
-		 
+        
          var fd = new FormData();
          fd.append('file', file);
          fd.append('name', name);
@@ -216,7 +204,9 @@ app01.service('fileUpload', ['$http', function ($http) {
              headers: {'Content-Type': undefined,'Process-Data': false}
          }).success(function(result){
             console.log(""+result);
-			 $scope.datamodel.provider_detail[index].img=result.trim();
+			$scope.datamodel.provider_detail[index].img=result.trim();
+			console.log($scope.datamodel.provider_detail[index].img);
+			//$scope.uploadimage=result.trim();;
 					
          }).error(function(){
             console.log("Error");
@@ -267,6 +257,53 @@ app01.service('fileUpload', ['$http', function ($http) {
 		     }
 	 
 			}]);
+			
+			
+	
+
+app01.directive('fetchData', function () {
+	var getdataController = ['$scope','$compile','$rootScope','$http', function ($scope,$compile,$rootScope,$http){
+		var entityName;
+		 var serviceBase = 'services/';
+	   $scope.loadData = function(entity){
+			entityName = entity;
+			console.log("entity"+entity)
+			
+			var fetchurl = serviceBase + 'selectdata?tablename='+entity;
+		
+		   $http.get(fetchurl).success(function(response){ 
+			//$http.get("0212/01/01/"+entity+"/13/0").then(function (response) {
+				console.log(response[entity]);
+			 $scope.returneddata=response[entity];
+			});
+			}		
+		}];
+	
+	var linker = function (scope, element, attrs) {
+	 scope.loadData(attrs.entity);
+	 console.log(scope);
+	};
+	
+	return {
+		restrict : 'A',
+		require:'ngModel',
+		replace: true,
+		scope: {
+			//returneddata: '=fetchData',
+			returneddata: '=ngModel',
+			entity: '@',
+			name : '@',
+			disabled : '=ngDisabled',
+			required : '=ngRequired',
+			value : '@'
+		}, 
+		controller : getdataController,
+		link : linker
+		
+	}
+});		
+			
+			
  
 
 
