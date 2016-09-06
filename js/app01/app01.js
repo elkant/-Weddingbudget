@@ -5,7 +5,7 @@
 //var app01=angular.module('app01',['ngRoute',]);
 
 
-app01 = angular.module('app01',['ngRoute','ngResource','ngSanitize','ngFileUpload']);
+app01 = angular.module('app01',['ngRoute','ngResource','ngSanitize','ngFileUpload','ngDialog']);
 
 app01.directive('fileModel', ['$parse', function ($parse) {
     return {
@@ -119,13 +119,14 @@ app01.service('fileUpload', ['$http', function ($http) {
     return obj;   
 }]);
 
- app01.controller('editCtrl',['$scope','$routeParams','$rootScope','$http','$location','$sce','$route','fileUpload','services', 
- function($scope,$routeParams,$rootScope,$http,$location,$sce,$route,fileUpload,services){
+ app01.controller('editCtrl',['$scope','$routeParams','$rootScope','$http','$location','$sce','$route','fileUpload','services','ngDialog','$filter',
+ function($scope,$routeParams,$rootScope,$http,$location,$sce,$route,fileUpload,services,ngDialog,$filter){
    $scope.datamodel={};
       $scope.datamodel.provider={'id':''};
 	  $scope.datamodel.provider_detail=[{'id':'','providerid':'','cost':'', 'capacity':'','type':'','uom':'', 'location':'','location':'','area':'','img':''}];
        var serviceBase = 'services/'
-  
+    $scope.showprovidertab=true;
+    $scope.edittab=false;
       $scope.saveCustomer = function(datamodel) {
         $location.path('/edit');
      
@@ -161,23 +162,19 @@ app01.service('fileUpload', ['$http', function ($http) {
 		  
 			  }
 	
-	/* 
+	 
 		$scope.uploadDocument = function(_field){
-		
-			
-			//$scope._field = _field;
-			
+			$scope._field = _field;			
 	    ngDialog.open({
-			template: 'filebrowser.html',
-			className: 'ngdialog w800',
+			template: 'filebrowser.jsp',
+			className : 'ngdialog-theme-default w800',
 			showClose: true,
 			closeByDocument: true,
 			closeByEscape: true,
-			appendTo: false
-			//,
-			//scope: $scope
+			appendTo: false,
+			scope: $scope
 		});	
-	     }; */
+	     };
 			
 		 $scope.getSelectData= function(table){
 				var fetchurl = serviceBase + 'selectdata?tablename='+table;
@@ -189,30 +186,7 @@ app01.service('fileUpload', ['$http', function ($http) {
 			
 		
 	  
-	   $scope.uploadFiles = function(files,index){
 
-		var file = files;   
-        console.dir(file);
-
-        var uploadUrl = "save_form.php";
-        
-         var fd = new FormData();
-         fd.append('file', file);
-         fd.append('name', name);
-         $http.post(uploadUrl, fd, {
-             transformRequest: angular.identity,
-             headers: {'Content-Type': undefined,'Process-Data': false}
-         }).success(function(result){
-            console.log(""+result);
-			$scope.datamodel.provider_detail[index].img=result.trim();
-			console.log($scope.datamodel.provider_detail[index].img);
-			//$scope.uploadimage=result.trim();;
-					
-         }).error(function(){
-            console.log("Error");
-         });
-        };
-	  
 	  
 	  
    
@@ -267,13 +241,12 @@ app01.directive('fetchData', function () {
 		 var serviceBase = 'services/';
 	   $scope.loadData = function(entity){
 			entityName = entity;
-			console.log("entity"+entity)
 			
 			var fetchurl = serviceBase + 'selectdata?tablename='+entity;
 		
 		   $http.get(fetchurl).success(function(response){ 
 			//$http.get("0212/01/01/"+entity+"/13/0").then(function (response) {
-				console.log(response[entity]);
+				//console.log(response[entity]);
 			 $scope.returneddata=response[entity];
 			});
 			}		
@@ -281,7 +254,7 @@ app01.directive('fetchData', function () {
 	
 	var linker = function (scope, element, attrs) {
 	 scope.loadData(attrs.entity);
-	 console.log(scope);
+	 //console.log(scope);
 	};
 	
 	return {
@@ -304,7 +277,37 @@ app01.directive('fetchData', function () {
 });		
 			
 			
- 
+
+	  app01.controller('uploadImgCtrl',['$scope','$routeParams','$rootScope','$http','$location','$sce','$route','fileUpload','services','ngDialog','$filter',
+ function($scope,$routeParams,$rootScope,$http,$location,$sce,$route,fileUpload,services,ngDialog,$filter){
+	 
+	 	   $scope.uploadFiles = function(files,index){
+
+		var file = files;   
+        var uploadUrl = "save_form.php";
+        
+         var fd = new FormData();
+         fd.append('file', file);
+         fd.append('name', name);
+         $http.post(uploadUrl, fd, {
+             transformRequest: angular.identity,
+             headers: {'Content-Type': undefined,'Process-Data': false}
+         }).success(function(result){
+            console.log(""+result);
+		
+			$scope.datamodel.provider_detail[index].img=result.trim();
+			console.log($scope.datamodel.provider_detail);
+			//alert('here');
+			ngDialog.close();
+			//$scope.uploadimage=result.trim();;
+					
+         }).error(function(){
+            console.log("Error");
+         });
+        };
+	  
+ }
+ ]);
 
 
 app01.controller('homeCtrl',['$scope','$routeParams','$http','$location','$sce','$route','fileUpload','services','$window','$filter', 
@@ -429,13 +432,16 @@ function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services,$wi
 		}
 	};
 	$scope.login = function(auth){
+		console.log(auth);
 	
 	  $http.post(serviceBase + 'login', angular.toJson(auth)).success(function (results) {
 				$scope.datamodel= results.data;
 			 	$scope.message=results.msg;
-				$location.path('/providers');
+				$route.reload();
+				console.log(results)
+				//$location.path('/providers');
 				$window.location.href = '#/providers';
-		
+		       alert('Login Successful');
 		         
 			}).error(function(response) {
 					alert("Failed to Login");
@@ -453,7 +459,16 @@ function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services,$wi
 	  $http.post(serviceBase + 'register', angular.toJson(registerdata.credentials)).success(function (results) {
 				
 		         console.log(results.msg);
-				 $location.path('/providers');
+				 
+				 
+				 
+				 
+				 $route.reload();
+				 
+				// $location.path('/providers');
+				
+				//$window.location.href = '#/providers';
+				
 				 
 				 
 			}).error(function(response) {
@@ -482,6 +497,12 @@ function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services,$wi
 				$scope.datamodel= results.data;
 			 	$scope.message=results.msg;
 				
+				 $route.reload();
+				 
+				// $location.path('/providers');
+				
+				$window.location.href = '#/edit';
+				
 			}).error(function(response) {
 					console.log("Failed to start process");
 				});
@@ -493,9 +514,10 @@ function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services,$wi
 }]);
 
 
-app01.controller('listCtrl', function ($scope, services,$http) {
+app01.controller('listCtrl', function ($scope, services,$http,ngDialog,$route) {
       $scope.datamodel={};
-    
+    $scope.showprovidertab=false;
+    $scope.edittab=true;
   var serviceBase = 'services/';
 
   $http.get(serviceBase + 'customers').success(function(response){
@@ -504,7 +526,7 @@ app01.controller('listCtrl', function ($scope, services,$http) {
 		  });
 		  
 		  
-		   $scope.uploadFiles = function(files,index){
+		/*  $scope.uploadFiles = function(files,index){
 
 		var file = files;   
         console.dir(file);
@@ -512,8 +534,7 @@ app01.controller('listCtrl', function ($scope, services,$http) {
         var uploadUrl = "save_form.php";
         var text = $scope.name;
 		console.log(text);
-        //fileUpload.uploadFileToUrl(file, uploadUrl, text);
-		
+        
 		 
          var fd = new FormData();
          fd.append('file', file);
@@ -528,7 +549,21 @@ app01.controller('listCtrl', function ($scope, services,$http) {
          }).error(function(){
             console.log("Error");
          });
-        };
+        }; */
+		
+		
+		$scope.uploadDocument = function(_field){
+			$scope._field = _field;			
+	    ngDialog.open({
+			template: 'filebrowser.jsp',
+			className : 'ngdialog-theme-default w800',
+			showClose: true,
+			closeByDocument: true,
+			closeByEscape: true,
+			appendTo: false,
+			scope: $scope
+		});	
+	     };
 		  
 		  $scope.removeRows = function(id,tablename){
 				
@@ -544,7 +579,7 @@ app01.controller('listCtrl', function ($scope, services,$http) {
  $http.post(serviceBase + 'update', angular.toJson(datamodel)).then(function (results) {
 				 
 				console.log(results.data);
-				
+				$route.reload();
 				
 			});
 			};

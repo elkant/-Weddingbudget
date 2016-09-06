@@ -18,8 +18,9 @@
                                 <a onclick='topofpage();' href="#/register">Register</a>
                             </li>
 							<li><a onclick='topofpage();' href="#/contactus">Contact Us </a></li>
-							<li ng-if="<?php echo $_SESSION['type']=='provider'?>"><a href="#/providers">Providers  </a></li>
-							<li ng-if="<?php echo $_SESSION['type']=='provider'?>"><a href="#/edit">Edit Provider </a></li>
+							<li ng-if="<?php echo $_SESSION['type']=='provider'?> && <?php echo $_SESSION['content']=='new' ?> "><a href="#/providers">Providers </a></li>
+							<li ng-if="<?php echo $_SESSION['type']=='provider'; ?> && <?php echo $_SESSION['content']=='edit' ?> "><a href="#/edit"> Edit Provider </a></li>
+							<li ng-if="<?php echo $_SESSION['type']=='provider'?>"><a href="logout.php">Logout (<?php echo $_SESSION['name']?>)</a></li>
           <!-- <li><a onclick='topofpage();' href="#/search">Search </a></li>-->
                         </ul>
 				

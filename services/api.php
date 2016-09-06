@@ -73,13 +73,24 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 							$_SESSION['id']= $result['id'];
 							$_SESSION['name']= $result['name'];
 							$_SESSION['email']=$result['email'];							 
-							$_SESSION['type']= $result['type'];							 
-											 
+							$_SESSION['type']= $result['type'];	
+							
+								$idvalue=$result['id'];			 
 							//header("location: budget.html");
 							if(isset($_SESSION["email"])) {
 							
-								header("Location:budget.html");
+							//	header("Location:budget.php");
 								}
+								
+				$selectquery="SELECT * FROM provider WHERE accountid = '$idvalue' LIMIT 1";
+                $check = $this->mysqli->query($selectquery) or die($this->mysqli->error.__LINE__);
+                 if($check->num_rows > 0) {
+					 echo "here with data";
+						$_SESSION['content']= "edit"; 
+				 }else{
+					  echo "here with no data";
+					 	$_SESSION['content']= "new"; 
+				 }
 			
 														
 						// If success everythig is good send header as "OK" and user details
@@ -149,7 +160,7 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 			
 			 $category = $this->_request['category'];		
 			 $cost = $this->_request['cost'];
-			 $query="SELECT * from provider_detail where providerid='$category' and cost='$cost'";
+			 $query="SELECT * from provider_detail where providerid='$category' OR cost='$cost'";
 
 			$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
 

@@ -16,12 +16,12 @@ session_start();
                   
 
 <div><div class="col-lg-12">
- <div class="col-lg-3"><img  src="img/sideflower.jpg" alt="" ></div>
+ <div class="col-lg-3"><img class="img img-responsive"  src="img/sideflower.jpg" alt="" ></div>
  <div class="col-lg-6">  <div class="heading-title  text-center ">
-                        <h3 class="text-uppercase"> Register your services </h3>
+                        <h3 class="text-uppercase"> Edit your service details </h3>
                         <div class="half-txt p-top-30">Provide as much details as possible </div>
                     </div></div>
-<div class="col-lg-3"><img style="float:right" src="img/leftsideflower.jpg" alt="" ></div> <!--<img  src="img/curvedflower.jpg" alt="">--> 
+<div class="col-lg-3"><img class="img img-responsive" style="float:right" src="img/leftsideflower.jpg" alt="" ></div> <!--<img  src="img/curvedflower.jpg" alt="">--> 
    </div> 
 </div>   
                     <div class="row">
@@ -145,27 +145,27 @@ session_start();
 			<!--<span><input type="file"  ng-model="pd.img" file-model="image"  /></span>
 			<span><button ng-click="uploadFiles(image)">upload me </button></span>-->
 			
-			<input type="file" ng-model="pd.img"  file-model="myFile" />
-			<button ng-click="uploadFiles(myFile,pdIndex)">up</button>
+			<!--<input type="file" ng-model="pd.img"  file-model="myFile" />
+			<button ng-click="uploadFiles(myFile,pdIndex)">up</button>-->
+			 <a href class="fa fa-paperclip"  data-ng-click="uploadDocument(pdIndex)"  tooltip="Add Document">
+															
+			</a>
 			 
 		   </td>
-		   
-		  <!-- <input type="file" ngf-select="onFileSelect(pd.img)" ng-model="pd.img" name="fileToUpload"   ngf-pattern="'image/*'" ngf-max-size="2M">-->
-		   <!--<form action="upload.php" method="post" enctype="multipart/form-data">
-				Select image to upload:
-				<input type="file" name="fileToUpload" id="fileToUpload">
-				<input type="submit" value="Upload Image" name="submit">
-				 <button  type="file" class="btn btn-toolbar" data-ng-click="uploadDocument(datamodel.provider.fileToUpload)" >
-															
-				</button>
-			</form>-->
-		   
-		   
-		 
 		   <td ><textarea class="form-control  " type="text" name="" placeholder="Small description" data-ng-model="pd.description" >small description</textarea></td>
 	    
-		    <td> <button type="button" data-ng-click="addRows(datamodel.provider_detail,pdIndex)">
-			+ </button></td>
+		    <!--<td> <button type="button" data-ng-click="addRows(datamodel.provider_detail,pdIndex)">
+			<span ng-if="">+ </span>
+			<span ng-if="">- </span>
+			
+			</button></td>-->
+			
+			
+			<td ng-show="$last"> <a href data-ng-click="addRows(datamodel.provider_detail,pdIndex)"  class='fa fa-plus'></a></td>
+             <td  ng-show="pdIndex != 0" >
+             <a href ng-click="removeRow(pdIndex,'provider_detail')" class='fa fa-minus' >
+			
+			</a>			</td>
 		   
 		   </tr>
 			</table>

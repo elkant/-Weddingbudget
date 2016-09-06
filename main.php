@@ -17,7 +17,7 @@ session_start();
                            <!-- <form method="post" action="#" id="form" role="form" class="contact-comments-->
 							
  <div class="col-lg-10">  <div >
-                        <h3 class="text-uppercase" style="text-align:center;"> Register  </h3>
+                        <h3 class="text-uppercase" style="text-align:center;"> Budget  </h3>
                         
   </div> 
 </div> 

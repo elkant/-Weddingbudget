@@ -36,7 +36,7 @@ session_start();
 										 <div class="col-lg-3 wow fadeInUp delay-06s">
 										  <div class="form">
 										  
-										<img src="img/bdsilhouette.jpg" alt=""> 
+										<img class="img img-responsive" src="img/bdsilhouette.jpg" alt=""> 
 									   
 										 </div>
 										</div>
@@ -68,7 +68,7 @@ session_start();
                             <div class="col-lg-3 wow fadeInUp delay-06s">
 										  <div class="form">
 										  
-										<img src="img/logins.jpg" alt=""> 
+										<img class="img img-responsive" src="img/logins.jpg" alt=""> 
 									   
 										 </div>
 										</div>
@@ -80,7 +80,7 @@ session_start();
 										 <div class="col-lg-6 wow fadeInUp delay-06s">
 										  <div class="form">
 										  
-										<img src="img/silhouette.jpg" alt=""> 
+										<img class="img img-responsive" src="img/silhouette.jpg" alt=""> 
 									   
 										 </div>
 										</div>

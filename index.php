@@ -20,8 +20,8 @@ session_start();
     
 <link href='http://fonts.googleapis.com/css?family=Abel|Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic,900,900italic,200italic,200' rel='stylesheet' type='text/css'>
 <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fields.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+ <link href="css/fields.css" rel="stylesheet">   
+   <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/magnific-popup.css" rel="stylesheet">
     <link href="css/shortcodes/shortcodes.css" rel="stylesheet">
     <link href="css/owl.carousel.css" rel="stylesheet">
@@ -30,7 +30,11 @@ session_start();
     <link href="css/blog.css" rel="stylesheet">
     <link href="css/style-responsivec4ca.css?1" rel="stylesheet">
     <link href="css/default-theme3860.css?v=1" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet" />
 	<link href="css/tabs.css" rel="stylesheet" />
+   <link href="css/ngdialog/ngDialog-theme-default.css" rel="stylesheet" />
+   <link href="css/ngdialog/ngDialog-theme-plain.css" rel="stylesheet" />
+<link href="css/ngdialog/ngDialog.css" rel="stylesheet" />
 
     <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="slider-revolution/css/extralayers.css" media="screen">
@@ -153,6 +157,8 @@ include 'slides.html';
     <script src="js/visible.js"></script>
     <script src="js/smooth.js"></script>
     <script src="js/wow.min.js"></script>
+    <script src="js/wow.min.js"></script>
+	
 	
 	<!--jss from mo-->
 <script type="text/javascript" src="js/angular.js"></script>
@@ -165,6 +171,7 @@ include 'slides.html';
   <script src="js/ng-file-upload.js"></script>
    <script src="js/ng-file-upload-shim.js"></script>
    <script src="js/tabs.js"></script>
+   <script src="js/ngDialog.js" type="text/javascript"></script>
    
 
     <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
@@ -272,7 +279,6 @@ $(function() {
 //a function to always focus on the top of angular div 
 
 function topofpage(){
-	 $('.showhide').click();
 	
 	//$(window).scrollTop(200);
 	$(window).scrollTop($('#maindiv').offset().top);

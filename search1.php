@@ -88,13 +88,13 @@
 								<th>Cost</th>
 								</tr>
                                 <tr style='text-align:left;'  ng-repeat="items in cart">
-								 <td entity = "services" ng-model="services" fetch-data><span ng-repeat="data in services|filter:{id:items.providerid}:true">{{data.type}}</span></td>
-				<!--Venue--> <td><td  ng-if="items.providerid=='5'" entity="venuetype" ng-model="venuetype" fetch-data><span ng-repeat="data in venuetype|filter:{id:items.type}:true">{{data.value}}</span></td>
-				<!--Flowers--> <td  ng-if="items.providerid=='3'" entity="flowers" ng-model="flowers" fetch-data><span ng-repeat="data in flowers|filter:{id:items.type}:true">{{data.value}}</span></td>
+								<td entity = "services" ng-model="services" fetch-data><span ng-repeat="data in services|filter:{id:items.providerid}:true">{{data.type}}</span></td>
+				<!--Venue-->    <td  ng-if="items.providerid=='5'" entity="venuetype" ng-model="venuetype" fetch-data><span ng-repeat="data in venuetype|filter:{id:items.type}:true">{{data.value}}</span></td>
+				<!--Flowers--> <td ng-if="items.providerid=='3'" entity="flowers" ng-model="flowers" fetch-data><span ng-repeat="data in flowers|filter:{id:items.type}:true">{{data.value}}</span></td>
 					<!--Tents--><td ng-if="items.providerid=='7'" entity="tents" ng-model="tents" fetch-data><span ng-repeat="data in tents|filter:{id:items.type}:true">{{data.value}}</span></td>
 					<!--cake--><td ng-if="items.providerid=='2'" entity="caketype" ng-model="caketype" fetch-data><span ng-repeat="data in caketype|filter:{id:items.type}:true">{{data.value}}</span></td>
 					<!--entmainent--><td ng-if="items.providerid=='10'" entity="entertainment" ng-model="entertainment" fetch-data><span ng-repeat="data in entertainment|filter:{id:items.type}:true">{{data.value}}</span></td>
-								</td>								
+																
 								<td>{{items.cost}}</td>
                                     
                                 </tr>

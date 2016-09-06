@@ -17,12 +17,12 @@ session_start();
                   
 
 <div><div class="col-lg-12">
- <div class="col-lg-3"><img  src="img/sideflower.jpg" alt="" ></div>
+ <div class="col-lg-3"><img class="img img-responsive" src="img/sideflower.jpg" alt="" ></div>
  <div class="col-lg-6">  <div class="heading-title  text-center ">
                         <h3 class="text-uppercase"> Register your services </h3>
                         <div class="half-txt p-top-30">Provide as much details as possible </div>
                     </div></div>
-<div class="col-lg-3"><img style="float:right" src="img/leftsideflower.jpg" alt="" ></div> <!--<img  src="img/curvedflower.jpg" alt="">--> 
+<div class="col-lg-3"><img  class="img img-responsive" style="float:right" src="img/leftsideflower.jpg" alt="" ></div> <!--<img  src="img/curvedflower.jpg" alt="">--> 
    </div> 
 </div>   
                     <div class="row">
@@ -90,7 +90,7 @@ session_start();
 	   </tr>-->
 	            <div  style="display:none" entity = "services" ng-model="services" fetch-data></div>
 				<div  style="display:none" entity ="capacityoptions" ng-model="capacityoptions" fetch-data></div>
-				<div  style="display:none" entity ="veneutype" ng-model="venuetype" fetch-data></div>
+				<div  style="display:none" entity ="venuetype" ng-model="venuetype" fetch-data></div>
 				<div  style="display:none" entity ="flowers" ng-model="flowers" fetch-data></div>
 				<div  style="display:none" entity ="tents" ng-model="tents" fetch-data></div>
 				<div  style="display:none" entity ="caketype" ng-model="caketype" fetch-data></div>
@@ -154,12 +154,22 @@ session_start();
 		   <td><textarea class="form-control  " type="text" name="" placeholder="Small description" data-ng-model="pd.description" >small description</textarea></td>
 			
 		   <td>
-			<input type="file" ng-model="pd.img" name="file" id="file" file-model="myFile" class="inputfile" />
-			<label for="file" >Choose image</label>	
-			<button ng-click="uploadFiles(myFile,pdIndex)">Upload</button>
+			<!--<input type="file" ng-model="pd.img"  file-model="myFile"  onchange="angular.element(this).scope().uploadFiles(this,pdIndex)" />
+			<label for="file" >Choose image</label>	-->
+			<!--<button ng-click="uploadFiles(myFile,pdIndex)">Upload</button>-->
+			 <a href class="fa fa-paperclip"  data-ng-click="uploadDocument(pdIndex)"  tooltip="Add Document">
+															
+			</a>
 			
 		  </td>
-		   <td><a href ng-click="removeRow(pdIndex,'provider_detail')">-</a></td>		   
+		 <!--  <td><a href ng-click="removeRow(pdIndex,'provider_detail')">-</a></td>-->	
+
+			<td ng-show="$last"> <a href data-ng-click="addRow('provider_detail')"  class='fa fa-plus'></a></td>
+             <td  ng-show="pdIndex != 0" >
+             <a href ng-click="removeRow(pdIndex,'provider_detail')" class='fa fa-minus' >
+			
+			</a>			</td>
+
 		   </tr>
 			</table>
 		 </td>
