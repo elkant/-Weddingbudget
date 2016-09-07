@@ -437,10 +437,17 @@ function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services,$wi
 	  $http.post(serviceBase + 'login', angular.toJson(auth)).success(function (results) {
 				$scope.datamodel= results.data;
 			 	$scope.message=results.msg;
-				$route.reload();
-				console.log(results)
-				//$location.path('/providers');
-				$window.location.href = '#/providers';
+			 	$scope.redirect=results.redirect;
+				
+				if(results.redirect=='edit'){
+				$location.path('/edit');
+				$window.location.reload();
+				  }else{
+					  $location.path('/providers');
+					  $window.location.reload();
+				  }
+				
+				//$window.location.href = '#/providers';
 		       alert('Login Successful');
 		         
 			}).error(function(response) {

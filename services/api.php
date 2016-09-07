@@ -85,17 +85,22 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 				$selectquery="SELECT * FROM provider WHERE accountid = '$idvalue' LIMIT 1";
                 $check = $this->mysqli->query($selectquery) or die($this->mysqli->error.__LINE__);
                  if($check->num_rows > 0) {
-					 echo "here with data";
+					
 						$_SESSION['content']= "edit"; 
+						header("Location:#/providers");
 				 }else{
-					  echo "here with no data";
+					  echo "";
 					 	$_SESSION['content']= "new"; 
+						header("Location:#/edit");
 				 }
 			
 														
 						// If success everythig is good send header as "OK" and user details
-						    $success = array('status' => "Success", "msg" => "Login successfull");
-							$this->response($this->json($result), 200);
+						    $success = array('status' => "Success", "msg" => "Login successfull", "data" => $result, "redirect" => $_SESSION['content']);
+							$this->response($this->json($success), 200);
+							
+							//$success = array('status' => "Success", "msg" => "Registration Successfully.", "data" => $datas);
+							//$this->response($this->json($success),200);
 							
 					}
 							$this->response('No record match ', 204);	// If no records "No Content" status
