@@ -58,7 +58,7 @@
                                              
 
                                                     <div class="col-lg-12 form-group" style=" padding-top:10%;">
-                                                     <div class="col-lg-6"><button type="button" class="btn btn-default"  ng-click="uploadFiles(myFile,_field)">Upload {{_field}}</button>
+                                                     <div class="col-lg-6"><button type="button" class="btn btn-default"  ng-click="uploadFiles(myFile,_field)">Upload</button>
 																		
 																	</button></div>
 																 <div class="col-lg-6">	<button type="button" class="btn btn-default" data-ng-click="closeThisDialog()">

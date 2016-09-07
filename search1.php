@@ -59,7 +59,13 @@
                                     </div>
                                 </div>
                             </div>
-<div ng-if="resultmodel.length==0"><h3 style="text-align:center;">No records found</h3></div>
+<div ng-if="resultmodel.length==0">
+<h3 style="text-align:center;">
+<div class="cart-img">
+<img title="" data-toggle="popover" data-trigger="hover" data-content="No data found" src="img/error-avatar.png" alt="" data-original-title="Indicator">
+</div>
+
+No records found</h3></div>
                            
 
 
