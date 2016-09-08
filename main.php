@@ -1,19 +1,28 @@
 <?php
-//session_start();
+session_start();
 ?>
 
 
 
             <div class="page-content" ng-controller="listCtrl">
-<div class="col-md-11 col-md-offset-1">							
- <div class="col-lg-12">  
- <div ><h4 class="text-uppercase" style="text-align:center;"> Generate/Create Budget  </h4></div> 
- <div class="divider d-border d-solid d-single text-center">
-<i class="fa fa-xing"></i>
-</div>
+
+             <!--
+                   <div class="heading-title  text-center ">
+                        <h3 class="text-uppercase"> Register your company </h3>
+                        
+                    </div>-->
+
+            
+                        <div class="col-md-12 col-md-offset-1">
+                           <!-- <form method="post" action="#" id="form" role="form" class="contact-comments-->
+							
+ <div class="col-lg-10">  <div >
+                        <h3 class="text-uppercase" style="text-align:center;"> Budget  </h3>
+                        
+  </div> 
 </div> 
 										  <div class="col-md-6">
-										<section id="work_outer">
+										<section id="work_outer"><!--main-section-start-->
 
   <div class="container">
     <section class="main-section contact" id="contact">
@@ -30,8 +39,8 @@
 									<div class="resp-tabs-container">
 										<div class="row">
 										 
-                                            <div class="col-lg-12 btn-rounded">
-											<div class="form ">
+                                            <div class="col-lg-6 btn-rounded">
+											<div class="form">
                                                 <div ng-include="'budget.php'"></div>
 												</div>
                                             </div>

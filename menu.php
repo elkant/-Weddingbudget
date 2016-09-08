@@ -11,9 +11,9 @@
                             <li class="active">
                                 <a onclick='topofpage();' href="index.php">Home</a>
                             </li>
-							<!--<li  class="">
+							<li  class="">
                                 <a onclick='topofpage();' href="#/budget">Budget</a>
-                            </li>-->
+                            </li>
                             <li  class="">
                                 <a onclick='topofpage();' href="#/register">Register</a>
                             </li>

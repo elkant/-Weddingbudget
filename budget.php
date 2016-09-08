@@ -12,65 +12,41 @@ input[type=radio]:checked ~ .check::before{
   background: #0DFF92;
 }
 
-
-.budget{
-    
-    background-attachment: scroll;
-    background-image: url(img/twb/decor.JPG);
-    background-position: center center;
-    background-repeat: none;
-
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    background-size: 100%;
-    -o-background-size: 100%;
-margin-left:2.5%;
-margin-right:2.5%;
-
-}
-
- .icon {
-	 
-	border-color:#FF00F0; 
- }
-
-
 </style>
  
  
 <!-- Portfolio -->
-<section  class="content budget"> 
+<section  class="content"> 
 
 <!-- Container -->
 <div class="container portfolio-title"> 
 
 <!-- Section Title -->
-<div class="section-title well col-xs-11 "    style='border-color:#FF7FF7;'>
+<div class="section-title well" style='border-color:#FF7FF7;'>
 <h2 style='text-align:left;background-color:white;'  >  <span class="timer" data-from="0" data-to="" data-speed="1000"  id='budgetreturned'></span></h2>
 <form class="form-inline">
-<div class="col-sm-12">
-<select   type="text" onchange='callpackage();' class="form-control col-xs-2" id='packages' name='packages'  > 
-<option value=''> choose budget package </option>
-<option value='100000'> Platnum package (100K) </option>
-<option value='500000'> Silver package (500K)</option>
-<option value='1000000'> Gold package (1M) </option>
-<option value='*'> Other (Input amount) </option>
-</select>
 
-<input id='budget_amount' style='display:none;' onkeypress='return numbers(event);'   name='budget_amount'  type="number" class="form-control col-xs-2"  placeholder="Enter your amount">
-<select  type="text" class="form-control col-xs-2" id='budget_location' name='budget_location'  > 
-<option>loading location</option>
+
+<select  type="text" onchange='callpackage();' class="form-control" id='packages' name='packages'  > 
+<option value=''> choose budget package </option>
+<option value='1000000'> Gold package (1M) </option>
+<option value='500000'> Silver package (500K)</option>
+<option value='100000'> Platnum package (100K) </option>
+
 </select>
-<button type="submit" id='generatebtn'  class="btn btn-sm   form-control" style='background-color:#FF00F0;color:white;' onclick='budgetgenerator(0);'>
+ <b>OR</b>
+<input id='budget_amount' onkeypress='return numbers(event);'  name='budget_amount'  type="number" class="form-control " style=;border-color:;  placeholder="Enter your amount">
+<select  type="text" class="form-control" id='budget_location' name='budget_location'  > 
+</select>
+<button type="submit" id='generatebtn' class="btn btn-sm btn-rounded btn-dark-solid text-uppercase" onclick='budgetgenerator(0);'>
 see results
 </button> 
 
 
 
-<button type="submit" id='viewsavedbudget'   data-toggle='modal' data-target='#savedbudget' style='padding-left:1px;background-color:#FF00F0;color:white;' class="btn btn-sm   form-control" onclick='loadbudget()'> <i class='fa fa-open'> </i>
-retrieve budget
+<button type="submit" data-toggle='modal' data-target='#savedbudget'  class="btn btn-sm btn-rounded btn-default" onclick='loadbudget()'> <i class='fa fa-view'> </i>
+View saved budget
 </button> 
-</div>
 <span id='loading'></span> 
 <input type='hidden' id='bv' name='bv'>
 </form>	   
@@ -83,11 +59,10 @@ retrieve budget
 
 <section class="normal-tabs line-tab">
 <ul class="nav nav-tabs">
-<!--
 <li class="active">
 <a data-toggle="tab"  href="#tab-autobudget">Budget Results</a>
 </li>
-
+<!--
 <li class="">
 <a data-toggle="tab"  href="#tab-services">Custom Budget</a>
 </li>
@@ -106,8 +81,8 @@ retrieve budget
 
 <dl class="accordion">
 
-<div class="table table-responsive" >
-                            <table class="table cart-table table-responsive" style='background-color:white;' id='budgettable' >
+<div class="table-responsive">
+                            <table class="table cart-table table-responsive" id='budgettable' >
 							
 								
                             </table>
@@ -118,74 +93,42 @@ retrieve budget
 </dl>
 
 <!--price table-->
-<!--
+ <dl class="accordion">
 <div class="row price-table-row">
 
 
+<!--3 column price table-->
 
-<div class="price-col wow fadeInLeft col-md-4" style='background-color:transparent;border-color:transparent;'>
-<h1 onclick="buttonpackage('1000000');topofpage();" style='color:green;text-align:left;background-color' class='well well-sm p-btn' ><img src='img/twb/goldring.jpg' width='46px' class='img-thumbnail'><b> Gold Package</b> </h1>
-<h5><b>1M  Kshs</b></h5>
+<div class="price-col wow fadeInLeft col-md-4">
+<h1 onclick="buttonpackage('1000000');topofpage();" style='color:green;text-align:left;' class='well well-sm p-btn' ><img src='img/twb/goldring.jpg' width='46px' class='img-thumbnail'><b> Gold Package</b> </h1>
+<h6><b>1M  Kshs</b></h6>
 </div>
 
 
 
 
-<div class="price-col  wow fadeInUp col-md-4" style='background-color : transparent;border-color:transparent;'>
+<div class="price-col  wow fadeInUp col-md-4">
 <h1 onclick="buttonpackage('500000');topofpage();" style='color:orange;text-align:left;' class='well well-sm p-btn'> <img src='img/twb/silverring.jpg' width='46px' class='img-thumbnail'><b> Silver Package</b></h1>
-<h5><b>500K  kshs</b></h5>
+<h6><b>500K  kshs</b></h6>
 
 </div>
 
 
 
 
-<div class="price-col wow fadeInRight col-md-4" style='background-color : transparent;border-color:transparent;'>
+<div class="price-col wow fadeInRight col-md-4">
 <h1 onclick="buttonpackage('100000');topofpage();" style='color:gray;' class='well well-sm p-btn' ><img src='img/twb/platinumring.jpg' width='46px' class='img-thumbnail'><b> Platinum Package</b></h1>
-<h5><b> 100K kshs</b></h5>
+<h6><b> 100K kshs</b></h6>
 </div>
 
+<!--3 column price table-->
 
-     
-</div>
--->
-<div class='row' style="margin-top:50px;">
-                        <div class="col-md-4">
-                            <div class="featured-item feature-bg-box white-bg btn-theme-border  text-center">
-                                <div class="icon">
-                                    <img onclick="buttonpackage('100000');topofpage();" src='img/twb/platinumring.jpg' width='48px' class='img-thumbnail'>
-                                </div>
-                                <div class="title text-uppercase">
-                                    <button onclick="buttonpackage('100000');topofpage();" class='btn btn-medium btn-rounded  btn-default'>Platinum Package</button>
-                                </div>
-                                
-                            </div>
-                        </div>
-                       
-                        <div class="col-md-4">
-                            <div class="featured-item feature-bg-box white-bg text-center">
-                                <div class="icon">
-                                    <img onclick="buttonpackage('500000');topofpage();" src='img/twb/silverring.jpg' width='48px' class='img-thumbnail'>
-                                </div>
-                                <div class="title">
-                                    <button onclick="buttonpackage('500000');topofpage();" class='btn btn-small btn-default  btn-transparent'>Silver Package</button>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    
-					 <div class="col-md-4">
-                            <div class="featured-item feature-bg-box white-bg text-center">
-                                <div class="icon">
-                                    <img onclick="buttonpackage('1000000');topofpage();" class="img-thumbnail" width="48px" src="img/twb/goldring.jpg">
-                                </div>
-                                 <div class="title">
-                                    <button onclick="buttonpackage('1000000');topofpage();" class='btn btn-small btn-rounded btn-warning  btn-transparent'>Gold Package</button>
-                                </div>
-                                
-                            </div>
-                        </div>
-					</div>
+
+
+
+</dl>
+
+
 
 <!--price table-->
 <div id='allmodals'></div>
@@ -284,16 +227,10 @@ if (amt===""){
 	
 	amt=0;
 }
-else if (amt==="*"){
-	
-$("#budget_amount").show();	
-	
-}
-else {
 
 $("#budget_amount").val(amt);
 budgetgenerator(amt);
-}
+	
 		
 	}
 	
@@ -402,7 +339,7 @@ var newtable="<thead><tr><th>Image</th><th>Category</th><th>Provider Name</th><t
 	
 	if(totalbudget>0){
 	
-	$("#budgetreturned").html("Total <b>"+totalbudget+"</b> Kshs. <button style='margin-right:2px;' type='submit' id='savebudgetbtn' class='btn btn-sm btn-rounded btn-dark-solid' style='width:136px;' onclick='savebudget();'> <i class='fa fa-save'> </i> save budget</button>  "
+	$("#budgetreturned").html("<i class='fa fa-dollar'></i> Budget Results "+totalbudget+"  <button style='margin-right:2px;' type='submit' id='savebudgetbtn' class='btn btn-sm btn-rounded btn-info' onclick='savebudget();'> <i class='fa fa-save'> </i> save budget </button>  "
 	+" <div id='budgetsavedalert' style='display:none;' role='alert' class='alert alert-danger'> <button aria-label='Close' data-dismiss='alert' class='close' type='button'><span aria-hidden='true'>×</span></button> <i class='fa fa-lg fa-check-circle-o'></i> <strong>Budget Saved </strong> successfully. </div>  ");
 	$("#bv").val(totalbudget);
 	$("#budgetreturned").data("to",totalbudget);
@@ -632,7 +569,7 @@ var uid=new Date().valueOf();
 	{
       console.log('budget added succesfully');
 	  $("#budgetsavedalert").show();
-	  loadbudget();
+	  
     }
 	else {
 		
@@ -647,20 +584,17 @@ function loadbudget()
 {
 	var mdata="<table class='table cart-table table-responsive' ><tr ><th>Date</th><th>Amount</th><th>View</th><th>Delete</th></tr>";
 	budgetdb.allDocs({include_docs:true,ascending: true}).then(function (doc) 
-{
-if(doc.total_rows===0){$("#viewsavedbudget").hide();}	
+{   
 for(a=0;a<doc.total_rows;a++){
 	    var dat={};	   
 	   dat=doc.rows[a];
 	
 mdata+="<tr ><td>"+dat.doc.datesaved+"</td><td>"+dat.doc.amount+" Kshs.</td><td><button class='btn btn-default' onclick=\"showdbtable('"+dat.doc._id+"');\" >View</button></td><td><button class='btn btn-default' onclick=\"isdelete('"+dat.doc._id+"');\" ><i class='fa fa-close'></i></button></td></tr>";
 if(a===(doc.total_rows-1)){ mdata+="</table>"; $("#savedbudgetdata").html(mdata); } //edit table dom after all data is loaded 
-//enable saved budget button
-$("#viewsavedbudget").show();
 }	   
 });	
 }
-loadbudget();
+
 
 function showdbtable(myid)
 {	

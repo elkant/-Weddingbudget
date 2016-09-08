@@ -67,7 +67,7 @@ session_start();
                     <nav id="massive-menu"  class="menuzord "  >
 
                         <!--logo start-->
-                        <a href="index.php" class="logo-brand">
+                        <a href="index.html" class="logo-brand">
                             <img class="img-thumbnail" src="img/logo.png" style='position:relative;' alt=""/>
                         </a>
                         <!--logo end-->
@@ -88,10 +88,15 @@ include 'menu.php';
 	
 
         <!--body content start-->
-		<div data-ng-view style='padding-top:20px;' id='maindiv'></div> <!-- This is the main div that will be used by angular -->
+		<div data-ng-view style='padding-top:100px;' id='maindiv'></div> <!-- This is the main div that will be used by angular -->
 		
 		
-<div  data-bgposition="center center"  data-bgfit="cover" ><?php include 'main.php'; include 'slides.php'; ?> </div>
+		<?php
+//include codes to decide the menu to load
+include 'slides.html';
+
+//the slides page is joined with the portfolio
+?>
 		
        						
 								
@@ -115,19 +120,19 @@ include 'menu.php';
             <div class="container">
 			<div class="col-xs-2"></div>
 			<div class="col-xs-8">
-                <a href="index.php" style='text-align:center;' class="footer-logo wow zoomIn">
+                <a href="index.html" style='text-align:center;' class="footer-logo wow zoomIn">
                     <img class="retina img-responsive col-xs-12"   src="img/logo.png" alt="" />
                 </a>
 				</div>
             <div class="col-xs-2"></div>   
-                <div class="social-link circle m-top-80 m-bot-80 col-xs-12" >
+                <div class="social-link circle m-top-80 m-bot-80" >
                     <a href="#"><i class="fa fa-facebook"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
-                
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
                     <a href="#"><i class="fa fa-google-plus"></i></a>
-                 
+                    <a href="#"><i class="fa fa-behance"></i></a>
                 </div>
-                <div class="copyright col-xs-12">
+                <div class="copyright">
                     &copy; The wedding Budget.
                 </div>
                 <div class="copyright-sub-title text-uppercase">
