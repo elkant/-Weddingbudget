@@ -1,7 +1,7 @@
 <?php
 $servername="localhost";
 $username="root";
-$password="";
+$password="70450289";
 $dbname="weddingbudget";
 
 // create connection
