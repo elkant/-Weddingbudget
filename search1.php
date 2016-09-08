@@ -1,5 +1,23 @@
 <!--portfolio-->
-            <div class="page-content p-bot-0" id="portfolio">
+<style>
+.budget{
+    
+    background-attachment: scroll;
+    background-image: url(img/twb/decor.JPG);
+    background-position: center center;
+    background-repeat: none;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    background-size: 100%;
+    -o-background-size: 100%;
+margin-left:2.5%;
+margin-right:2.5%;
+
+}
+</style>
+
+            <div class="page-content p-bot-0 budget" id="portfolio">
                 <div class="container-fluid">
 
                     <div class="row">
