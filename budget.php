@@ -15,17 +15,25 @@ input[type=radio]:checked ~ .check::before{
 
 .budget{
     
-    background-attachment: scroll;
+  
     background-image: url(img/twb/decor.JPG);
     background-position: center center;
     background-repeat: none;
+    -moz-background-repeat: none;
+    -o-background-repeat: none;
+    -webkit-background-repeat: none;
 
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    background-size: 100%;
-    -o-background-size: 100%;
-margin-left:2.5%;
-margin-right:2.5%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+margin-left:1.5%;
+margin-right:1.5%;
+background-attachment: fixed;
+    background-position: 50% 0;
+    
+  
+
 
 }
 
@@ -614,10 +622,15 @@ function savebudget() {
 	
 var today = new Date();
 var budgetvalue=$("#bv").val();
+var currentloc=$("#budget_location").val();
 var title=$("#budgetreturned").html();
 var dateis=""+today;
 var dateform=dateis.substring(0,16);
-var uid=new Date().valueOf();	
+var uid=new Date().valueOf();
+var budgetsource="auto-generate";
+//(uid,title,budgetsource,dateform,providerid,price,location,htmlcode)
+submittomysql(uid,title,budgetsource,dateform,budgetvalue,currentloc,currenttabledata);
+
    budgetdetails=
         {_id:""+uid,//unique identifier
 	    code:currenttabledata,  //the whole json results. as loaded from search.
@@ -625,7 +638,8 @@ var uid=new Date().valueOf();
 		title:title,
 		amount:budgetvalue,
 		
-        completed: false};
+        completed: false
+    };
   budgetdb.put(budgetdetails, function callback(err, result) 
                               {
     if (!err) 
@@ -642,6 +656,37 @@ var uid=new Date().valueOf();
 }
 
 // a code to load the budget from local storage
+
+function submittomysql(uid,title,budgetsource,dateform,price,location,encodeURIComponent(htmlcode)){
+    
+    
+                   $.ajax({
+			url:'savebudget.php',
+			data:{	id:uid,
+                            title:title,
+                            date:dateform,
+                            budgetsource:budgetsource,			
+				 providerid:providerid,
+                                 price:price,
+                                 location:location,
+                                 htmlcode:htmlcode
+			     },
+			dataType:'html',
+			type:'post',
+			success:function(data){
+				
+			//here you have received a table with the other available vendors. 	
+			console.log(data);	
+			//$('#otherproviders').DataTable();	
+			}
+			
+		});  
+
+ 
+    
+    
+}
+
 
 function loadbudget()
 {
