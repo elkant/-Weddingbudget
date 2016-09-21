@@ -125,7 +125,7 @@ No records found</h3></div>
 					<!--entmainent--><td ng-if="items.providerid=='10'" entity="entertainment" ng-model="entertainment" fetch-data><span ng-repeat="data in entertainment|filter:{id:items.type}:true">{{data.value}}</span></td>
 					<!--entmainent--><td ng-if="items.type=='' || items.type==' '" ></td>
 																
-								<td>{{items.cost}}--{{items.type}}---</td>
+								<td>{{items.cost}}</td>
                                   <td> <button ng-click="addtocart(items,itemsIndex)" >
 																
 																<span >-</span>
