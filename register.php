@@ -43,9 +43,9 @@ session_start();
                                             <div class="col-lg-6 btn-rounded">
 											<div class="form">
                                                 <form class="">
-												 <div>Email </div>
+												 <div>Username </div>
                                                     <div class="form-group">
-                                                        <input type="text"   ng-model="auth.email" name="username" id='username' onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue" value="" class="form-control" placeholder="Login ID">
+                                                        <input type="text"   ng-model="auth.username" name="username" id='username' onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue" value="" class="form-control" placeholder="Login ID">
                                                     </div>
 												<div>Password </div>
                                                     <div class="form-group">
@@ -90,18 +90,21 @@ session_start();
 	  <div class="col-lg-6 wow fadeInUp delay-06s">
 	
           <div class="form">
-		  
-         <div> Company name </div>
-		 <div class="form-group">
-		 <input ng-model="registermodel.account.id"   ng-init="registermodel.credentials.account.id=''" type="hidden" name="id">
-		 <input class="form-control" ng-model="registermodel.credentials.account.name"  type="text" name="" placeholder="Your Company name *" ></div>
-         <div> Email</div><div class="form-group">  <input  class="form-control" ng-model="registermodel.credentials.account.email" type="text" name="" placeholder="Your E-mail *"></div>
-         <div> Type</div><div class="form-group">  
+		   <div> Type</div><div class="form-group">  
 		 <select  class="form-control" ng-model="registermodel.credentials.account.type" >
 		 <option></option>
 		 <option value="user">User</option>
 		 <option value="provider">Provider/Vendor</option>
 		 </select></div>
+         <div ng-if="registermodel.credentials.account.type=='provider'"> Company name </div>
+		 <div class="form-group" ng-if="registermodel.credentials.account.type=='provider'">
+		 
+		 <input class="form-control" ng-model="registermodel.credentials.account.name"  type="text" name="" placeholder="Your Company name *" ></div>
+         <div> Username</div>
+		 <div class="form-group">  <input  class="form-control" ng-model="registermodel.credentials.account.username" type="text" name="" placeholder="Your Username/Email *">
+		 <input ng-model="registermodel.credentials.account.id"   ng-init="registermodel.credentials.account.id=''" type="hidden" name="id">
+		 </div>
+        
          <div> Password</div><div class="form-group">  <input  class="form-control" ng-model="registermodel.credentials.account.password" type="password" name="" placeholder="Your Password *"></div>
          <div> Repeat Password</div><div class="form-group">  <input  class="form-control" ng-model="registermodel.pwdcheck.rptpwd" type="password"   name="" placeholder="Repeat Your Password *"></div>
 		 <div class="form-group full-width">
@@ -109,7 +112,7 @@ session_start();
                                                 Register 
                </button>
 			   
-			  
+			  <div><h4>{{errmsg}}</h4><div>
 		 
 		  
 		

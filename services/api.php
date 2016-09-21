@@ -48,18 +48,17 @@
 			if($this->get_request_method() != "POST"){
 				$this->response('',406);
 			}
-			// $email = $this->_request['email'];		
-			// $password = $this->_request['pwd'];
+			
 			
 				$credential = json_decode(file_get_contents("php://input"),true);
-				  $email = $credential['email'];
+				  $username = $credential['username'];
 			   $password =$credential['pwd'];
 			    $pwd=  md5($password);
 				//echo $pwd;
-			if(!empty($email) and !empty($password)){
-				if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+			if(!empty($username) and !empty($password)){
+
 					//$query="SELECT accountid, name, email FROM account WHERE email = '$email' AND password = '".md5($password)."' LIMIT 1";
-$query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND password = '$pwd' LIMIT 1";
+$query="SELECT id, name, username,type FROM account WHERE username = '$username'  AND password = '$pwd' LIMIT 1";
 
 					
 					$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
@@ -72,12 +71,13 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 						
 							$_SESSION['id']= $result['id'];
 							$_SESSION['name']= $result['name'];
-							$_SESSION['email']=$result['email'];							 
+							$_SESSION['username']=$result['username'];							 
 							$_SESSION['type']= $result['type'];	
 							
-								$idvalue=$result['id'];			 
+								$idvalue=$result['id'];	
+								
 							//header("location: budget.html");
-							if(isset($_SESSION["email"])) {
+							if(isset($_SESSION["username"])) {
 							
 							//	header("Location:budget.php");
 								}
@@ -104,7 +104,7 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 							
 					}
 							$this->response('No record match ', 204);	// If no records "No Content" status
-				}
+				
 			}
 			$error = array('status' => "Failed", "msg" => "Invalid Email address or Password");
 			
@@ -158,7 +158,7 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 		
 		
 		
-		private function fetchitems(){	
+		private function fetchitems1(){	
 			if($this->get_request_method() != "GET"){
 				$this->response('',406);
 			}
@@ -177,12 +177,14 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 				);
                while($row = $r->fetch_assoc()){
 					$result['provider_detail'][] = $row;
-					$query2="SELECT * FROM provider where id = '".$row['id']."'";					
+					$query2="SELECT * FROM provider where id = '".$row['id']."'";
+						//echo 'query----->'. $query2;					
 						$r2 = $this->mysqli->query($query2) or die($this->mysqli->error.__LINE__);
 
 						if($r2->num_rows > 0){
-						while($row = $r2->fetch_assoc()){
-						$result['provider']= $row;
+						while($rows = $r2->fetch_assoc()){
+							echo 'row--->'.$rows;
+						$result['provider']= $rows;
 								}					
 						}				
 
@@ -192,6 +194,61 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 			}
 			$this->response('',204);	// If no records "No Content" status
 		}
+		
+		
+			
+		private function fetchitems(){	
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			 $category = $this->_request['category'];		
+			$cost="";
+			
+			 if($cost=='undefined'){
+				 $cost="";
+			 }else{
+				  $cost = $this->_request['cost'];
+				 
+			 }
+			// $query="SELECT * from provider_detail.provider where providerid='$category' OR cost='$cost' where ";
+			// $getpriorityitems="select priority, type as itemname, services.id as itemid from budgetpriority join
+			 //services on budgetpriority.serviceid=services.id  ";
+   
+	
+	           $query="SELECT * from provider JOIN provider_detail ON  provider.id=provider_detail.id where provider_detail.providerid='$category' OR provider_detail.cost='$cost'";
+
+			$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+
+			if($r->num_rows > 0){
+				$result = array();
+				
+               while($row = $r->fetch_assoc()){
+					$result['provider'][]= $row;
+					
+								
+
+				}
+			
+			$this->response($this->json($result), 200); // send user details
+			}
+			$this->response('',204);	// If no records "No Content" status
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		private function fetch(){	
 			if($this->get_request_method() != "GET"){
@@ -305,20 +362,23 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 		
 			                protected function register() {
 									$id= uniqid();
+									$username;
 										$datas = json_decode(file_get_contents("php://input"),true);
 										  foreach($datas as $column => $value){
 														foreach($value as $key => $value){
 															
-															echo $key .'___'.$value;
+														
 															
 															if($key=='password'){
 																$value = md5($value);
 															}
-															
 															if($key=='id'){
+															
 																$value = $id;
 															}
-															
+															if($key=='username'){
+																$username = $value;
+															}
 																$cols[]=$key;
 																$vals[] = $value;
 																
@@ -328,7 +388,17 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 													$colvals="'".implode("','", $vals)."'";
 																					
 												//	echo $colnames.'======'.$colvals;
+                                         $checkquery="SELECT  username FROM account WHERE username = '$username'";
+											$r = $this->mysqli->query($checkquery) or die($this->mysqli->error.__LINE__);
 
+													
+													if($r->num_rows > 0) {
+														
+														$success = array('status' => "Failed", "msg" => "Username already taken", "data" => $datas);
+																$this->response($this->json($success),200);
+														
+													}else{
+												
 													$query= "INSERT INTO $column ($colnames) VALUES ($colvals)";
 
 															if(!empty($datas)){
@@ -337,7 +407,7 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 																$this->response($this->json($success),200);
 															}else
 																$this->response('',204);	// "No Content" status
-														}
+										            }}
 											}	
 
 
@@ -493,10 +563,12 @@ $query="SELECT id, name, email,type FROM account WHERE email = '$email'  AND pas
 												if($this->get_request_method() != "DELETE"){
 													$this->response('',406);
 												}
-												$id = (int)$this->_request['id'];
+												$id = $this->_request['id'];
+												$pdid = $this->_request['pdid'];
 												$tablename = $this->_request['tablename'];
+												echo 'ID    ------>>> '+$id;
 												if($id > 0){				
-													$query="DELETE FROM $tablename WHERE id = $id";
+													$query="DELETE FROM $tablename WHERE id = '$id' and pdid=$pdid";
 													$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
 													$success = array('status' => "Success", "msg" => "Successfully deleted one record.");
 													$this->response($this->json($success),200);

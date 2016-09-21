@@ -154,10 +154,9 @@ app01.service('fileUpload', ['$http', function ($http) {
 		    
 			
 			
-			$scope.removeRow = function(id,tablename){
-				console.log(id+"---"+tablename);
+			$scope.removeRow = function(id,tablename,pdid){
 				if(id>0){
-					  $scope.datamodel[tablename].splice(id,1);
+					$scope.datamodel[tablename].splice(id,1);
 				}
 		  
 			  }
@@ -310,39 +309,119 @@ app01.directive('fetchData', function () {
  ]);
 
 
-app01.controller('homeCtrl',['$scope','$routeParams','$http','$location','$sce','$route','fileUpload','services','$window','$filter', 
-function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services,$window,$filter){
+app01.controller('homeCtrl',['$scope','$routeParams','$http','$location','$sce','$route','fileUpload','services','$window','$filter','ngDialog', 
+function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services,$window,$filter,ngDialog){
     $scope.datamodel={};
       $scope.datamodel.provider={'id':''};
 	  $scope.datamodel.provider_detail=[{'id':'','providerid':'','cost':'', 'capacity':'','type':'','uom':'', 'location':'','location':'','area':'','img':''}];
      
    var serviceBase = 'services/'
   //  $scope.searchmodel={};
-  			$scope.cart=[]
+  $scope.cart=[];
+  
+/*   if(typeof(Storage) !== "undefined") {
+if(localStorage.getItem("cart")) {
+  if(checkDate(localStorage.getItem("lastSave"))) {
+    $scope.cart = localStorage.getItem("cart");
+	console.log('here');
+	console.log(localStorage.getItem("cart"));
+  } else {
+    $scope.cart = [];
+  }
+}}
+  
+  
+  function checkDate(date) {
+	  console.log("checkdate  "+date);
+  if(date < new Date().getTime()) {
+    return false;
+  }
+  return true;
+} */
+  		
 	$scope.search = function(data) {
-		
+			//$scope.saved=[];
+			$scope.resultmodel=[];
           $scope.searchmodel=services.getItems(data.category,data.cost);
 		  $http.get(serviceBase + 'fetchitems?category='+data.category+' && cost='+data.cost).success(function(response){
 		   $scope.resultmodel =response;
+		   console.log(response);
 
 				var total=0;
 	       $scope.addtocart = function pushtoarray(value,index) {
 			var idx = $scope.cart.indexOf(value);
 	    if (idx > -1) {
 		  $scope.cart.splice(idx,1);
-		   $scope.resultmodel.provider_detail[index].label="Add"
-		   total=total-parseInt($scope.resultmodel.provider_detail[index].cost);	   
+		   $scope.resultmodel.provider[index].label="Add"
+		   total=total-parseInt($scope.resultmodel.provider[index].cost);	   
            $scope.totalcost=total;	
 		}
 		else {
 		  $scope.cart.push(value);
-		   $scope.resultmodel.provider_detail[index].label="Remove";
-			total=total+parseInt($scope.resultmodel.provider_detail[index].cost);	   
+		   $scope.resultmodel.provider[index].label="Remove";
+			total=total+parseInt($scope.resultmodel.provider[index].cost);	   
 			$scope.totalcost=total;
 	   }
 	  
 		};
-		});}
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		}
+		
+		$scope.showSaved = function(saved){
+			$scope.savedBudget=saved;
+					
+	    ngDialog.open({
+			template: 'savedbudget.jsp',
+			className : 'ngdialog-theme-default w800',
+			showClose: true,
+			closeByDocument: true,
+			closeByEscape: true,
+			appendTo: false,
+			scope: $scope
+		});	
+	     };
+	
+		console.log(typeof(Storage));
+		
+if(typeof(Storage) !== "undefined") {
+if(localStorage.getItem("cart")) {
+console.log($scope.saved);
+if(checkDate(localStorage.getItem("lastSave"))) {
+ $scope.saved=(JSON.parse(JSON.stringify(localStorage.getItem("cart"))));
+			  } else {
+					$scope.saved = {};
+				  }}}	
+						
+		
+function checkDate(date) {
+  if(date < new Date().getTime()) {
+    return false;
+  }
+  return true;
+}
+
+		
+		
+$scope.saveToLocal = function(carts){
+	console.log(carts);
+	$scope.carts=carts;
+	localStorage.setItem("cart", JSON.stringify($scope.carts));
+    localStorage.setItem("lastSave", new Date().getTime() + (3 * 24 * 60 * 60 * 1000));
+	
+}
+		
+		
+		
+		
+		
 		
 		$scope.getValue = function (propname,table) {
 			console.log(propname+'++++'+table);
@@ -470,7 +549,7 @@ function($scope,$routeParams,$http,$location,$sce,$route,fileUpload,services,$wi
 				 
 				 
 				 
-				 $route.reload();
+				 //$route.reload();
 				 
 				// $location.path('/providers');
 				
@@ -590,6 +669,28 @@ app01.controller('listCtrl', function ($scope, services,$http,ngDialog,$route) {
 				
 			});
 			};
+			
+			
+			$scope.removeRow = function(id,tablename,pid,pdid){
+				if(id>0){
+					
+					
+					if(pdid==''){
+						 $scope.datamodel[tablename].splice(id,1);
+					} else{
+						$scope.datamodel[tablename].splice(id,1);
+						console.log(pdid);
+						$http.delete(serviceBase + 'delete?id=' + pid +'&& tablename='+tablename+'&& pdid= '+pdid).then(function (status) {
+	                     return status.data;
+							});
+					}
+					
+					  //$scope.datamodel[tablename].splice(id,1);
+				}
+		  
+			  }
+	
+			
 	   
 });
 
