@@ -413,6 +413,7 @@ $query="SELECT id, name, username,type FROM account WHERE username = '$username'
 
 											// insert with array 
 												protected function insert(){
+													session_start();
 																$id= uniqid();
 												$arr = json_decode(file_get_contents("php://input"),true);
 																echo $arr;
@@ -474,7 +475,7 @@ $query="SELECT id, name, username,type FROM account WHERE username = '$username'
 																  echo 'New record created successfully for id   '. $id;
 															       } */
 														    $r = $this->mysqli->query($sql1) or die($this->mysqli->error.__LINE__);
-														           
+														     $_SESSION['content']= "edit";  
 															
 																} 
 															

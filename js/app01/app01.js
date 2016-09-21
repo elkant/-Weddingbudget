@@ -393,9 +393,12 @@ if(localStorage.getItem("cart")) {
 		
 if(typeof(Storage) !== "undefined") {
 if(localStorage.getItem("cart")) {
-console.log($scope.saved);
+
 if(checkDate(localStorage.getItem("lastSave"))) {
+
+ 
  $scope.saved=(JSON.parse(JSON.stringify(localStorage.getItem("cart"))));
+ console.log(angular.fromJson($scope.saved));
 			  } else {
 					$scope.saved = {};
 				  }}}	
@@ -411,9 +414,11 @@ function checkDate(date) {
 		
 		
 $scope.saveToLocal = function(carts){
-	console.log(carts);
-	$scope.carts=carts;
-	localStorage.setItem("cart", JSON.stringify($scope.carts));
+	
+	$scope.savedBudget=carts;
+	
+	console.log($scope.savedBudget);
+	localStorage.setItem("cart", JSON.stringify($scope.savedBudget));
     localStorage.setItem("lastSave", new Date().getTime() + (3 * 24 * 60 * 60 * 1000));
 	
 }
@@ -520,6 +525,7 @@ $scope.saveToLocal = function(carts){
 				
 				if(results.redirect=='edit'){
 				$location.path('/edit');
+				$route.reload();
 				$window.location.reload();
 				  }else{
 					  $location.path('/providers');

@@ -32,9 +32,10 @@ session_start();
     <link href="css/default-theme3860.css?v=1" rel="stylesheet">
 	<link href="css/font-awesome.css" rel="stylesheet" />
 	<link href="css/tabs.css" rel="stylesheet" />
+  	<link href="css/nomoretables.css" rel="stylesheet" />
    <link href="css/ngdialog/ngDialog-theme-default.css" rel="stylesheet" />
    <link href="css/ngdialog/ngDialog-theme-plain.css" rel="stylesheet" />
-<link href="css/ngdialog/ngDialog.css" rel="stylesheet" />
+    <link href="css/ngdialog/ngDialog.css" rel="stylesheet" />
 
     <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="slider-revolution/css/extralayers.css" media="screen">

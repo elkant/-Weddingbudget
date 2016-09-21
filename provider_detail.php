@@ -74,7 +74,7 @@ session_start();
              
 		
 	  
-	   <tr><td colspan="5">
+	  </table>
 	   <table class="table table-bordered table-primary table-striped" id="no-more-tables">
 	  <!-- <tr>
 	   <th>Provider</th>
