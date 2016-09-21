@@ -66,14 +66,8 @@ session_start();
 		   <tr><td class="control-label">  Other Details</td><td><div  class="form-group"> 
 		   <textarea class="form-control maindetails" placeholder="Description" required data-ng-model="datamodel.provider.comments" cols="0" rows="0" >Other Details</textarea></div></td></tr>
           
-			 
-             
-			<tr>			
-		<td class="col-lg-3" style="padding-left:20px; "> 	<div  class="form-group"> <button type="button" data-ng-click="addRow('provider_detail')">
-			Add Service </div></button></td>
-			</tr>
 	  
-	   <tr><td colspan="3">
+	   <tr><td colspan="5">
 	   <table class="table table-bordered table-primary table-striped" style="width:100%">
 	  <!-- <tr>
 	   <th>Provider</th>
@@ -184,7 +178,7 @@ session_start();
  <div class="col-md-6 form-group">
                                        
                                         <div class="form-group full-width">
-                                            <button type="submit" class="btn btn-small btn-dark-solid " data-ng-submit="updateCustomer(datamodel)" >
+                                            <button type="submit" class="btn btn-small btn-dark-solid " data-ng-click="updateCustomer(datamodel)" >
                                                 Update 
                                             </button>
                                         </div>

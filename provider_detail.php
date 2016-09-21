@@ -38,6 +38,7 @@ session_start();
   <div class="container">
     <section class="main-section contact" id="contact">
      <div class="row">
+	 <form>
           <div>
           <div class="form" >
 		  <table class="col-lg-10 wow fadeInUp delay-06s" ><tbody>
@@ -71,10 +72,7 @@ session_start();
           
 			 
              
-			<tr>			
-		<td class="col-lg-3" style="padding-left:20px; "> 	<div  class="form-group"> <button type="button" data-ng-click="addRow('provider_detail')">
-			Add Service </div></button></td>
-			</tr>
+		
 	  
 	   <tr><td colspan="5">
 	   <table class="table table-bordered table-primary table-striped" id="no-more-tables">
@@ -193,7 +191,7 @@ session_start();
  <div class="col-md-6 form-group">
                                        
                                         <div class="form-group full-width">
-                                            <button class="btn btn-small btn-dark-solid " data-ng-submit="saveCustomer(datamodel)" >
+                                            <button class="btn btn-small btn-dark-solid " data-ng-click="saveCustomer(datamodel)" >
                                                 Register 
                                             </button>
                                         </div>
