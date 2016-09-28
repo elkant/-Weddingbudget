@@ -16,7 +16,7 @@ input[type=radio]:checked ~ .check::before{
 .budget{
     
   
-    background-image: url(img/twb/decor.JPG);
+    background-image: url(img/twb/decor.JPEG);
     background-position: center center;
     background-repeat: none;
     -moz-background-repeat: none;
@@ -629,7 +629,7 @@ var dateform=dateis.substring(0,16);
 var uid=new Date().valueOf();
 var budgetsource="auto-generate";
 //(uid,title,budgetsource,dateform,providerid,price,location,htmlcode)
-submittomysql(uid,title,budgetsource,dateform,budgetvalue,currentloc,currenttabledata);
+submittomysql(uid,title,budgetsource,dateform,budgetvalue,currentloc,encodeURIComponent(currenttabledata));
 
    budgetdetails=
         {_id:""+uid,//unique identifier
@@ -657,29 +657,26 @@ submittomysql(uid,title,budgetsource,dateform,budgetvalue,currentloc,currenttabl
 
 // a code to load the budget from local storage
 
-function submittomysql(uid,title,budgetsource,dateform,price,location,encodeURIComponent(htmlcode)){
+function submittomysql(uid,title,budgetsource,dateform,price,location,htmlcode){
     
-    
+    console.log("send to mysql");
                    $.ajax({
 			url:'savebudget.php',
-			data:{	id:uid,
+			data:{id:uid,
                             title:title,
                             date:dateform,
-                            budgetsource:budgetsource,			
-				 providerid:providerid,
+                            budgetsource:budgetsource,
                                  price:price,
                                  location:location,
-                                 htmlcode:htmlcode
+                                 htmlcode:htmlcode,
+                                 providerid:'0'
 			     },
 			dataType:'html',
 			type:'post',
 			success:function(data){
-				
-			//here you have received a table with the other available vendors. 	
+				 	
 			console.log(data);	
-			//$('#otherproviders').DataTable();	
-			}
-			
+			}			
 		});  
 
  

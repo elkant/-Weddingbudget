@@ -41,7 +41,7 @@ $date=$_POST["date"]; //get providerid
 
 $price=$_POST["price"];     //get price per item
 $location=$_POST["location"];   //location 
-$htmlcode=$_POST["budgetcode"];   //
+$htmlcode=$_POST["htmlcode"];   //
 
 include 'db.php';
 
@@ -57,9 +57,10 @@ $query=" insert into budget(budgetid,customerid,providerID,price,location,htmlco
 $executeexisting=mysqli_query($conn,$checkexisting) or die(mysql_error());
 if($executeexisting)
 {
-        if(mysqli_num_rows($executequery)==0 ){
+        if(mysqli_num_rows($executeexisting)==0 ){
         //insert existing 
-         
+         echo $query;
+            
         if(mysqli_query($conn,$query)){
             
             echo " <font color='green'>budget saved successfully </font>";
