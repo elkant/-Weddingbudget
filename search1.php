@@ -1,23 +1,5 @@
 <!--portfolio-->
-
-<style>
-.budget{
-    
-    background-attachment: scroll;
-    <!--background-image: url(img/twb/decor.JPG);-->
-    background-position: center center;
-    background-repeat: none;
-
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    background-size: 100%;
-    -o-background-size: 100%;
-margin-left:2.5%;
-margin-right:2.5%;
-
-}
-</style> 
-            <div class="page-content p-bot-0 budget" id="portfolio">
+            <div class="page-content p-bot-0" id="portfolio">
                 <div class="container-fluid">
 
                     <div class="row">
@@ -31,19 +13,60 @@ margin-right:2.5%;
 										
 								</li>
                                 <li style="margin-right:2%"> <input style="box-shadow: none;border: 1px solid #e5e5e5; border-radius: 3px;width:100%;height:34px; " data-ng-model="searchmodel.cost" type="text" name="" placeholder="Cost "></li>
-                                <li style="margin-right:2%"><button class="btn btn-small btn-dark-solid "  ng-click="search(searchmodel)" >Search</button></li>
-
+                                <li style="margin-right:2%"><button class="btn btn-small btn-dark-solid "  ng-click="search(searchmodel)" >Search </button></li>
+ 
                             </ul>
                         </div>
-					<div class="">
-                        <div class="portfolio  portfolio-gallery gutter m-bot-0 inline-block col-md-8">
-						
-                            <div class="portfolio-item col-md-4" ng-repeat="(pdIndex,pd) in resultmodel.provider" style="height:inherit;">
+					<div class="col-md-8">
+					
+					<div class="portfolio  portfolio-gallery gutter m-bot-0 inline-block">
+					<div class="duration">    
+									<button type="submit" ng-click="showSaved(x)">Show Budget</button>										
+                         </div>
+							   <div class="thumb">
+					<table class="table table-bordered table-primary table-striped" >
+					<!--<tr><td>{{x}}</td></tr>
+					<tr ng-repeat="n in x.saved"><td>{{n.id}}</td></tr>-->
+					
+					<tr ng-repeat="(pdIndex,pd) in resultmodel.provider" >
+														<td><b>  {{pd.name}} </b> </td>
+                                                        <td> <img src="uploads/{{pd.img}}" class="editimg" alt=""></td>
+			                                            <td>{{pd.email}}</td>
+													    <td>{{pd.websiteurl}}</ts>
+													 		<td ng-if="pd.providerid!=''"  >
+															<span ng-repeat="serv in services | filter:{id:pd.providerid}:true" >{{serv.type}}</span>
+															</td>
+															<td ng-if="pd.capacity!=''">
+															 <div entity = "capacityoptions" ng-model="capacityoptions" fetch-data><span ng-repeat="data in capacityoptions|filter:{id:pd.capacity}:true">{{data.value}}</span></div>
+							     
+															</td>
+															<td ng-if="pd.location!=''">
+															<div entity = "location" ng-model="location" fetch-data><span ng-repeat="data in location|filter:{id:pd.location}:true">{{data.value}}</span></div>
+															</td>
+															<td ng-if="pd.area!=''">{{pd.area}}</td>
+															<td ng-if="pd.uom!=''"> {{pd.uom}}<td>
+															<td ng-if="pd.cost!=''">{{pd.cost}}</td>
+													
+															<td><button ng-click="addtocart(pd,pdIndex)" >
+																<span ng-if="!pd.label">Add</span>
+																<span ng-if="pd.label!=''">{{pd.label}}</span>
+																</button>
+															 </td>
+															 </tr>
+					</table>
+					
+					</div></div>
+					
+					
+                     <!--   <div class="portfolio  portfolio-gallery gutter m-bot-0 inline-block col-md-8">
+						<div class="portfolio-item col-md-4" ng-repeat="(pdIndex,pd) in resultmodel.provider" style="height:500px;">
 							   <div class="thumb">
 <!--<img src="img/twb/wedding_venue1.jpg" alt="">-->
-                                    <div class="portfolio">
+                                   <!-- <div class="portfolio">
                                        <div class="price-col wow fadeInLeft">
 											<div class="portfolio-description" > 
+											
+											
 												<ul style='text-align:left;' >	
 												
 													<li> <h1 style='color:#f400a1;text-align:left;' class='well well-sm' ><b>  {{pd.name}} </b> </h1>
@@ -76,7 +99,7 @@ margin-right:2.5%;
 											</div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 <div ng-if="resultmodel.length==0">
 <h3 style="text-align:center;">
 <div class="cart-img">
@@ -88,9 +111,9 @@ No records found</h3></div>
 
 
                         </div>
-						</div>
+					
 						<div class="col-md-4" ng-if="cart.length!='' || cart.length!=0">
-						<div class="portfolio portfolio-gallery gutter m-bot-0 inline-block">
+						<div class=" portfolio-gallery gutter m-bot-0 inline-block">
 						  <div class="portfolio-item" >
 						  <div class="portfolio">
                                        <div class="price-col wow fadeInLeft">
@@ -102,12 +125,11 @@ No records found</h3></div>
                                     <div class="dollar">
                                        <p>Total: {{totalcost}}</p>   <span>&nbsp; KSHS </span>
                                     </div>
-                                  <!--  <div class="duration">    
+                                    <div class="duration">    
 									<button type="submit" ng-click="saveToLocal(cart)">	Save Budget</button>										
                                     </div>
-									<div class="duration">    
-									<button type="submit" ng-click="showSaved(saved)">	Show Budget</button>										
-                                    </div>-->
+						
+									
                                 </div>
 								<table class="table table-bordered table-primary table-striped">
 								<tr>
@@ -130,11 +152,9 @@ No records found</h3></div>
 																
 																<span >-</span>
 										</button> 
+										<!--{{saved}} ==={{savedBudget}}-->
 								  </td>
                                 </tr>
-								
-								
-								
 								</table>
                                 
                             </div>

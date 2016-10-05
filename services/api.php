@@ -58,7 +58,10 @@
 			if(!empty($username) and !empty($password)){
 
 					//$query="SELECT accountid, name, email FROM account WHERE email = '$email' AND password = '".md5($password)."' LIMIT 1";
-$query="SELECT id, name, username,type FROM account WHERE username = '$username'  AND password = '$pwd' LIMIT 1";
+					
+					
+					
+$query="SELECT id, name, username,type,emailverified FROM account WHERE username = '$username'  AND password = '$pwd'  LIMIT 1";
 
 					
 					$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
@@ -68,7 +71,12 @@ $query="SELECT id, name, username,type FROM account WHERE username = '$username'
 					
 							$result = $r->fetch_assoc();
 							//$row  = mysql_fetch_array($r);
-						
+					
+						if( $result['emailverified']=="NO"){
+								 $error = array('status' => "Error", "msg" => "Account not verified");
+							 $this->response($this->json($error), 400);
+							
+						}else{
 							$_SESSION['id']= $result['id'];
 							$_SESSION['name']= $result['name'];
 							$_SESSION['username']=$result['username'];							 
@@ -76,10 +84,10 @@ $query="SELECT id, name, username,type FROM account WHERE username = '$username'
 							
 								$idvalue=$result['id'];	
 								
-							//header("location: budget.html");
+							header("location: budget.html");
 							if(isset($_SESSION["username"])) {
 							
-							//	header("Location:budget.php");
+								header("Location:budget.php");
 								}
 								
 				$selectquery="SELECT * FROM provider WHERE accountid = '$idvalue' LIMIT 1";
@@ -102,12 +110,13 @@ $query="SELECT id, name, username,type FROM account WHERE username = '$username'
 							//$success = array('status' => "Success", "msg" => "Registration Successfully.", "data" => $datas);
 							//$this->response($this->json($success),200);
 							
-					}
-							$this->response('No record match ', 204);	// If no records "No Content" status
+					}}
+							 $error = array('status' => "Error", "msg" => "No record match found");
+							 $this->response($this->json($error), 400);
+							//$this->response('No record match ', 204);	// If no records "No Content" status
 				
 			}
-			$error = array('status' => "Failed", "msg" => "Invalid Email address or Password");
-			
+			$error = array('status' => "Failed", "msg" => "Invalid Email address or Password");			
 			$this->response($this->json($error), 400);
 		}
 		
@@ -363,6 +372,7 @@ $query="SELECT id, name, username,type FROM account WHERE username = '$username'
 			                protected function register() {
 									$id= uniqid();
 									$username;
+									$verificationcode='V'.uniqid();
 										$datas = json_decode(file_get_contents("php://input"),true);
 										  foreach($datas as $column => $value){
 														foreach($value as $key => $value){
@@ -376,6 +386,11 @@ $query="SELECT id, name, username,type FROM account WHERE username = '$username'
 															
 																$value = $id;
 															}
+															if($key=='emailverificationcode'){
+															
+																$value = $verificationcode;
+															}
+															
 															if($key=='username'){
 																$username = $value;
 															}

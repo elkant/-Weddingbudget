@@ -103,6 +103,7 @@ session_start();
          <div> Username</div>
 		 <div class="form-group">  <input  class="form-control" ng-model="registermodel.credentials.account.username" type="text" name="" placeholder="Your Username/Email *">
 		 <input ng-model="registermodel.credentials.account.id"   ng-init="registermodel.credentials.account.id=''" type="hidden" name="id">
+		 <input ng-model="registermodel.credentials.account.emailverificationcode"  ng-init="registermodel.credentials.account.emailverificationcode=''" type="hidden" name="emailverificationcode">
 		 </div>
         
          <div> Password</div><div class="form-group">  <input  class="form-control" ng-model="registermodel.credentials.account.password" type="password" name="" placeholder="Your Password *"></div>

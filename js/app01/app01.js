@@ -364,18 +364,16 @@ if(localStorage.getItem("cart")) {
 	   }
 	  
 		};
+		
+		
+		
+	 
+		
 		});
-		
-		
-		
-		
-		
-		
-		
-		
 		}
 		
 		$scope.showSaved = function(saved){
+			console.log(saved);
 			$scope.savedBudget=saved;
 					
 	    ngDialog.open({
@@ -393,14 +391,14 @@ if(localStorage.getItem("cart")) {
 		
 if(typeof(Storage) !== "undefined") {
 if(localStorage.getItem("cart")) {
-
+$scope.x={};
 if(checkDate(localStorage.getItem("lastSave"))) {
 
  
- $scope.saved=(JSON.parse(JSON.stringify(localStorage.getItem("cart"))));
+ $scope.x.saved=(JSON.parse(localStorage.getItem("cart")));
  console.log(angular.fromJson($scope.saved));
 			  } else {
-					$scope.saved = {};
+					$scope.x.saved = {};
 				  }}}	
 						
 		
@@ -533,11 +531,28 @@ $scope.saveToLocal = function(carts){
 				  }
 				
 				//$window.location.href = '#/providers';
-		       alert('Login Successful');
+		      // alert(response.msg);
+			   console.log(results)
+			   
+			   var n = noty({text: results.msg,
+                        layout: 'center',
+                        type: 'Success', 
+                         timeout: 1800});
+                    
+			   
 		         
 			}).error(function(response) {
 					alert("Failed to Login");
-					 $location.path('#/');
+					console.log('RESPONSE   ---->>>>>  '+response);
+					console.log('RESPONSE   ---->>>>> msg '+response.msg);
+					
+					
+			   var n = noty({text: response.msg,
+                        layout: 'center',
+                        type: 'Error', 
+                         timeout: 1800});
+					
+					// $location.path('#/');
 				});
 	
 	          }
@@ -550,12 +565,23 @@ $scope.saveToLocal = function(carts){
 		 } else{
 	  $http.post(serviceBase + 'register', angular.toJson(registerdata.credentials)).success(function (results) {
 				
-		         console.log(results.msg);
+		        // console.log(results.msg);
 				 
+				  var n = noty({text: results.msg,
+                        layout: 'center',
+                        type: 'Success', 
+                         timeout: 1800});
+              
+				 if(results.msg=='Username already taken'){
+					 
+					 
+				 }else{
+					 
+					 	 $route.reload();
+					 
+				 }
 				 
-				 
-				 
-				 //$route.reload();
+			
 				 
 				// $location.path('/providers');
 				
@@ -565,6 +591,13 @@ $scope.saveToLocal = function(carts){
 				 
 			}).error(function(response) {
 					console.log("Failed to Register");
+					
+					 var n = noty({text: response.msg,
+                        layout: 'center',
+                        type: 'Success', 
+                         timeout: 1800});
+              
+					
 		 });
 		 }
 	
@@ -590,6 +623,11 @@ $scope.saveToLocal = function(carts){
 			 	$scope.message=results.msg;
 				
 				 $route.reload();
+				  var n = noty({text: results.msg,
+                        layout: 'center',
+                        type: 'Success', 
+                         timeout: 1800});
+              
 				 
 				// $location.path('/providers');
 				
@@ -597,6 +635,11 @@ $scope.saveToLocal = function(carts){
 				
 			}).error(function(response) {
 					console.log("Failed to start process");
+					 var n = noty({text: response.msg,
+                        layout: 'center',
+                        type: 'error', 
+                         timeout: 1800});
+              
 				});
 		
     };

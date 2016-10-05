@@ -169,6 +169,13 @@ include 'menu.php';
    <script src="js/tabs.js"></script>
    <script src="js/ngDialog.js" type="text/javascript"></script>
    
+<script type="text/javascript" src="js/noty/jquery.noty.js"></script>
+
+<script type="text/javascript" src="js/noty/layouts/top.js"></script>
+<script type="text/javascript" src="js/noty/layouts/center.js"></script>
+<!-- You can add more layouts if you want -->
+
+<script type="text/javascript" src="js/noty/themes/default.js"></script>
 
     <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
     <script src="slider-revolution/js/jquery.themepunch.tools.min.js"></script>
