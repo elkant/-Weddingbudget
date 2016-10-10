@@ -5,8 +5,8 @@
 
 
             <div class="page-content" ng-controller="listCtrl">
-<div class="col-md-11 col-md-offset-1">							
- <div class="col-lg-12">  
+<div class="col-md-11 ">							
+ <div class="">  
  <div ><h4 class="text-uppercase" style="text-align:center;"> Generate/Create Budget  </h4></div> 
  <div class="divider d-border d-solid d-single text-center">
 <i class="fa fa-xing"></i>

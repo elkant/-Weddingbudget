@@ -1,4 +1,5 @@
 <!--portfolio-->
+<div class="smallbg">
             <div class="page-content p-bot-0" id="portfolio">
                 <div class="container-fluid">
 
@@ -14,17 +15,18 @@
 								</li>
                                 <li style="margin-right:2%"> <input style="box-shadow: none;border: 1px solid #e5e5e5; border-radius: 3px;width:100%;height:34px; " data-ng-model="searchmodel.cost" type="text" name="" placeholder="Cost "></li>
                                 <li style="margin-right:2%"><button class="btn btn-small btn-dark-solid "  ng-click="search(searchmodel)" >Search </button></li>
- 
+                                <li  ng-if="savedBudget.length !=0 && savedBudget.length !='' "style="margin-right:2%"><button class="btn btn-small btn-dark-solid "  ng-click="showSaved(x)" >Show Budget </button></li>
+
                             </ul>
                         </div>
-					<div class="col-md-8">
+						<div class="col-md-12">
+					<div class="col-md-9">
 					
 					<div class="portfolio  portfolio-gallery gutter m-bot-0 inline-block">
-					<div class="duration">    
-									<button type="submit" ng-click="showSaved(x)">Show Budget</button>										
-                         </div>
-							   <div class="thumb">
-					<table class="table table-bordered table-primary table-striped" >
+				
+							   <div class="table-responsive">
+					<table class="price-col col-md-9 table table-bordered table-condensed table-primary table-striped" style="background-color:rgba(204, 0, 153,0.9); opacity:.9;   font-family:Arial; font-size: 16px; line-height: 1.428571429; color: black;
+					" >
 					<!--<tr><td>{{x}}</td></tr>
 					<tr ng-repeat="n in x.saved"><td>{{n.id}}</td></tr>-->
 					
@@ -41,7 +43,7 @@
 							     
 															</td>
 															<td ng-if="pd.location!=''">
-															<div entity = "location" ng-model="location" fetch-data><span ng-repeat="data in location|filter:{id:pd.location}:true">{{data.value}}</span></div>
+															<div ng-if="pd.location!=''" entity = "location" ng-model="location" fetch-data><span ng-repeat="data in location|filter:{id:pd.location}:true">{{data.value}}</span></div>
 															</td>
 															<td ng-if="pd.area!=''">{{pd.area}}</td>
 															<td ng-if="pd.uom!=''"> {{pd.uom}}<td>
@@ -100,7 +102,7 @@
                                     </div>
                                 </div>
                             </div> -->
-<div ng-if="resultmodel.length==0">
+<div  ng-if="resultmodel.length==0" class="price-col">
 <h3 style="text-align:center;">
 <div class="cart-img">
 <img title="" data-toggle="popover" data-trigger="hover" data-content="No data found" src="img/error-avatar.png" alt="" data-original-title="Indicator">
@@ -112,7 +114,7 @@ No records found</h3></div>
 
                         </div>
 					
-						<div class="col-md-4" ng-if="cart.length!='' || cart.length!=0">
+						<div class="col-md-3" ng-if="cart.length!='' || cart.length!=0">
 						<div class=" portfolio-gallery gutter m-bot-0 inline-block">
 						  <div class="portfolio-item" >
 						  <div class="portfolio">
@@ -131,7 +133,7 @@ No records found</h3></div>
 						
 									
                                 </div>
-								<table class="table table-bordered table-primary table-striped">
+								<table class="table table-condensed borderless">
 								<tr>
 								<th>Vendor</th>
 								<th>Type</th>
@@ -148,12 +150,12 @@ No records found</h3></div>
 					<!--entmainent--><td ng-if="items.type=='' || items.type==' '" ></td>
 																
 								<td>{{items.cost}}</td>
-                                  <td> <button ng-click="addtocart(items,itemsIndex)" >
-																
-																<span >-</span>
-										</button> 
-										<!--{{saved}} ==={{savedBudget}}-->
-								  </td>
+								
+									<td><button ng-click="addtocart(items,itemsIndex)" >
+															<span>-</span>
+																</button>
+									</td>
+                                  
                                 </tr>
 								</table>
                                 
@@ -173,6 +175,48 @@ No records found</h3></div>
 							
                     </div>
                 </div>
+				</div>
             </div>
             <!--portfolio-->
+			
+					<script type="text/javascript">
+    $(document).ready(function() {
+        welcome();
+		
+    });
+	
+	
+		$(window).scroll(function(e){ 
+		console.log("scrolling");
+	  var $el = $('.fixedElement'); 
+	  var isPositionFixed = ($el.css('position') == 'fixed');
+	  if ($(this).scrollTop() > 50 && !isPositionFixed){ 
+		$('.fixedElement').css({'position': 'fixed', 'top': '0px'}); 
+	  }
+	  if ($(this).scrollTop() < 50 && isPositionFixed)
+	  {
+		$('.fixedElement').css({'position': 'static', 'top': '0px'}); 
+	  } 
+});
+	
+	
+function fixfooter(){
+	var b=$("#footer").offset().left;
+	$("#footer").css("position","absolute");
+	$("#footer").css("left",b);
+	$("#footer").css("bottom","0.5em");
+}
+
+function welcome(){
+	
+	$('.smallbg').css('background-image', 'url(../-Weddingbudget/img/background/'+getRandomIntInclusive(1, 20)+'.jpg)');
+	$('.smallbg').css('background-size', 'cover');
+}
+
+function getRandomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+</script>
+
 		

@@ -755,7 +755,8 @@ app01.config(['$routeProvider',function($routeProvider){
     .when('/providers',{  templateUrl:'provider_detail.php'}).
      when('/edit',{templateUrl:'editprovider.php'}).
      when('/search',{templateUrl:'search1.php'}).
-     when('/editmsg',{templateUrl:'manageSMS.jsp'}); 
+     when('/editmsg',{templateUrl:'manageSMS.jsp'}).
+	 when('/about',{templateUrl:'aboutus.php'}); 
         
         
         
