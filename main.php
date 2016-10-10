@@ -5,21 +5,21 @@
 
 
             <div class="page-content" ng-controller="listCtrl">
-<div class="col-md-11 ">							
+<div>							
  <div class="">  
  <div ><h4 class="text-uppercase" style="text-align:center;"> Generate/Create Budget  </h4></div> 
  <div class="divider d-border d-solid d-single text-center">
 <i class="fa fa-xing"></i>
 </div>
 </div> 
-										  <div class="col-md-6">
-										<section id="work_outer">
+<div class="col-md-6">
+<section id="work_outer">
 
   <div class="container">
     <section class="main-section contact" id="contact">
 	 
      <div class="row">
-          <div  >
+          <div   class="col-lg-12 col-lg-offset-3">
           <div class="form" >
  
              <div responsivetabs id="htab" class="htab">
@@ -71,3 +71,4 @@
 
   
 </section>
+
