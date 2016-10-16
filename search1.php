@@ -25,36 +25,38 @@
 					<div class="portfolio  portfolio-gallery gutter m-bot-0 inline-block">
 				
 							   <div class="table-responsive">
-					<table class="price-col col-md-9 table table-bordered table-condensed table-primary table-striped" style="background-color:rgba(204, 0, 153,0.9); opacity:.9;   font-family:Arial; font-size: 16px; line-height: 1.428571429; color: black;
+					<table class="price-col col-md-9 table table-bordered table-condensed table-primary table-striped" style="background-color:darkgrays; opacity:.9;   font-family:Arial; font-size: 16px; line-height: 1.428571429; color: black;
 					" >
 					<!--<tr><td>{{x}}</td></tr>
 					<tr ng-repeat="n in x.saved"><td>{{n.id}}</td></tr>-->
 					
 					<tr ng-repeat="(pdIndex,pd) in resultmodel.provider" >
+														<td><b>  <a href="" ng-click="viewItem(pd)">view</a></b> </td>
 														<td><b>  {{pd.name}} </b> </td>
                                                         <td> <img src="uploads/{{pd.img}}" class="editimg" alt=""></td>
-			                                            <td>{{pd.email}}</td>
-													    <td>{{pd.websiteurl}}</ts>
-													 		<td ng-if="pd.providerid!=''"  >
+			                                           <!-- <td>{{pd.email}}</td>-->
+													    <td>{{pd.websiteurl}}</td>
+													 		<!--<td ng-if="pd.providerid!=''"  >
 															<span ng-repeat="serv in services | filter:{id:pd.providerid}:true" >{{serv.type}}</span>
-															</td>
+															</td>-->
 															<td ng-if="pd.capacity!=''">
 															 <div entity = "capacityoptions" ng-model="capacityoptions" fetch-data><span ng-repeat="data in capacityoptions|filter:{id:pd.capacity}:true">{{data.value}}</span></div>
 							     
 															</td>
 															<td ng-if="pd.location!=''">
-															<div ng-if="pd.location!=''" entity = "location" ng-model="location" fetch-data><span ng-repeat="data in location|filter:{id:pd.location}:true">{{data.value}}</span></div>
+															<div  entity = "location" ng-model="location" fetch-data><span ng-repeat="data in location|filter:{id:pd.location}:true">{{data.value}}</span></div>
 															</td>
 															<td ng-if="pd.area!=''">{{pd.area}}</td>
-															<td ng-if="pd.uom!=''"> {{pd.uom}}<td>
+															<!--<td ng-if="pd.providerid='2'"> {{pd.uom}}<td>-->
 															<td ng-if="pd.cost!=''">{{pd.cost}}</td>
 													
-															<td><button ng-click="addtocart(pd,pdIndex)" >
+															<td><button   class="btn btn-default" ng-click="addtocart(pd,pdIndex)" >
 																<span ng-if="!pd.label">Add</span>
 																<span ng-if="pd.label!=''">{{pd.label}}</span>
 																</button>
 															 </td>
 															 </tr>
+															
 					</table>
 					
 					</div></div>
