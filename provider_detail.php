@@ -41,6 +41,8 @@ session_start();
 	 <form>
           <div>
           <div class="form" >
+		  <table class="col-md-12">
+		  <tr><td>
 		  <table class="col-lg-10 wow fadeInUp delay-06s" ><tbody>
            <tr><td class="control-label">Name</td>
 		   <td><div class="form-group"><input class="form-control maindetails" disabled type="text" name=""  data-ng-model="datamodel.provider.name" ng-init=" datamodel.provider.name='<?php if(isset($_SESSION["name"])) {
@@ -75,6 +77,8 @@ session_start();
 		
 	  
 	  </table>
+	  </tr></td>
+	  <tr><td>
 	   <table class="table table-bordered table-primary table-striped" id="no-more-tables">
 	  <!-- <tr>
 	   <th>Provider</th>
@@ -182,6 +186,7 @@ session_start();
 		 </tr>
 			
 			</table>
+			</td></tr>
           </div>
         </div>
       </div>

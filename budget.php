@@ -44,10 +44,10 @@ background-attachment: fixed;
 
 
 </style>
- 
+ <div class="smallbg">
  
 <!-- Portfolio -->
-<section  class="content budget"> 
+<section  class="content "> 
 
 <!-- Container -->
 <div class="container portfolio-title"> 
@@ -237,7 +237,7 @@ retrieve budget
 </section>
 
 
-
+</div>
 
 
   <!-- Modal -->
@@ -754,6 +754,47 @@ budgetdb.get(id).then(function(doc) {
 
 
 </script>
+
+					<script type="text/javascript">
+    $(document).ready(function() {
+        welcome();
+		
+    });
+	
+	
+		$(window).scroll(function(e){ 
+		console.log("scrolling");
+	  var $el = $('.fixedElement'); 
+	  var isPositionFixed = ($el.css('position') == 'fixed');
+	  if ($(this).scrollTop() > 50 && !isPositionFixed){ 
+		$('.fixedElement').css({'position': 'fixed', 'top': '0px'}); 
+	  }
+	  if ($(this).scrollTop() < 50 && isPositionFixed)
+	  {
+		$('.fixedElement').css({'position': 'static', 'top': '0px'}); 
+	  } 
+});
+	
+	
+function fixfooter(){
+	var b=$("#footer").offset().left;
+	$("#footer").css("position","absolute");
+	$("#footer").css("left",b);
+	$("#footer").css("bottom","0.5em");
+}
+
+function welcome(){
+	
+	$('.smallbg').css('background-image', 'url(../-Weddingbudget/img/background/'+getRandomIntInclusive(1, 20)+'.jpg)');
+	$('.smallbg').css('background-size', 'cover');
+}
+
+function getRandomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+</script>
+
 
 
 
