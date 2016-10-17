@@ -372,6 +372,26 @@ if(localStorage.getItem("cart")) {
 		});
 		}
 		
+		
+		$scope.viewItem = function(budgetitem){
+			
+		
+			$scope.viewitem=budgetitem;
+					
+	    ngDialog.open({
+			template: 'showitem.jsp',
+			className : 'ngdialog-theme-default w800',
+			showClose: true,
+			closeByDocument: true,
+			closeByEscape: true,
+			appendTo: false,
+			scope: $scope
+		});	
+	     };	
+		
+		
+		
+		
 		$scope.showSaved = function(saved){
 			console.log(saved);
 			$scope.savedBudget=saved;
