@@ -6,7 +6,7 @@
 
                 <div class="container">
 
-                    <div class="heading-title  text-center ">
+                    <div class="heading-title  text-center " style="margin-top: 90px;">
                         <h3 class="text-uppercase">Drop us a line</h3>
                        <!-- <div class="half-txt p-top-30"></div> -->
                     </div>

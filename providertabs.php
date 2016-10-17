@@ -8,7 +8,7 @@ $serviceid=$_POST["pdid"];
 //query to load data from the table
 
 
-$query=" select name , provider_detail.cost as cost,capacity,services.type as itemname, provider.phoneno, provider.websiteurl, provider.email , location.value as town,  provider_detail.area,  provider_detail.img,  provider_detail.timestamp, description, hits from provider_detail join location on provider_detail.location=location.id  join provider on provider_detail.providerid=provider.providerId join services on services.id=provider_detail.type where provider_detail.pdid='".$serviceid."'";
+$query=" select name , provider_detail.cost as cost,capacity,services.type as itemname, provider.phoneno, provider.websiteurl, provider.email , location.value as town,  provider_detail.area,  provider_detail.img,  provider_detail.timestamp, description, hits from provider_detail   join ( provider join location on provider.county=location.id) on provider_detail.id=provider.id join services on services.id=provider_detail.providerid where provider_detail.pdid='".$serviceid."'";
 
 
 include 'db.php';
@@ -34,7 +34,7 @@ if($executequery)
      echo '<tr><td>  <div class="row">   <div class="col-sm-6"> <b>Email </b> </div> </td><td> <div class="col-sm-6">'. $row["email"] .'</div>   </div> </td></tr> ';
      echo '<tr><td>  <div class="row">   <div class="col-sm-6"> <b>Phone Number </b> </div> </td><td> <div class="col-sm-6"> '.$row["phoneno"] .'</div>   </div> </td></tr> ';
      echo '<tr><td>  <div class="row">   <div class="col-sm-6"> <b>Description </b> </div> </td><td> <div class="col-sm-6">'. $row["description"] .'</div>   </div> </td></tr>';
-     echo '<tr><td colspan="2">  <div class="row">   <div class="col-sm-12"> <img src="'.$row["img"].'" class="image img-responsive"  alt="image"/></div>   </div> </td></tr>';
+     echo '<tr><td colspan="2">  <div class="row">   <div class="col-sm-12"> <img src="uploads/'.$row["img"].'" class="image img-responsive"  alt="image"/></div>   </div> </td></tr>';
 
 	  
 	  echo "</table></div>";

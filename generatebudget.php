@@ -35,7 +35,7 @@ $wheresubquery = "1=1 and ";
 
 if ($location != '' && !empty($location)) {
 
-    $wheresubquery = " ( location='" . $location . "' ) and ";
+    $wheresubquery = " ( location.id='" . $location . "' ) and ";
 }
 
 
@@ -67,7 +67,7 @@ if ($executequery) {
         //we can give priority to featured items in future
         //currently, we will only watch the first item, but we should fetch a list of items, then display the first per category, a user can then change the list
 
-        $wishlistquery = "select provider_detail.img as img, name as providername, provider_detail.pdid as id, provider.providerId as providerid, hits ,location.value as location ,provider_detail.cost as avgprice , provider_detail.type as itemid from provider_detail join provider on provider.providerId = provider_detail.providerid join location on location.id=provider_detail.location  where $wheresubquery  type='" . $row["itemid"] . "' order by hits desc $categorylimit  ";
+        $wishlistquery = "select provider_detail.img as img, name as providername, provider_detail.pdid as id, provider.id as providerid, hits ,location.value as location ,provider_detail.cost as avgprice , provider_detail.type as itemid from provider join provider_detail on provider.id = provider_detail.id left join location on location.id=provider.county  where $wheresubquery  provider_detail.providerid='" . $row["itemid"] . "' order by hits desc $categorylimit  ";
 
         //echo $wishlistquery ."<br/>";
         $rowcount = 0;

@@ -396,7 +396,7 @@ var newtable="<thead><tr><th>Image</th><th>Category</th><th>Provider Name</th><t
 					}
 					
 				//conribute to a 
-	newtable+="<tr "+initiatemodal+" id='tablerow"+i+"'  ><td><div class='cart-img'><img title='"+jdata.alldata[i][0].provider+"'  src='"+jdata.alldata[i][0].image+"' alt=''></div></td><td><a href='#'>"+jdata.alldata[i][0].item+"</a></td><td>"+jdata.alldata[i][0].provider+"</td><td><div class='cart-action'>"+jdata.alldata[i][0].location+"</div></td><td><b>"+jdata.alldata[i][0].price+"</b></td><td><div class='cart-action'>  "+othervendorscount+" </div></td></tr>";
+	newtable+="<tr "+initiatemodal+" id='tablerow"+i+"'  ><td><div class='cart-img'><img title='"+jdata.alldata[i][0].provider+"'  src='uploads/"+jdata.alldata[i][0].image+"' alt=''></div></td><td><a href='#'>"+jdata.alldata[i][0].item+"</a></td><td>"+jdata.alldata[i][0].provider+"</td><td><div class='cart-action'>"+jdata.alldata[i][0].location+"</div></td><td><b>"+jdata.alldata[i][0].price+"</b></td><td><div class='cart-action'>  "+othervendorscount+" </div></td></tr>";
             	totalbudget+=parseInt(jdata.alldata[i][0].price);
 			                             }
 			//console.log(data[i]);
@@ -549,7 +549,7 @@ ismodalminimized="";
 	var newttlbudget=parseInt($("#bv").val())-parseInt(olderbudget);	
 newttlbudget=newttlbudget+parseInt(newbudget);	
 
-$("#budgetreturned").html("<i class='fa fa-dollar'></i> Budget Results "+newttlbudget);
+$("#budgetreturned").html("<i class='fa fa-dollar'></i> Budget Results "+newttlbudget+"  <button style='margin-right:2px;' type='submit' id='savebudgetbtn' class='btn btn-sm btn-rounded btn-dark-solid' style='width:136px;' onclick='savebudget();'> <i class='fa fa-save'> </i> save budget</button>");
 $("#tableheader").html(" New total budget is  "+newttlbudget);
 	$("#bv").val(newttlbudget);	
 		
@@ -565,7 +565,7 @@ $("#tableheader").html(" New total budget is  "+newttlbudget);
 		var newttlbudget=parseInt($("#bv").val())-parseInt(oldbudget);	
 newttlbudget=newttlbudget+parseInt(newbudget);	
 
-$("#budgetreturned").html("<i class='fa fa-dollar'></i> Budget Results "+newttlbudget);
+$("#budgetreturned").html("<i class='fa fa-dollar'></i> Budget Results "+newttlbudget+"  <button style='margin-right:2px;' type='submit' id='savebudgetbtn' class='btn btn-sm btn-rounded btn-dark-solid' style='width:136px;' onclick='savebudget();'> <i class='fa fa-save'> </i> save budget</button>");
 $("#tableheader").html(" New total budget is  "+newttlbudget);
 	$("#bv").val(newttlbudget);	
 		
