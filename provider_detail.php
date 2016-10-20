@@ -8,26 +8,33 @@ session_start();
 .maindetails{
 	width:60%;
 }
+.featured-item .icon i {
+    font-size: 26px;
+}
 </style>
 <!--editCtrl-->
             <div class="page-content" ng-controller="editCtrl" >
 
-                <div class="container">
+              
 
-                  
-
-<div><div class="col-lg-12">
- <div class="col-lg-3"><img class="img img-responsive" src="img/sideflower.jpg" alt="" ></div>
- <div class="col-lg-6">  <div class="heading-title  text-center ">
+                <div class="col-md-12">
+ <div class="col-md-3"><img class="img-responsive" src="img/sideflower.jpg" alt="" ></div>
+ <div class="col-md-6">  <div class="heading-title  text-center ">
                         <h3 class="text-uppercase"> Register your services </h3>
                         <div class="half-txt p-top-30">Provide as much details as possible </div>
-                    </div></div>
-<div class="col-lg-3"><img  class="img img-responsive" style="float:right" src="img/leftsideflower.jpg" alt="" ></div> <!--<img  src="img/curvedflower.jpg" alt="">--> 
-   </div> 
-</div>   
+                    </div>
+</div>
+<div class="col-md-3"><img  class="img img-responsive" src="img/leftsideflower.jpg" alt="" ></div><!----> <!--<img  src="img/curvedflower.jpg" alt="">--> 
+   </div>   
+
+  <div >
+  
                     <div class="row">
-					     <div class="col-md-12 col-md-offset-1">
-                            <form >
+					     <div class="col-md-12">
+						 
+						 
+						 
+                            <form data-ng-submit="saveCustomer(datamodel);" >
 
                                 <div class="row">
 
@@ -42,8 +49,17 @@ session_start();
           <div>
           <div class="form" >
 		  <table class="col-md-12">
+		 	  <tr><td>  
+	  <div class="col-md-12  col-md-offset-3 text-center">
+                        <h3 class="text-uppercase"> basic details</h3>
+                        <div class="half-txt p-top-30"></div>
+                    </div>
+	  
+	  
+	  </td></tr>
+	  <tr><td></td></tr><tr><td></td></tr>
 		  <tr><td>
-		  <table class="col-lg-10 wow fadeInUp delay-06s" ><tbody>
+		  <table class="col-md-8 wow fadeInUp delay-06s  col-md-offset-3" ><tbody>
            <tr><td class="control-label">Name</td>
 		   <td><div class="form-group"><input class="form-control maindetails" disabled type="text" name=""  data-ng-model="datamodel.provider.name" ng-init=" datamodel.provider.name='<?php if(isset($_SESSION["name"])) {
 							echo $_SESSION["name"];} ?>'"  placeholder="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
@@ -53,9 +69,10 @@ session_start();
 		   </td></tr>
            <tr><td  class="form-group"> Email</td><td>
 		   <div class="form-group">
-		   <input type="hidden" data-ng-model="datamodel.provider.id" > <input type="hidden" data-ng-model="datamodel.provider.accountid" ng-init=" datamodel.provider.accountid='<?php if(isset($_SESSION["id"])) {
+		   <input type="hidden" data-ng-model="datamodel.provider.id" > <input type="hidden"  data-ng-model="datamodel.provider.accountid" ng-init=" datamodel.provider.accountid='<?php if(isset($_SESSION["id"])) {
 							echo $_SESSION["id"];} ?>'" > 
-			<input class="form-control maindetails"  type="text" name=""  data-ng-model="datamodel.provider.email"  placeholder="Your E-mail *" ></div></td></tr>
+			<input class="form-control maindetails"  type="text" name=""  data-ng-model="datamodel.provider.email"  disabled ng-init="datamodel.provider.email='<?php if(isset($_SESSION["username"])) {
+							echo $_SESSION["username"];} ?>'" placeholder="Your E-mail *" ></div></td></tr>
 			<tr><td  class="form-group">County</td><td  > <div class="form-group">
 		   <select  class="form-control maindetails" name="" required value="Location" data-ng-init="getSelectData('county');"   data-ng-model="datamodel.provider.county" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
              <option value="">Choose a County</option>		  
@@ -78,8 +95,17 @@ session_start();
 	  
 	  </table>
 	  </tr></td>
+	  <tr><td>  
+	  <div class="col-md-12  col-md-offset-3 text-center">
+                        <h3 class="text-uppercase"> Add your details</h3>
+                        <div class="half-txt p-top-30">Add your various packages. e.g if you provide catering at different prices enter all your package details here. Remember provide as much details as possible </div>
+                    </div>
+	  
+	  
+	  </td></tr>
+	  <tr class="col-md-12  col-md-offset-3"><td><h3></h3></td></tr>
 	  <tr><td>
-	   <table class="table table-bordered table-primary table-striped" id="no-more-tables">
+	   <table class=" col-md-12  col-md-offset-3 table table-bordered table-primary table-striped" id="no-more-tables">
 	  <!-- <tr>
 	   <th>Provider</th>
 	   <th>Cost</th>
@@ -104,7 +130,7 @@ session_start();
 			<td data-title="Provider type">
 		
 			<select class="form-control"  id="id{{$index+1}}"  required data-ng-model="pd.providerid" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
-				<option value="">Choose a provider</option>	
+				<option value="">Choose a service</option>	
 				<option  id="{{ptype.id}}" ng-repeat="ptype in services " value ="{{ptype.id}}">{{ptype.type}}</option>       
 				</select>
 			</td>
@@ -166,8 +192,20 @@ session_start();
 			<!--<input type="file" ng-model="pd.img"  file-model="myFile"  onchange="angular.element(this).scope().uploadFiles(this,pdIndex)" />
 			<label for="file" >Choose image</label>	-->
 			<!--<button ng-click="uploadFiles(myFile,pdIndex)">Upload</button>-->
-			 <a href class="fa fa-paperclip"  data-ng-click="uploadDocument(pdIndex)"  tooltip="Add Document">
-															
+			<!-- <a href class="fa fa-paperclip"  data-ng-click="uploadDocument(pdIndex)"  tooltip="Add Document">-->
+			
+                      <div class="">
+																	<div class="featured-item text-center">
+																		<div class="icon " style="visibility: visible; ">
+																			<a href=""  data-ng-click="uploadDocument(pdIndex)" ><i class="fa fa-paperclip"></i></a>
+																		</div>
+																	   
+																	</div>
+																</div>
+
+
+
+			
 			</a>
 			
 		  </td>
@@ -193,10 +231,10 @@ session_start();
     </section>
   </div>
   </section>
- <div class="col-md-6 form-group">
+ <div class="col-md-12 col-md-offset-6 form-group" style="padding-left:30%">
                                        
-                                        <div class="form-group full-width">
-                                            <button class="btn btn-small btn-dark-solid " data-ng-click="saveCustomer(datamodel)" >
+                                        <div class="col-md-6 form-group full-width">
+                                            <button type="submit" class="btn btn-small btn-dark-solid "  >
                                                 Register 
                                             </button>
                                         </div>

@@ -1,12 +1,12 @@
 <!--portfolio-->
-<div class="smallbg">
+<div >
             <div class="page-content p-bot-0" id="portfolio">
                 <div class="container-fluid">
 
                     <div class="row">
                          <div class="text-center">
                             <ul class="portfolio-filter">
-                                <li style="margin-right:2%" >
+                                <li>
 								        <select class="form-control"  id="id{{$index+1}}"  ng-init="getSelectData('services');"  data-ng-model="searchmodel.category" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue">
 										<option value="">Choose a provider </option>	
 										<option ng-repeat="ptype in services" value ="{{ptype.id}}">{{ptype.type}}</option>       
@@ -25,13 +25,24 @@
 					<div class="portfolio  portfolio-gallery gutter m-bot-0 inline-block">
 				
 							   <div class="table-responsive">
-					<table class="price-col col-md-9 table table-bordered table-condensed table-primary table-striped" style="background-color:darkgrays; opacity:.9;   font-family:Arial; font-size: 16px; line-height: 1.428571429; color: black;
-					" >
+					<table class="price-col col-md-9  table table-responsive table-bordered table-condensed table-primary table-striped" style="background-color:darkgrays; opacity:.9;   font-family:Arial; font-size: 16px; line-height: 1.428571429; color: black;" >
 					<!--<tr><td>{{x}}</td></tr>
 					<tr ng-repeat="n in x.saved"><td>{{n.id}}</td></tr>-->
 					
 					<tr ng-repeat="(pdIndex,pd) in resultmodel.provider" >
-														<td><b>  <a href="" ng-click="viewItem(pd)">view</a></b> </td>
+														<td><b> 
+
+                                                           <div class="col-md-4">
+																	<div class="featured-item text-center">
+																		<div class="icon " style="visibility: visible; ">
+																			<a   href=""  ng-click="viewItem(pd)" ><i style="font-size:25px;" class="fa fa-eye"></i></a>
+																		</div>
+																	   
+																	</div>
+
+
+													<!--	<a href="" ng-click="viewItem(pd)">view</a></b>-->
+													</td>
 														<td><b>  {{pd.name}} </b> </td>
                                                         <td> <img src="uploads/{{pd.img}}" class="editimg" alt=""></td>
 			                                           <!-- <td>{{pd.email}}</td>-->
@@ -50,10 +61,39 @@
 															<!--<td ng-if="pd.providerid='2'"> {{pd.uom}}<td>-->
 															<td ng-if="pd.cost!=''">{{pd.cost}}</td>
 													
-															<td><button   class="btn btn-default" ng-click="addtocart(pd,pdIndex)" >
-																<span ng-if="!pd.label">Add</span>
-																<span ng-if="pd.label!=''">{{pd.label}}</span>
-																</button>
+															<td>
+																<span  ng-if="!pd.label || pd.label=='Add'">
+																<div class="col-md-4">
+																	<div class="featured-item text-center">
+																		<div class="icon " style="visibility: visible; ">
+																			<a href="" ng-click="addtocart(pd,pdIndex)"  ><i class="icon-ecommerce_cart_plus"></i></a>
+																		</div>
+																	   
+																	</div>
+																</div>
+																
+																
+																<!--<a href=""  ng-click="addtocart(pd,pdIndex)"  class=" icon-ecommerce_cart_plus"></a>-->
+																</span>
+																
+																<span ng-if="pd.label=='Remove'">
+																<div class="col-md-4">
+																	<div class="featured-item text-center">
+																		<div class="icon " style="visibility: visible; ">
+																			<a href=""  ng-click="addtocart(pd,pdIndex)"  ><i class="icon-ecommerce_cart_remove"></i></a>
+																		</div>
+																	   
+																	</div>
+																</div>
+																
+																<!--<span ><a href="" ng-click="addtocart(pd,pdIndex)" class="icon-ecommerce_cart_remove"></a></span>-->
+																
+																</span>
+																
+																
+																
+																
+																
 															 </td>
 															 </tr>
 															
@@ -125,13 +165,11 @@ No records found</h3></div>
 						        <div class="thumb">
                                   <div >
                                     <h1 style='color:green;text-align:left;' class='well well-sm' ><b> My Budget </b> </h1>
-                                    <div class="p-value">
+                                    <div >
                                     <div class="dollar">
-                                       <p>Total: {{totalcost}}</p>   <span>&nbsp; KSHS </span>
+                                       <p>Kshs. Total: {{totalcost}}</p>   
                                     </div>
-                                    <div class="duration">    
-									<button type="submit" ng-click="saveToLocal(cart)">	Save Budget</button>										
-                                    </div>
+                                  
 						
 									
                                 </div>
@@ -153,14 +191,15 @@ No records found</h3></div>
 																
 								<td>{{items.cost}}</td>
 								
-									<td><button ng-click="addtocart(items,itemsIndex)" >
-															<span>-</span>
-																</button>
-									</td>
+									<!--<td ><a href class="icon-ecommerce_cart_remove" ng-click="addtocart(items,itemsIndex)" >
+															</a>
+									</td>-->
                                   
                                 </tr>
 								</table>
-                                
+                                 <div class="duration">    
+									<button class="btn btn-small btn-dark-solid " type="submit" ng-click="saveToLocal(cart)">	Save Budget</button>										
+                                    </div> 
                             </div>
                         
 									
@@ -181,44 +220,5 @@ No records found</h3></div>
             </div>
             <!--portfolio-->
 			
-					<script type="text/javascript">
-    $(document).ready(function() {
-        welcome();
-		
-    });
-	
-	
-		$(window).scroll(function(e){ 
-		console.log("scrolling");
-	  var $el = $('.fixedElement'); 
-	  var isPositionFixed = ($el.css('position') == 'fixed');
-	  if ($(this).scrollTop() > 50 && !isPositionFixed){ 
-		$('.fixedElement').css({'position': 'fixed', 'top': '0px'}); 
-	  }
-	  if ($(this).scrollTop() < 50 && isPositionFixed)
-	  {
-		$('.fixedElement').css({'position': 'static', 'top': '0px'}); 
-	  } 
-});
-	
-	
-function fixfooter(){
-	var b=$("#footer").offset().left;
-	$("#footer").css("position","absolute");
-	$("#footer").css("left",b);
-	$("#footer").css("bottom","0.5em");
-}
-
-function welcome(){
-	
-	$('.smallbg').css('background-image', 'url(../-Weddingbudget/img/background/'+getRandomIntInclusive(1, 20)+'.jpg)');
-	$('.smallbg').css('background-size', 'cover');
-}
-
-function getRandomIntInclusive(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-</script>
 
 		

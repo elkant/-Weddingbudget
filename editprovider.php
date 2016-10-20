@@ -11,7 +11,7 @@ session_start();
 <!--editCtrl-->
             <div class="page-content" ng-controller="listCtrl" >
 
-                <div class="container">
+                <div >
 
                   
 
@@ -21,12 +21,12 @@ session_start();
                         <h3 class="text-uppercase"> Edit your service details </h3>
                         <div class="half-txt p-top-30">Provide as much details as possible </div>
                     </div></div>
-<div class="col-lg-3"><img class="img img-responsive" style="float:right" src="img/leftsideflower.jpg" alt="" ></div> <!--<img  src="img/curvedflower.jpg" alt="">--> 
+<div class="col-lg-3"><img class="img img-responsive" src="img/leftsideflower.jpg" alt="" ></div> <!--<img  src="img/curvedflower.jpg" alt="">--> 
    </div> 
 </div>   
                     <div class="row">
-					     <div class="col-md-10 col-md-offset-1">
-                            <form >
+					     <div class="col-md-12 ">
+                            <form data-ng-submit="updateCustomer(datamodel);">
 
                                 <div class="row">
 
@@ -40,9 +40,17 @@ session_start();
           <div>
           <div class="form" >
 		  <table class="col-md-12">
+		    <tr><td>  
+	  <div class="col-md-12  col-md-offset-3 text-center">
+                        <h3 class="text-uppercase"> basic details</h3>
+                        <div class="half-txt p-top-30"></div>
+                    </div>
+	  
+	  
+	  </td></tr>
 		  <tr><tr>
-		  <table class="col-lg-10 wow fadeInUp delay-06s">
-           <tr><td class="control-label">Name</td>
+		  <table class="col-md-8 wow fadeInUp delay-06s  col-md-offset-3" wow fadeInUp delay-06s">
+           <tr><td class="control-label">Name </td>
 		   <td><div class="form-group"><input class="form-control maindetails" disabled type="text" name=""  data-ng-model="datamodel.provider.name" ng-init=" datamodel.provider.name='<?php if(isset($_SESSION["name"])) {
 							echo $_SESSION["name"];} ?>'"  placeholder="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
 		   <input type="hidden" data-ng-model="datamodel.provider.id" > <input type="hidden" data-ng-model="datamodel.provider.accountid" ng-init=" datamodel.provider.accountid='<?php if(isset($_SESSION["id"])) {
@@ -66,14 +74,22 @@ session_start();
 			<input class="form-control maindetails"  data-ng-model="datamodel.provider.websiteurl"  type="text" name="" placeholder="Website url" ></div></td></tr>
 			  
 		   <tr><td class="control-label">  Other Details</td><td><div  class="form-group"> 
-		   <textarea class="form-control maindetails" placeholder="Description" required data-ng-model="datamodel.provider.comments" cols="0" rows="0" >Other Details</textarea></div></td></tr>
+		   <textarea class="form-control maindetails" placeholder="Description" required data-ng-model="datamodel.provider.comments" cols="2" rows="2" ></textarea></div></td></tr>
           
 	  
 	   </table>
 	   </td></tr>
+	    <tr><td>  
+	  <div class="col-md-12  col-md-offset-3 text-center">
+                        <h3 class="text-uppercase"> Edit your details</h3>
+                        <div class="half-txt p-top-30">Edit your various packages. e.g if you provide catering at different prices enter all your package details here. Remember provide as much details as possible </div>
+                    </div>
+	  
+	  
+	  </td></tr>
 	   <tr><td>
 	   
-	   <table class="table table-bordered table-primary table-striped" style="width:100%" id="no-more-tables">
+	   <table class="col-md-12  col-md-offset-3 table table-bordered table-primary table-striped" style="width:100%" id="no-more-tables">
 	  <!-- <tr>
 	   <th>Provider</th>
 	   <th>Cost</th>
@@ -180,10 +196,18 @@ session_start();
     </section>
   </div>
   </section>
- <div class="col-md-6 form-group">
+ <!--<div class="col-md-6 form-group">
                                        
                                         <div class="form-group full-width">
-                                            <button type="submit" class="btn btn-small btn-dark-solid " data-ng-click="updateCustomer(datamodel)" >
+                                            <button type="submit" class="btn btn-small btn-dark-solid " >
+                                                Update 
+                                            </button>
+                                        </div>
+                                    </div>-->
+									 <div class="col-md-12 col-md-offset-6 form-group" style="padding-left:30%">
+                                       
+                                        <div class="col-md-6 form-group full-width">
+                                            <button type="submit"  class="btn btn-small btn-dark-solid " >
                                                 Update 
                                             </button>
                                         </div>

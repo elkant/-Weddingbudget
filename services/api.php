@@ -73,7 +73,7 @@ $query="SELECT id, name, username,type,emailverified FROM account WHERE username
 							//$row  = mysql_fetch_array($r);
 					
 						if( $result['emailverified']=="NO"){
-								 $error = array('status' => "Error", "msg" => "Account not verified");
+								 $error = array('status' => "Error", "msg" => "Account not verified, please check your email to verify your account");
 							 $this->response($this->json($error), 400);
 							
 						}else{
@@ -418,7 +418,7 @@ $query="SELECT id, name, username,type,emailverified FROM account WHERE username
 
 															if(!empty($datas)){
 																$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
-																$success = array('status' => "Success", "msg" => "Registration Successfully. Kindly Login", "data" => $datas);
+																$success = array('status' => "Success", "msg" => "Registration Successfully. Please check your email to verify your account.", "data" => $datas);
 																$this->response($this->json($success),200);
 															}else
 																$this->response('',204);	// "No Content" status

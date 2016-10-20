@@ -127,11 +127,43 @@ app01.service('fileUpload', ['$http', function ($http) {
        var serviceBase = 'services/'
     $scope.showprovidertab=true;
     $scope.edittab=false;
+	
+	
+	/*  $http.get(serviceBase + 'customers').success(function(response){
+					 
+					  $scope.datamodel=response
+					  console.log($scope.datamodel);
+			}); */
+		  
+	
       $scope.saveCustomer = function(datamodel) {
-        $location.path('/edit');
-     
+		  console.log(datamodel);
+		  services.insertCustomers(datamodel);
+
+		 
+		  
+		  
+		  $http.post(serviceBase + 'insert', angular.toJson(datamodel)).then(function (results) {
+				console.log(results)
+				 $scope.datamodel=results.config.data;
+                      var n = noty({text: "Saved successfully",
+                        layout: 'center',
+                        type: 'Success',
+						timeout:1800
+						});
+			
+				$location.path('/edit');
+				$route.reload();
+				$window.location.reload();
+				
+			});
+		  
+		  
+       // $location.path('/edit');
+           
+
 		
-            services.insertCustomers(datamodel);
+           // 
        
     };
 	
@@ -393,7 +425,7 @@ if(localStorage.getItem("cart")) {
 		
 		
 		$scope.showSaved = function(saved){
-			console.log(saved);
+			
 			$scope.savedBudget=saved;
 					
 	    ngDialog.open({
@@ -416,7 +448,7 @@ if(checkDate(localStorage.getItem("lastSave"))) {
 
  
  $scope.x.saved=(JSON.parse(localStorage.getItem("cart")));
- console.log(angular.fromJson($scope.saved));
+ 
 			  } else {
 					$scope.x.saved = {};
 				  }}}	
@@ -432,7 +464,7 @@ function checkDate(date) {
 		
 		
 $scope.saveToLocal = function(carts){
-	
+	$scope.savedBudget={};
 	$scope.savedBudget=carts;
 	
 	console.log($scope.savedBudget);
@@ -556,21 +588,15 @@ $scope.saveToLocal = function(carts){
 			   
 			   var n = noty({text: results.msg,
                         layout: 'center',
-                        type: 'Success', 
-                         timeout: 1800});
+                        type: 'Success'});
                     
 			   
 		         
 			}).error(function(response) {
-					alert("Failed to Login");
-					console.log('RESPONSE   ---->>>>>  '+response);
-					console.log('RESPONSE   ---->>>>> msg '+response.msg);
-					
-					
+						
 			   var n = noty({text: response.msg,
                         layout: 'center',
-                        type: 'Error', 
-                         timeout: 1800});
+                        type: 'Error'});
 					
 					// $location.path('#/');
 				});
@@ -581,7 +607,14 @@ $scope.saveToLocal = function(carts){
 	 $scope.register = function(registerdata){	
 	
 	 if(registerdata.pwdcheck.rptpwd != registerdata.credentials.account.password ){
-		 alert("Password entered in repeat password field does not match with new password.");
+		 
+		   var n = noty({text: "Password entered in repeat password field does not match with new password.",
+                        layout: 'center',
+                        type: 'Success'
+						});
+		 
+		 
+		//alert("Password entered in repeat password field does not match with new password.");-->
 		 } else{
 	  $http.post(serviceBase + 'register', angular.toJson(registerdata.credentials)).success(function (results) {
 				
@@ -589,8 +622,8 @@ $scope.saveToLocal = function(carts){
 				 
 				  var n = noty({text: results.msg,
                         layout: 'center',
-                        type: 'Success', 
-                         timeout: 1800});
+                        type: 'Success'
+						});
               
 				 if(results.msg=='Username already taken'){
 					 
@@ -614,8 +647,7 @@ $scope.saveToLocal = function(carts){
 					
 					 var n = noty({text: response.msg,
                         layout: 'center',
-                        type: 'Success', 
-                         timeout: 1800});
+                        type: 'Success'});
               
 					
 		 });
@@ -641,24 +673,17 @@ $scope.saveToLocal = function(carts){
 		  $http.post(serviceBase + 'insert', angular.toJson(datamodel)).success(function (results) {
 				$scope.datamodel= results.data;
 			 	$scope.message=results.msg;
-				
-				 $route.reload();
-				  var n = noty({text: results.msg,
+				  var n = noty({text:"Saved Successfully",
                         layout: 'center',
-                        type: 'Success', 
-                         timeout: 1800});
+                        type: 'Success'});
               
-				 
-				// $location.path('/providers');
-				
-				$window.location.href = '#/edit';
+				//$window.location.href = '#/edit';
 				
 			}).error(function(response) {
-					console.log("Failed to start process");
-					 var n = noty({text: response.msg,
+					console.log("Error");
+					 var n = noty({text: "Not Saved Successfully",
                         layout: 'center',
-                        type: 'error', 
-                         timeout: 1800});
+                        type: 'error'});
               
 				});
 		
@@ -675,7 +700,7 @@ app01.controller('listCtrl', function ($scope, services,$http,ngDialog,$route) {
     $scope.edittab=true;
   var serviceBase = 'services/';
 
-  $http.get(serviceBase + 'customers').success(function(response){
+        $http.get(serviceBase + 'customers').success(function(response){
 	     
 		  $scope.datamodel=response;
 		  });
@@ -731,10 +756,15 @@ app01.controller('listCtrl', function ($scope, services,$http,ngDialog,$route) {
 		  
 	    $scope.updateCustomer = function(datamodel) {
 		
- $http.post(serviceBase + 'update', angular.toJson(datamodel)).then(function (results) {
+              $http.post(serviceBase + 'update', angular.toJson(datamodel)).then(function (results) {
 				 
-				console.log(results.data);
-				$route.reload();
+				//console.log(results.data);
+				//$route.reload();
+				
+				  var n = noty({text:"Updated Successfully",
+                        layout: 'center',
+                        type: 'Success'});
+				
 				
 			});
 			};

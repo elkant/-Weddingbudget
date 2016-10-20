@@ -5,15 +5,22 @@ session_start();
 
 
             <div class="page-content" ng-controller="listCtrl">
-
-                        <div class="col-md-10 col-md-offset-1">
-                           <!-- <form method="post" action="#" id="form" role="form" class="contact-comments-->
-							
- <div class="col-lg-12">  <div >
-                        <h3 class="text-uppercase" style="text-align:center;"> Register  </h3>
-                        
+<div class="col-lg-12">  <div >
+                      <!--  <h3 class="text-uppercase" style="text-align:center;"> Register  </h3>-->
+                       
+						
+						
+						<div class="col-md-12  text-center">
+                        <h3 class="text-uppercase"> Register</h3>
+                        <div class="half-txt p-top-30"><b> Are you in the wedding business and want to get listed for free? Register with us to create an account </b></div>
+                    </div>
+						
   </div> 
 </div> 
+                        <div class="col-md-10 col-md-offset-2">
+                           <!-- <form method="post" action="#" id="form" role="form" class="contact-comments-->
+							
+ 
             
 
 										  <div class="col-md-6">
@@ -28,8 +35,8 @@ session_start();
  
              <div responsivetabs id="htab" class="htab">
 									<ul class="resp-tabs-list">
-										<li  class="resp-tab-item resp-tab-active">Login </li>
-										<li  class="resp-tab-item">Register</li>
+										<li  class="resp-tab-item resp-tab-active"> LOGIN </li>
+										<li  class="resp-tab-item">REGISTER (Start here if you are new) </li>
 									</ul>
 									<div class="resp-tabs-container">
 										<div class="row">
@@ -100,8 +107,8 @@ session_start();
 		 <div class="form-group" ng-if="registermodel.credentials.account.type=='provider'">
 		 
 		 <input class="form-control" ng-model="registermodel.credentials.account.name"  type="text" name="" placeholder="Your Company name *" ></div>
-         <div> Username</div>
-		 <div class="form-group">  <input  class="form-control" ng-model="registermodel.credentials.account.username" type="text" name="" placeholder="Your Username/Email *">
+         <div> Email</div>
+		 <div class="form-group">  <input  class="form-control" ng-model="registermodel.credentials.account.username" type="email" name="" placeholder="Your Username/Email *">
 		 <input ng-model="registermodel.credentials.account.id"   ng-init="registermodel.credentials.account.id=''" type="hidden" name="id">
 		 <input ng-model="registermodel.credentials.account.emailverificationcode"  ng-init="registermodel.credentials.account.emailverificationcode=''" type="hidden" name="emailverificationcode">
 		 </div>
