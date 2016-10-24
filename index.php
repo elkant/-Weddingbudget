@@ -69,7 +69,7 @@ session_start();
 
                         <!--logo start-->
                         <a href="index.php" class="logo-brand">
-                            <img class="img-thumbnail" src="img/logo.png" style='position:relative;' alt=""/>
+                            <img class="img" style="width:90%;" src="img/logo3.png" style='position:relative;' alt=""/>
                         </a>
                         <!--logo end-->
 <?php
