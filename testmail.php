@@ -2,5 +2,6 @@
 
 require 'sendmail.php';
 
-echo verify('ekmanukaka5@gmail.com', 'elkant', '5654343fgds', 'provider');
+echo anymail('care@weddingbudget.co.ke', 'Wedding budget Care', 'New comment from emmanuel', 'Thanks alot for creating this great website');
+
 
