@@ -10,7 +10,7 @@ session_start();
                        
 						
 						
-						<div class="col-md-12  text-center" style="margin-top: 30px;">
+						<div class="col-md-12  text-center">
                         <h3 class="text-uppercase"> Register</h3>
                         <div class="half-txt p-top-30"><b> Are you in the wedding business and want to get listed for free? Register with us to create an account </b></div>
                     </div>
