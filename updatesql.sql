@@ -1,10 +1,10 @@
-ALTER TABLE `weddingbudget`.`budget` 
-CHANGE COLUMN `title` `title` VARCHAR(255) NULL DEFAULT NULL ;
-
-
-CREATE TABLE `weddingbudget`.`verification` (
+CREATE TABLE `weddingbudget`.`itemviews` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `code` VARCHAR(255) NULL,
-  `customerid` VARCHAR(45) NULL,
-  `activeuntil` DATE NULL,
+`views` VARCHAR(45) NULL,
+  `date` VARCHAR(45) NULL,
+  `timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`));
+
+
+ALTER TABLE `weddingbudget`.`itemviews` 
+ADD COLUMN `itemid` VARCHAR(255) NULL AFTER `id`;
