@@ -44,7 +44,7 @@ background-attachment: fixed;
 
 
 </style>
- <div class="smallbg">
+ <div >
  
 <!-- Portfolio -->
 <section  class="content "> 
@@ -59,9 +59,9 @@ background-attachment: fixed;
 <div class="col-sm-12">
 <select   type="text" onchange='callpackage();' class="form-control col-xs-2" id='packages' name='packages'  > 
 <option value=''> choose budget package </option>
-<option value='100000'> Platnum package (100K) </option>
-<option value='500000'> Silver package (500K)</option>
-<option value='1000000'> Gold package (1M) </option>
+<option value='100000'> Silver package (100K) </option>
+<option value='500000'> Gold package (500K)</option>
+<option value='1000000'> Platinum package (1M) </option>
 <option value='*'> Other (Input amount) </option>
 </select>
 
@@ -164,7 +164,7 @@ retrieve budget
                                     <img onclick="buttonpackage('100000');topofpage();" src='img/twb/platinumring.jpg' width='48px' class='img-thumbnail'>
                                 </div>
                                 <div class="title text-uppercase">
-                                    <button onclick="buttonpackage('100000');topofpage();" class='btn btn-medium btn-rounded  btn-default'>Platinum Package</button>
+                                    <button onclick="buttonpackage('100000');topofpage();" class='btn btn-medium btn-rounded  btn-default'>Silver Package</button>
                                 </div>
                                 
                             </div>
@@ -176,7 +176,7 @@ retrieve budget
                                     <img onclick="buttonpackage('500000');topofpage();" src='img/twb/silverring.jpg' width='48px' class='img-thumbnail'>
                                 </div>
                                 <div class="title">
-                                    <button onclick="buttonpackage('500000');topofpage();" class='btn btn-small btn-default  btn-transparent'>Silver Package</button>
+                                    <button onclick="buttonpackage('500000');topofpage();" class='btn btn-small btn-default  btn-transparent'>Gold Package</button>
                                 </div>
                                 
                             </div>
@@ -188,7 +188,7 @@ retrieve budget
                                     <img onclick="buttonpackage('1000000');topofpage();" class="img-thumbnail" width="48px" src="img/twb/goldring.jpg">
                                 </div>
                                  <div class="title">
-                                    <button onclick="buttonpackage('1000000');topofpage();" class='btn btn-small btn-rounded btn-warning  btn-transparent'>Gold Package</button>
+                                    <button onclick="buttonpackage('1000000');topofpage();" class='btn btn-small btn-rounded btn-warning  btn-transparent'>Platinum Package</button>
                                 </div>
                                 
                             </div>

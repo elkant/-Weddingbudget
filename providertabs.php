@@ -8,7 +8,8 @@ $serviceid=$_POST["pdid"];
 //query to load data from the table
 
 
-$query=" select name , provider_detail.cost as cost,capacity,services.type as itemname, provider.phoneno, provider.websiteurl, provider.email , location.value as town,  provider_detail.area,  provider_detail.img,  provider_detail.timestamp, description, hits from provider_detail   join ( provider join location on provider.county=location.id) on provider_detail.id=provider.id join services on services.id=provider_detail.providerid where provider_detail.pdid='".$serviceid."'";
+
+$query=" select name , provider_detail.cost as cost,capacity,services.type as itemname, provider.phoneno, provider.websiteurl, provider.email , location.value as town,  provider_detail.area,  provider_detail.img,  provider_detail.timestamp, description, IFNULL(views,0) as hits ,provider_detail.id as mainid from provider_detail   join ( provider join location on provider.county=location.id) on provider_detail.id=provider.id join services on services.id=provider_detail.providerid left join itemviews on itemviews.itemid = provider_detail.id where provider_detail.pdid='".$serviceid."'";
 
 
 include 'db.php';
@@ -19,6 +20,7 @@ if($executequery)
 {
 	while($row=mysqli_fetch_array($executequery))
 	{
+            echo "<input type='hidden' id='idyangu' value='".$row["mainid"]."'>";
 		//details for [provider name] as a [product] supplier
 	echo "<div class='panel panel-danger'>";
       echo '<div class="panel-heading">Details for <i> <b>'.$row["name"].'</b> </i> as a <i> <b>'.$row["itemname"] .'</b> </i> supplier </div>';
@@ -51,3 +53,20 @@ if($executequery)
 mysqli_close($conn);
 
 ?>
+<script>
+    
+    var itemid=$("#idyangu").val();
+    console.log(itemid);
+$.ajax({
+    
+			url:'viewcount.php',
+			data:{itemid:itemid
+			     },
+			dataType:'html',
+			type:'get',
+			success:function(data){
+				 	
+				
+			}			
+		}); 
+</script>
