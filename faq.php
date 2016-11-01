@@ -67,7 +67,7 @@ p {
 									  <div >
 										 <h3>Frequently Asked Questions for Providers </h3>
 										 <p > 1. How do I register as a provider?	</p>
-										<span class="m-top-0">Register as user by clicking Register on the menu 
+										<span class="m-top-0">Register by clicking Register on the menu 
 										then click on the Register(Start here if you are new) Tab</span>  
 										<ul><li> Register with your email and password.</li>
 										<li>Choose either if you are a user or provider.</li> 
@@ -88,9 +88,8 @@ p {
 											<li>Enter you basic details </li>
 											<li>Enter the individual service details by adding as many rows as you need </li>
 											<li>You can add as many services as you want,remember to upload an image, specify the <b>cost</b> per service.</li>
-											<li><b>Then save your details.</b></li>
-											<li>Please remeber to save to prevent data loss.</li>
-											<li>You can also edit your details later</li>
+											<li><b>Then save your details to prevent data loss.</b></li>											
+											<li>You can also edit your details later, add more services</li>
 											<b>NB: Provide as much details as possible</b>
 											
 											</ul> </div>
