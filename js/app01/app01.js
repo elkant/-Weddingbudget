@@ -575,8 +575,8 @@ $scope.saveToLocal = function(carts){
 				
 				if(results.redirect=='edit'){
 				$location.path('/edit');
-				$route.reload();
 				$window.location.reload();
+				$route.reload();
 				  }else{
 					  $location.path('/providers');
 					  $window.location.reload();
@@ -806,7 +806,8 @@ app01.config(['$routeProvider',function($routeProvider){
      when('/edit',{templateUrl:'editprovider.php'}).
      when('/search',{templateUrl:'search1.php'}).
      when('/editmsg',{templateUrl:'manageSMS.jsp'}).
-	 when('/about',{templateUrl:'aboutus.php'}); 
+	 when('/about',{templateUrl:'aboutus.php'}). 
+	 when('/faq',{templateUrl:'faq.php'});   
         
         
         
