@@ -10,7 +10,7 @@ function verify($sendermail, $username, $verficationcode, $accountype) {
     $mail->Host = 'weddingbudget.co.ke';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'noreply@weddingbudget.co.ke';                 // SMTP username
-    $mail->Password = 'P@ss4wb!';                           // SMTP password
+    $mail->Password = '';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 25;                                    // TCP port to connect to
     $mail->setFrom('noreply@weddingbudget.co.ke', 'Wedding Budget');
