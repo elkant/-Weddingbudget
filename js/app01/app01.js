@@ -575,8 +575,8 @@ $scope.saveToLocal = function(carts){
 				
 				if(results.redirect=='edit'){
 				$location.path('/edit');
-				$window.location.reload();
 				$route.reload();
+				$window.location.reload();
 				  }else{
 					  $location.path('/providers');
 					  $window.location.reload();
@@ -687,6 +687,35 @@ $scope.saveToLocal = function(carts){
               
 				});
 		
+    };
+	
+	
+	
+	  $scope.contact = function(datamodel) {
+		  console.log(datamodel);
+		  //services.insertCustomers(datamodel);
+		  $http.post(serviceBase + 'contactus', angular.toJson(datamodel)).then(function (results) {
+				console.log(results)
+				 $scope.datamodel=results.config.data;
+                      var n = noty({text: "Saved successfully",
+                        layout: 'center',
+                        type: 'Success',
+						timeout:1800
+						});
+			
+			
+				$route.reload();
+				
+				
+			});
+		  
+		  
+       // $location.path('/edit');
+           
+
+		
+           // 
+       
     };
 
 	
@@ -806,8 +835,8 @@ app01.config(['$routeProvider',function($routeProvider){
      when('/edit',{templateUrl:'editprovider.php'}).
      when('/search',{templateUrl:'search1.php'}).
      when('/editmsg',{templateUrl:'manageSMS.jsp'}).
-	 when('/about',{templateUrl:'aboutus.php'}). 
-	 when('/faq',{templateUrl:'faq.php'});   
+	 when('/about',{templateUrl:'aboutus.php'});
+	// when('/faq',{templateUrl:'faq.php'});  
         
         
         

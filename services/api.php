@@ -1,5 +1,6 @@
 <?php
  	require_once("Rest.inc.php");
+ 	require_once("../sendmail.php");
 	//include('../config/config.php');
 	class API extends REST {
 	
@@ -485,7 +486,6 @@ $query="SELECT id, name, username,type,emailverified FROM account WHERE username
 																							}
 															}
 															$sql1= "INSERT INTO $column ($colnames) VALUES ($colvals)";
-															echo 'second insert '.$sql1;
 															/*  if(mysqli_query($conn,$sql1)){
 																  echo 'New record created successfully for id   '. $id;
 															       } */
@@ -594,7 +594,60 @@ $query="SELECT id, name, username,type,emailverified FROM account WHERE username
 		
 		
 		
-		
+							protected function contactus(){
+										
+										$datas = json_decode(file_get_contents("php://input"),true);
+										
+										
+												$id= uniqid();
+												
+											
+										    	foreach($datas as $column => $value){
+															foreach($value as $key => $values){
+														
+															$cols[]=$key;
+															$vals[] = $values;
+															
+															// $value['id']=$id;
+															 
+															      if($key=='id'){
+																	$vals[0]=$id;
+																	} 
+																	//if($key=='id'){
+																		   
+																		// }
+																	/* echo $value;
+																	$id=$array['id'];
+																		   $message='Name: '.$array['name']. ' Email: '. $a['email'].' Comment : ' $datas['comment'];
+																		   $name=$array['name'];
+																		   echo 'SEE MESSAFE ';
+																		   echo $message;
+																		   echo $name; */
+																	
+															}
+															$msg=$value['comment'];
+															$email=$value['email'];
+															$name=$value['name'];
+															$comment=$value['comment'];
+															$message = 'Name: '.$name. ' Email: '. $email .' Comment : '. $comment;
+															
+														
+															//echo 'cols   '.cols;
+													   $colnames =implode(",",$cols);
+													    $colvals="'".implode("','", $vals)."'";	
+		                                              $sql= "INSERT INTO $column ($colnames) VALUES ($colvals)";
+													   
+														if(!empty($datas)){
+															    $r = $this->mysqli->query($sql) or die($this->mysqli->error.__LINE__);
+																anymail("care@weddingbudget.co.ke", "Wedding Budget Feedback","New comment from ".$name,$message);
+																
+																$success = array('status' => "Success", "msg" => "Registration Successfully.", "data" => $datas);
+																$this->response($this->json($success),200);
+																
+															}else
+																$this->response('',204);	// "No Content" status
+														}
+															}
 		
 		
 		

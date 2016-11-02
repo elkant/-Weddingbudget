@@ -14,7 +14,7 @@
 
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
-                          <!--  <form method="post" action="#" id="form" role="form" class="contact-comments">-->
+                             <form data-ng-submit="contact(contactmodel)" >
 
                                 <div class="row">
 
@@ -22,26 +22,26 @@
 
                                         <div class="form-group">
                                             <!-- Name -->
-                                            <input type="text" name="name" ng-model="contactmodel.contactus.name" id="name" class=" form-control" placeholder="Name *" maxlength="100" required="">
+                                            <input type="text" name="name" ng-model="contactmodel.contactus.name" id="name" class=" form-control" placeholder="Name *" required maxlength="100" required="">
                                             <input type="hidden" name="id" ng-model="contactmodel.contactus.id" ng-init="contactmodel.contactus.id=''" id="id">
                                         </div>
                                         <div class="form-group">
                                             <!-- Email -->
-                                            <input type="email" name="email"  ng-model="contactmodel.contactus.email" id="email" class=" form-control" placeholder="Email *" maxlength="100" required="">
+                                            <input type="email" name="email"  ng-model="contactmodel.contactus.email" id="email" class=" form-control" required placeholder="Email *" maxlength="100" required="">
                                         </div>
                                         <div class="form-group">
                                             <!-- phone -->
-                                            <input type="text" name="phone" id="phone"  ng-model="contactmodel.contactus.phoneno" class=" form-control" placeholder="Phone" maxlength="100">
+                                            <input type="text" name="phone" id="phone"  ng-model="contactmodel.contactus.phoneno" class=" form-control" required placeholder="Phone" maxlength="100">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 form-group">
                                         <div class="form-group">
                                             <!-- Comment -->
-                                            <textarea name="text" id="text" class="cmnt-text form-control" ng-model="contactmodel.contactus.comment" placeholder="Comment" maxlength="400"></textarea>
+                                            <textarea name="text" id="text"  class="cmnt-text form-control" ng-model="contactmodel.contactus.comment" required placeholder="Comment" maxlength="400"></textarea>
                                         </div>
                                         <div class="form-group full-width">
-                                            <button type="submit"   ng-click="register(contactmodel)" class="btn btn-small btn-dark-solid ">
+                                            <button type="submit" class="btn btn-small btn-dark-solid ">
                                                 Send Message
                                             </button>
 									  </div>
