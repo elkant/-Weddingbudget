@@ -69,7 +69,7 @@ session_start();
 
                         <!--logo start-->
                         <a href="index.php" class="logo-brand">
-                            <img class="img" style="width:90%;" src="img/logo3.png" style='position:relative;' alt=""/>
+                            <img class="img-thumbnail" src="img/logo.png" style='position:relative;' alt=""/>
                         </a>
                         <!--logo end-->
 <?php
@@ -122,10 +122,10 @@ include 'menu.php';
 				</div>
             <div class="col-xs-2"></div>   
                 <div class="social-link circle m-top-80 m-bot-80 col-xs-12" >
-                    <a href="https://www.facebook.com/The-Wedding-Budget-580132895507835/"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/weddingbudgetke/"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
                 
-                    <a href="https://plus.google.com/u/2/116430970601621011697"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
                  
                 </div>
                 <div class="copyright col-xs-12">
@@ -284,13 +284,7 @@ $(function() {
 function topofpage(){
 	
 	//$(window).scrollTop(200);
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- // some code..
- 
- $(".showhide").click();
-}
 	$(window).scrollTop($('#maindiv').offset().top);
-        
 }
 
 // a function to trigger the login popup

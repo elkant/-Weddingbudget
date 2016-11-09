@@ -59,9 +59,15 @@ background-attachment: fixed;
 <div class="col-sm-12">
 <select   type="text" onchange='callpackage();' class="form-control col-xs-2" id='packages' name='packages'  > 
 <option value=''> choose budget package </option>
+<<<<<<< HEAD
 <option value='100000'> Silver package (100K) </option>
 <option value='500000'> Gold package (500K)</option>
 <option value='1000000'> Platinum package (1M) </option>
+=======
+<option value='100000'> Platinum package (100K) </option>
+<option value='500000'> Silver package (500K)</option>
+<option value='1000000'> Gold package (1M) </option>
+>>>>>>> parent of 322f9e8... Revert "Toggling mobile menu"
 <option value='*'> Other (Input amount) </option>
 </select>
 
@@ -785,12 +791,12 @@ function fixfooter(){
 
 function welcome(){
 	
-	$('.smallbg').css('background-image', 'url(../-Weddingbudget/img/background/'+getRandomIntInclusive(1, 20)+'.jpg)');
-	$('.smallbg').css('background-size', 'cover');
+	//$('.smallbg').css('background-image', 'url(../-Weddingbudget/img/background/'+getRandomIntInclusive(1, 20)+'.jpg)');
+	//$('.smallbg').css('background-size', 'cover');
 }
 
 function getRandomIntInclusive(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  //return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 </script>

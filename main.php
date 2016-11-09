@@ -11,9 +11,11 @@
  
                        <div class=" text-center">
                         <h3 class="text-uppercase"> Generate/Create Budget </h3>
+                        <div class="featured-item feature-border-box text-center wow fadeInLeft">
                         <div class="half-txt p-top-30"> Are you a bride to be? groom to be? wedding planner? Helping plan a wedding? Lets help you budget for that wedding</div>
                         <div class="half-txt p-top-30"> <b>We have three great options for you. </b></br></div>
                         <div class="half-txt p-top-30"> </div>
+                        </div>
 						
 						</div>
 					
@@ -27,7 +29,7 @@
 						</ol>-->
 						<div class="row ">
                         <div class="col-md-4">
-                            <div class="featured-item text-center">
+                            <div class="featured-item feature-border-box text-left wow fadeInLeft">
                                 <div class="icon wow bounceInDown" style="visibility: visible; animation-name: bounceInDown;">
                                     <i class="icon-multiple_paper"></i>
                                 </div>
@@ -36,12 +38,13 @@
                                 </div>
                                 <div class="desc ">
                                     Enter the budget amount of your wedding then  <br> we will break it down for you according to a priority matrix
-                                  
+                                  <br/>
+                                  <br/>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="featured-item text-center">
+                            <div class="featured-item feature-border-box text-left wow fadeOutRight">
                                 <div class="icon wow bounceInDown" style="visibility: visible; animation-name: bounceInDown;">
                                     <i class="icon-basic_elaboration_todolist_star"></i>
                                 </div>
@@ -49,13 +52,13 @@
                                     <h4 class="">Packages</h4>
                                 </div>
                                 <div class="desc">
-                                    Choose a package, an estimate of what you plan to spend for you wedding  <br>
-                                    
+                                    Choose a package, an estimate of what you plan to spend for you wedding  
+                                    <br/><br/><br/>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="featured-item text-center">
+                            <div class="featured-item feature-border-box text-left wow fadeInLeft">
                                 <div class="icon wow bounceInDown" style="visibility: visible; animation-name: bounceInDown;">
                                     <i class="icon-basic_todolist_pencil"></i>
                                 </div>

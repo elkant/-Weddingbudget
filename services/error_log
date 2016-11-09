@@ -1,0 +1,301 @@
+[24-Oct-2016 19:53:08 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[24-Oct-2016 19:53:08 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[24-Oct-2016 19:53:08 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[24-Oct-2016 19:57:18 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[24-Oct-2016 19:57:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[24-Oct-2016 19:57:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[24-Oct-2016 19:57:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:46:48 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:46:48 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:46:48 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:46:50 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:46:50 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 05:46:50 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 05:47:01 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:47:01 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:47:01 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:47:06 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:47:06 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 05:47:06 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 05:47:17 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:47:17 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:47:17 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:47:18 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:47:18 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 05:47:18 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 05:51:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:51:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:51:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:51:46 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 05:51:46 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 05:51:46 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:48 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:48 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:49 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:50 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:50 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:50 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:54 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:54 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:54 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[25-Oct-2016 11:58:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 16:32:53 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 16:32:53 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 16:32:54 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 16:32:54 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 16:32:54 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 16:32:54 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 16:33:16 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 18:47:09 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 18:47:09 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 18:47:10 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 18:47:10 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 18:47:10 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 18:47:10 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:15:32 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:15:33 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:15:33 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:15:33 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:15:33 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:15:33 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:15:52 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:15:52 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:15:52 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:15:53 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:15:53 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:15:53 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:17:04 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:17:05 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:17:05 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:17:05 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:17:05 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:17:05 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:17:19 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:17:31 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:21:10 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:21:11 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:21:11 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:21:11 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:21:11 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:21:11 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:21:47 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:21:53 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:38:14 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:38:14 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:38:14 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:38:14 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:38:14 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:38:14 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:38:57 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:38:57 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:38:58 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:39:00 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:39:00 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:39:00 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:39:00 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:39:27 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:39:53 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:39:59 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:51:00 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:59:25 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:59:26 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:59:26 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:59:26 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:59:26 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 19:59:26 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 19:59:26 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 20:20:14 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 20:20:15 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 20:20:15 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 20:20:15 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 20:20:15 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 20:20:15 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 20:20:32 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 20:20:32 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 20:20:32 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 20:20:33 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[26-Oct-2016 20:20:33 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 20:20:33 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[26-Oct-2016 20:20:59 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:01 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:01 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:01 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 04:16:01 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 04:16:07 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:15 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:16 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:49 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:50 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:54 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:54 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 04:16:54 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 04:16:54 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 04:16:57 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 06:56:37 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 06:56:37 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 06:56:37 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 06:56:38 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 06:56:38 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 06:56:38 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 06:56:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 06:56:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 06:56:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 06:56:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 06:56:45 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 06:56:45 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 07:15:01 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 07:54:52 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 07:54:52 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 07:54:52 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 07:54:56 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 07:54:56 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 07:54:56 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 08:00:07 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 08:00:07 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 08:00:07 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 08:00:07 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 08:00:07 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 08:00:07 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 13:38:09 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:38:09 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:38:09 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:38:09 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:38:09 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 13:38:09 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 13:45:43 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:45:44 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:45:44 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:46:02 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:46:02 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 13:46:02 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 13:53:12 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:53:23 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:53:29 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 13:53:29 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 13:53:29 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:10:12 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:10:12 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:10:12 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:10:12 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:10:12 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:10:12 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:10:24 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:10:25 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:10:25 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:10:25 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:10:25 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:10:25 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:13:29 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:13:29 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:13:29 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:13:29 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:13:29 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:13:29 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:20 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:20 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 230
+[27-Oct-2016 14:15:20 UTC] PHP Warning:  API::fetchitems(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 230
+[27-Oct-2016 14:15:21 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:21 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 230
+[27-Oct-2016 14:15:21 UTC] PHP Warning:  API::fetchitems(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 230
+[27-Oct-2016 14:15:24 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:43 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:43 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 67
+[27-Oct-2016 14:15:43 UTC] PHP Warning:  API::login(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 67
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:45 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:52 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:53 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:53 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:54 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:54 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:54 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:54 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:54 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:54 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:54 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:54 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:54 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 14:15:55 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 16:24:48 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:24:48 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:24:48 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:24:56 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:24:56 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 16:24:56 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 16:25:51 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:25:51 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:25:51 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:25:53 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:25:53 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 16:25:53 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 16:26:17 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:26:17 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 230
+[27-Oct-2016 16:26:17 UTC] PHP Warning:  API::fetchitems(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 230
+[27-Oct-2016 16:26:17 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:26:17 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 230
+[27-Oct-2016 16:26:17 UTC] PHP Warning:  API::fetchitems(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 230
+[27-Oct-2016 16:27:00 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:27:01 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:27:01 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:27:01 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:27:01 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 16:27:01 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 16:27:33 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:27:33 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:27:34 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:27:34 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/weddingb/public_html/services/api.php on line 29
+[27-Oct-2016 16:27:34 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
+[27-Oct-2016 16:27:34 UTC] PHP Warning:  API::selectdata(): Couldn't fetch mysqli in /home/weddingb/public_html/services/api.php on line 290
