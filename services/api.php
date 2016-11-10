@@ -1,6 +1,7 @@
 <?php
  	require_once("Rest.inc.php");
  	require_once("../sendmail.php");
+ 	//require_once("../testmail.php");
 	//include('../config/config.php');
 	class API extends REST {
 	
@@ -73,7 +74,7 @@ $query="SELECT id, name, username,type,emailverified FROM account WHERE username
 							$result = $r->fetch_assoc();
 							//$row  = mysql_fetch_array($r);
 					
-						if( $result['emailverified']=="NO"){
+						if( $result['emailverified']=="no"){
 								 $error = array('status' => "Error", "msg" => "Account not verified, please check your email to verify your account");
 							 $this->response($this->json($error), 400);
 							
@@ -247,7 +248,33 @@ $query="SELECT id, name, username,type,emailverified FROM account WHERE username
 		
 		
 		
+			
+		private function search(){	
+			if($this->get_request_method() != "GET"){
+				$this->response('',406);
+			}
+			
+			 $searchterm = $this->_request['searchterm'];		
+		 $query="SELECT * from provider JOIN provider_detail ON  provider.id=provider_detail.id where provider.name like '%$searchterm%' OR  provider.name like '%$searchterm%' OR provider.websiteurl like '%$searchterm%' OR provider_detail.cost like '%$searchterm%'";
+
+			$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+
+			if($r->num_rows > 0){
+				$result = array();
+				
+               while($row = $r->fetch_assoc()){
+					$result['provider'][]= $row;
+					
+								
+					//echo $result;
+				}
+			
+			$this->response($this->json($result), 200); // send user details
+			}
+			$this->response('',204);	// If no records "No Content" status
+		}
 		
+			
 		
 		
 		
@@ -378,7 +405,7 @@ $query="SELECT id, name, username,type,emailverified FROM account WHERE username
 										  foreach($datas as $column => $value){
 														foreach($value as $key => $value){
 															
-														
+															
 															
 															if($key=='password'){
 																$value = md5($value);
@@ -395,13 +422,25 @@ $query="SELECT id, name, username,type,emailverified FROM account WHERE username
 															if($key=='username'){
 																$username = $value;
 															}
+															if($key=='name'){
+																$name = $value;
+															}
+															if($key=='type'){
+																$type = $value;
+															}
+															
 																$cols[]=$key;
 																$vals[] = $value;
 																
 																
-													}			
+													}	
+
+
+													
 													$colnames =implode(",",$cols);
 													$colvals="'".implode("','", $vals)."'";
+													
+													
 																					
 												//	echo $colnames.'======'.$colvals;
                                          $checkquery="SELECT  username FROM account WHERE username = '$username'";
@@ -418,9 +457,12 @@ $query="SELECT id, name, username,type,emailverified FROM account WHERE username
 													$query= "INSERT INTO $column ($colnames) VALUES ($colvals)";
 
 															if(!empty($datas)){
-																$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
-																$success = array('status' => "Success", "msg" => "Registration Successfully. Please check your email to verify your account.", "data" => $datas);
-																$this->response($this->json($success),200);
+															$r = $this->mysqli->query($query) or die($this->mysqli->error.__LINE__);
+															verify($username,$name,$verificationcode,$type);
+															$success = array('status' => "Success", "msg" => "Registration Successfully. Please check your email to verify your account.", "data" => $datas);
+															$this->response($this->json($success),200);
+																
+																
 															}else
 																$this->response('',204);	// "No Content" status
 										            }}

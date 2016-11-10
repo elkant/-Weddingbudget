@@ -16,7 +16,7 @@ app01.directive('fileModel', ['$parse', function ($parse) {
             }, */
     link: function(scope, element, attrs, ngModelCtrl,ngModel) {
         var model = $parse(attrs.fileModel);
-		console.log(attrs);
+		
         var modelSetter = model.assign;
 
         element.bind('change', function(){
@@ -566,7 +566,7 @@ $scope.saveToLocal = function(carts){
 		}
 	};
 	$scope.login = function(auth){
-		console.log(auth);
+		
 	
 	  $http.post(serviceBase + 'login', angular.toJson(auth)).success(function (results) {
 				$scope.datamodel= results.data;
@@ -574,17 +574,15 @@ $scope.saveToLocal = function(carts){
 			 	$scope.redirect=results.redirect;
 				
 				if(results.redirect=='edit'){
-				$location.path('/edit');
+				//$location.path('/edit');
 				$route.reload();
 				$window.location.reload();
 				  }else{
-					  $location.path('/providers');
+					 // $location.path('/providers');
 					  $window.location.reload();
 				  }
 				
-				//$window.location.href = '#/providers';
-		      // alert(response.msg);
-			   console.log(results)
+				
 			   
 			   var n = noty({text: results.msg,
                         layout: 'center',
@@ -643,7 +641,7 @@ $scope.saveToLocal = function(carts){
 				 
 				 
 			}).error(function(response) {
-					console.log("Failed to Register");
+				
 					
 					 var n = noty({text: response.msg,
                         layout: 'center',
@@ -663,13 +661,13 @@ $scope.saveToLocal = function(carts){
 
         var uploadUrl = "save_form.php";
         var text = $scope.name;
-		console.log(text);
+		
         fileUpload.uploadFileToUrl(file, uploadUrl, text);
 				};
 	
     $scope.message="";
 	 $scope.saveCustomer = function(datamodel) {
-				console.log("this is called"+angular.toJson(datamodel));
+				
 		  $http.post(serviceBase + 'insert', angular.toJson(datamodel)).success(function (results) {
 				$scope.datamodel= results.data;
 			 	$scope.message=results.msg;
@@ -692,10 +690,10 @@ $scope.saveToLocal = function(carts){
 	
 	
 	  $scope.contact = function(datamodel) {
-		  console.log(datamodel);
+		 
 		  //services.insertCustomers(datamodel);
 		  $http.post(serviceBase + 'contactus', angular.toJson(datamodel)).then(function (results) {
-				console.log(results)
+				
 				 $scope.datamodel=results.config.data;
                       var n = noty({text: "Saved successfully",
                         layout: 'center',
@@ -807,7 +805,7 @@ app01.controller('listCtrl', function ($scope, services,$http,ngDialog,$route) {
 						 $scope.datamodel[tablename].splice(id,1);
 					} else{
 						$scope.datamodel[tablename].splice(id,1);
-						console.log(pdid);
+						
 						$http.delete(serviceBase + 'delete?id=' + pid +'&& tablename='+tablename+'&& pdid= '+pdid).then(function (status) {
 	                     return status.data;
 							});
